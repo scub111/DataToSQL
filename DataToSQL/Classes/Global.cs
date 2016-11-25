@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DevExpress.Xpo;
-using DevExpress.Xpo.DB;
 using RapidInterface;
 using System.Threading;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using DevExpress.XtraEditors;
 using System.Windows.Forms;
-using DataToSQL.Properties;
 using System.Xml.Serialization;
 using System.IO;
 using DevExpress.Data.Filtering;
@@ -37,13 +34,13 @@ namespace DataToSQL
         /// </summary>
         public VarXml(string strFileXml)
         {
-            this.FileXml = strFileXml;
+            FileXml = strFileXml;
             Init();
         }
 
         void Init()
         {
-            FilePath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + FileXml;
+            FilePath = string.Format("{0}\\{1}", Path.GetDirectoryName(Application.ExecutablePath), FileXml);
             ThreadMainPeriod = 5000;
             ThreadMainDelay = 3000;
             AppName = "ABC";
@@ -236,16 +233,15 @@ namespace DataToSQL
 
             CopyDataToReal();
 
-            ThreadMain = new ThreadTimer();
-            ThreadMain.Period = varXml.ThreadMainPeriod;
-            ThreadMain.WorkChanged += new EventHandler(ThreadMain_WorkChanged);
+            ThreadMain = new ThreadTimer() { Period = varXml.ThreadMainPeriod };
+            ThreadMain.WorkChanged += ThreadMain_WorkChanged;
             ThreadMain.Run();
 
             ThreadMainDelay = varXml.ThreadMainDelay;
             AppName = varXml.AppName;
 
             WorkerReboot = new BackgroundWorker();
-            WorkerReboot.DoWork += new DoWorkEventHandler(WorkerReboot_DoWork);
+            WorkerReboot.DoWork += WorkerReboot_DoWork;
         }
 
         /// <summary>
@@ -295,7 +291,7 @@ namespace DataToSQL
         /// <summary>
         /// Инициализации определенной коллекции данных.
         /// </summary>
-        public void InitXPCollection(XPCollection collection, Type type, Session session)
+        public static void InitXPCollection(XPCollection collection, Type type, Session session)
         {
             collection = new XPCollection();
             XPCollectionContainer.InitXPCollection(collection, type, session);
@@ -335,7 +331,7 @@ namespace DataToSQL
         /// <summary>
         /// Асинхронное чтение данных.
         /// </summary>
-        void ReadDataAsync(CollectionEx<DataSourceReal> realCollection)
+        static void ReadDataAsync(CollectionEx<DataSourceReal> realCollection)
         {
             realCollection.ConnectedCount = 0;
             foreach (DataSourceReal opcServer in realCollection)
@@ -481,7 +477,7 @@ namespace DataToSQL
 
     public class Global
     {
-        private static GlobalDefault defaultInstance = new GlobalDefault();
+        private readonly static GlobalDefault defaultInstance = new GlobalDefault();
         public static GlobalDefault Default { get { return defaultInstance; } }
     }
 }
