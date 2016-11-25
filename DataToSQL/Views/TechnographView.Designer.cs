@@ -1,0 +1,1446 @@
+﻿namespace DataToSQL
+{
+    partial class TechnographView
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TechnographView));
+            this._dbInterface1 = new RapidInterface.DBInterface();
+            this.dockPanelMerge1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.tableDockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.tableDockContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.tableLayoutControl1 = new RapidInterface.LayoutControlEx();
+            this.tableGridControl1 = new RapidInterface.GridControlEx(this.components);
+            this.tableGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.tableGridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.CaptionGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CommentGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.SQLPrefixGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.DescriptionPrefixGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.PortNameGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ReplacePointGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.IsConnectedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ItemsCountGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.UpdateTimeGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.UpdateTimeRepositoryItemDateEdit1 = new RapidInterface.RepositoryItemDateEditEx();
+            this.ReadTimeSpanGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ConnectSuccessCountGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ConnectFaultCountGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ReceiveSuccessCountGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ReceiveFaultCountGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.MessageGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.icons1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.tableNavigatorControl1 = new RapidInterface.DataNavigatorEx(this.components);
+            this.tableLayoutGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.tableNavigatorLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tableGridLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.formDockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.formDockContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.formLayoutControl1 = new RapidInterface.LayoutControlEx();
+            this.formNavigatorControl1 = new RapidInterface.DataNavigatorEx(this.components);
+            this.CaptionTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.SQLPrefixTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.DescriptionPrefixTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.CommentTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.PortNameTextEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.IsConnectedCheckEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.ItemsCountSpinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.ReceiveSuccessCountSpinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.ReceiveFaultCountSpinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.UpdateTimeDateEditEx1 = new RapidInterface.DateEditEx();
+            this.ReadTimeSpanSpinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.MessageTextEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.ConnectSuccessCountSpinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.ConnectFaultCountSpinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.ReplacePointCheckEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.formLayoutGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.formNavigatorLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.formDataLayoutGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.CaptionLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.SQLPrefixLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.DescriptionPrefixLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.PortNameLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.IsConnectedLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ReceiveSuccessCountLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.MessageLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.CommentLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.UpdateTimeLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ReceiveFaultCountLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ConnectSuccessCountLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ConnectFaultCountLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ItemsCountLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ReadTimeSpanLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ReplacePointLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.itemString1 = new RapidInterface.DBInterfaceItemString();
+            this.itemString4 = new RapidInterface.DBInterfaceItemString();
+            this.itemString2 = new RapidInterface.DBInterfaceItemString();
+            this.itemString3 = new RapidInterface.DBInterfaceItemString();
+            this.itemString5 = new RapidInterface.DBInterfaceItemString();
+            this.itemBoolean2 = new RapidInterface.DBInterfaceItemBoolean();
+            this.itemBoolean1 = new RapidInterface.DBInterfaceItemBoolean();
+            this.itemNumeric1 = new RapidInterface.DBInterfaceItemNumeric();
+            this.itemNumeric5 = new RapidInterface.DBInterfaceItemNumeric();
+            this.itemNumeric6 = new RapidInterface.DBInterfaceItemNumeric();
+            this.itemNumeric2 = new RapidInterface.DBInterfaceItemNumeric();
+            this.itemNumeric3 = new RapidInterface.DBInterfaceItemNumeric();
+            this.itemDateTime1 = new RapidInterface.DBInterfaceItemDateTime();
+            this.itemNumeric4 = new RapidInterface.DBInterfaceItemNumeric();
+            this.itemString6 = new RapidInterface.DBInterfaceItemString();
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this._dbInterface1.SuspendLayout();
+            this.dockPanelMerge1.SuspendLayout();
+            this.tableDockPanel1.SuspendLayout();
+            this.tableDockContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableLayoutControl1)).BeginInit();
+            this.tableLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeRepositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeRepositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icons1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableLayoutGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableNavigatorLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableGridLayoutItem1)).BeginInit();
+            this.formDockPanel1.SuspendLayout();
+            this.formDockContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.formLayoutControl1)).BeginInit();
+            this.formLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CaptionTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SQLPrefixTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescriptionPrefixTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PortNameTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IsConnectedCheckEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemsCountSpinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveSuccessCountSpinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveFaultCountSpinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeDateEditEx1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeDateEditEx1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadTimeSpanSpinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MessageTextEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectSuccessCountSpinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectFaultCountSpinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplacePointCheckEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formLayoutGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formNavigatorLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formDataLayoutGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaptionLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SQLPrefixLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescriptionPrefixLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PortNameLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IsConnectedLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveSuccessCountLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MessageLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveFaultCountLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectSuccessCountLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectFaultCountLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemsCountLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadTimeSpanLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplacePointLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel2.SuspendLayout();
+            this.dockPanel2_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // _dbInterface1
+            // 
+            this._dbInterface1.BaseUnitOfWork = null;
+            this._dbInterface1.BaseXPCollecton = null;
+            this._dbInterface1.Controls.Add(this.dockPanelMerge1);
+            this._dbInterface1.CountOpenDesigner = 16;
+            this._dbInterface1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._dbInterface1.DockManager = this.dockManager1;
+            this._dbInterface1.DockPanelMerge = this.dockPanelMerge1;
+            this._dbInterface1.FormDataLayoutGroup = this.formDataLayoutGroup1;
+            this._dbInterface1.FormDockContainer = this.formDockContainer1;
+            this._dbInterface1.FormDockPanel = this.formDockPanel1;
+            this._dbInterface1.FormLayoutControl = this.formLayoutControl1;
+            this._dbInterface1.FormLayoutGroup = this.formLayoutGroup1;
+            this._dbInterface1.FormNavigatorControl = this.formNavigatorControl1;
+            this._dbInterface1.FormNavigatorLayoutItem = this.formNavigatorLayoutItem1;
+            this._dbInterface1.Icons = this.icons1;
+            this._dbInterface1.ImagePath = null;
+            this._dbInterface1.Items.Add(this.itemString1);
+            this._dbInterface1.Items.Add(this.itemString4);
+            this._dbInterface1.Items.Add(this.itemString2);
+            this._dbInterface1.Items.Add(this.itemString3);
+            this._dbInterface1.Items.Add(this.itemString5);
+            this._dbInterface1.Items.Add(this.itemBoolean2);
+            this._dbInterface1.Items.Add(this.itemBoolean1);
+            this._dbInterface1.Items.Add(this.itemNumeric1);
+            this._dbInterface1.Items.Add(this.itemNumeric5);
+            this._dbInterface1.Items.Add(this.itemNumeric6);
+            this._dbInterface1.Items.Add(this.itemNumeric2);
+            this._dbInterface1.Items.Add(this.itemNumeric3);
+            this._dbInterface1.Items.Add(this.itemDateTime1);
+            this._dbInterface1.Items.Add(this.itemNumeric4);
+            this._dbInterface1.Items.Add(this.itemString6);
+            this._dbInterface1.ItemsSeq.Add(this.itemString1);
+            this._dbInterface1.ItemsSeq.Add(this.itemString2);
+            this._dbInterface1.ItemsSeq.Add(this.itemString3);
+            this._dbInterface1.ItemsSeq.Add(this.itemString4);
+            this._dbInterface1.ItemsSeq.Add(this.itemString5);
+            this._dbInterface1.ItemsSeq.Add(this.itemBoolean1);
+            this._dbInterface1.ItemsSeq.Add(this.itemNumeric1);
+            this._dbInterface1.ItemsSeq.Add(this.itemNumeric2);
+            this._dbInterface1.ItemsSeq.Add(this.itemNumeric3);
+            this._dbInterface1.ItemsSeq.Add(this.itemDateTime1);
+            this._dbInterface1.ItemsSeq.Add(this.itemNumeric4);
+            this._dbInterface1.ItemsSeq.Add(this.itemString6);
+            this._dbInterface1.ItemsSeq.Add(this.itemNumeric5);
+            this._dbInterface1.ItemsSeq.Add(this.itemNumeric6);
+            this._dbInterface1.ItemsSeq.Add(this.itemBoolean2);
+            this._dbInterface1.Location = new System.Drawing.Point(0, 0);
+            this._dbInterface1.Name = "_dbInterface1";
+            this._dbInterface1.Size = new System.Drawing.Size(1383, 661);
+            this._dbInterface1.TabIndex = 0;
+            this._dbInterface1.TableDockContainer = this.tableDockContainer1;
+            this._dbInterface1.TableDockPanel = this.tableDockPanel1;
+            this._dbInterface1.TableGridBand = this.tableGridBand1;
+            this._dbInterface1.TableGridControl = this.tableGridControl1;
+            this._dbInterface1.TableGridLayoutItem = this.tableGridLayoutItem1;
+            this._dbInterface1.TableGridView = this.tableGridView1;
+            this._dbInterface1.TableLayoutControl = this.tableLayoutControl1;
+            this._dbInterface1.TableLayoutGroup = this.tableLayoutGroup1;
+            this._dbInterface1.TableNavigatorControl = this.tableNavigatorControl1;
+            this._dbInterface1.TableNavigatorLayoutItem = this.tableNavigatorLayoutItem1;
+            this._dbInterface1.TableType = typeof(DataToSQL.Technograph);
+            // 
+            // dockPanelMerge1
+            // 
+            this.dockPanelMerge1.ActiveChild = this.tableDockPanel1;
+            this.dockPanelMerge1.Controls.Add(this.formDockPanel1);
+            this.dockPanelMerge1.Controls.Add(this.tableDockPanel1);
+            this.dockPanelMerge1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanelMerge1.FloatVertical = true;
+            this.dockPanelMerge1.ID = new System.Guid("feae6b91-9eab-4ecd-998a-477b8225a263");
+            this.dockPanelMerge1.Location = new System.Drawing.Point(0, 0);
+            this.dockPanelMerge1.Name = "dockPanelMerge1";
+            this.dockPanelMerge1.OriginalSize = new System.Drawing.Size(501, 200);
+            this.dockPanelMerge1.Size = new System.Drawing.Size(1383, 661);
+            this.dockPanelMerge1.Tabbed = true;
+            this.dockPanelMerge1.TabsPosition = DevExpress.XtraBars.Docking.TabsPosition.Left;
+            // 
+            // tableDockPanel1
+            // 
+            this.tableDockPanel1.Controls.Add(this.tableDockContainer1);
+            this.tableDockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.tableDockPanel1.FloatSize = new System.Drawing.Size(600, 600);
+            this.tableDockPanel1.ID = new System.Guid("e8505f95-2ac7-4489-b148-f0f7943c3c9c");
+            this.tableDockPanel1.Location = new System.Drawing.Point(31, 23);
+            this.tableDockPanel1.Name = "tableDockPanel1";
+            this.tableDockPanel1.OriginalSize = new System.Drawing.Size(1102, 649);
+            this.tableDockPanel1.Size = new System.Drawing.Size(1348, 634);
+            this.tableDockPanel1.Text = "Таблица";
+            // 
+            // tableDockContainer1
+            // 
+            this.tableDockContainer1.Controls.Add(this.tableLayoutControl1);
+            this.tableDockContainer1.Location = new System.Drawing.Point(0, 0);
+            this.tableDockContainer1.Name = "tableDockContainer1";
+            this.tableDockContainer1.Size = new System.Drawing.Size(1348, 634);
+            this.tableDockContainer1.TabIndex = 0;
+            // 
+            // tableLayoutControl1
+            // 
+            this.tableLayoutControl1.Controls.Add(this.tableGridControl1);
+            this.tableLayoutControl1.Controls.Add(this.tableNavigatorControl1);
+            this.tableLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutControl1.Images = this.icons1;
+            this.tableLayoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutControl1.Name = "tableLayoutControl1";
+            this.tableLayoutControl1.Root = this.tableLayoutGroup1;
+            this.tableLayoutControl1.Size = new System.Drawing.Size(1348, 634);
+            this.tableLayoutControl1.TabIndex = 0;
+            // 
+            // tableGridControl1
+            // 
+            this.tableGridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.tableGridControl1.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.tableGridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.tableGridControl1.Location = new System.Drawing.Point(12, 35);
+            this.tableGridControl1.MainView = this.tableGridView1;
+            this.tableGridControl1.Name = "tableGridControl1";
+            this.tableGridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.UpdateTimeRepositoryItemDateEdit1});
+            this.tableGridControl1.ShowOnlyPredefinedDetails = true;
+            this.tableGridControl1.Size = new System.Drawing.Size(1324, 587);
+            this.tableGridControl1.TabIndex = 4;
+            this.tableGridControl1.UseEmbeddedNavigator = true;
+            this.tableGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.tableGridView1});
+            // 
+            // tableGridView1
+            // 
+            this.tableGridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(240)))));
+            this.tableGridView1.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.tableGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.tableGridBand1});
+            this.tableGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.CaptionGridColumn1,
+            this.SQLPrefixGridColumn1,
+            this.DescriptionPrefixGridColumn1,
+            this.CommentGridColumn1,
+            this.PortNameGridColumn1,
+            this.IsConnectedGridColumn1,
+            this.ItemsCountGridColumn1,
+            this.ReceiveSuccessCountGridColumn1,
+            this.ReceiveFaultCountGridColumn1,
+            this.UpdateTimeGridColumn1,
+            this.ReadTimeSpanGridColumn1,
+            this.MessageGridColumn1,
+            this.ConnectSuccessCountGridColumn1,
+            this.ConnectFaultCountGridColumn1,
+            this.ReplacePointGridColumn1});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "IsConnected";
+            this.tableGridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
+            this.tableGridView1.GridControl = this.tableGridControl1;
+            this.tableGridView1.Images = this.icons1;
+            this.tableGridView1.Name = "tableGridView1";
+            this.tableGridView1.OptionsBehavior.AutoPopulateColumns = false;
+            this.tableGridView1.OptionsDetail.AllowExpandEmptyDetails = true;
+            this.tableGridView1.OptionsView.ShowAutoFilterRow = true;
+            this.tableGridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // tableGridBand1
+            // 
+            this.tableGridBand1.Caption = "Основные данные";
+            this.tableGridBand1.Columns.Add(this.CaptionGridColumn1);
+            this.tableGridBand1.Columns.Add(this.CommentGridColumn1);
+            this.tableGridBand1.Columns.Add(this.SQLPrefixGridColumn1);
+            this.tableGridBand1.Columns.Add(this.DescriptionPrefixGridColumn1);
+            this.tableGridBand1.Columns.Add(this.PortNameGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ReplacePointGridColumn1);
+            this.tableGridBand1.Columns.Add(this.IsConnectedGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ItemsCountGridColumn1);
+            this.tableGridBand1.Columns.Add(this.UpdateTimeGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ReadTimeSpanGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ConnectSuccessCountGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ConnectFaultCountGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ReceiveSuccessCountGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ReceiveFaultCountGridColumn1);
+            this.tableGridBand1.Columns.Add(this.MessageGridColumn1);
+            this.tableGridBand1.Name = "tableGridBand1";
+            this.tableGridBand1.VisibleIndex = 0;
+            this.tableGridBand1.Width = 1306;
+            // 
+            // CaptionGridColumn1
+            // 
+            this.CaptionGridColumn1.Caption = "Название";
+            this.CaptionGridColumn1.FieldName = "Caption";
+            this.CaptionGridColumn1.Name = "CaptionGridColumn1";
+            this.CaptionGridColumn1.Visible = true;
+            this.CaptionGridColumn1.Width = 87;
+            // 
+            // CommentGridColumn1
+            // 
+            this.CommentGridColumn1.Caption = "Комментарий";
+            this.CommentGridColumn1.FieldName = "Comment";
+            this.CommentGridColumn1.Name = "CommentGridColumn1";
+            this.CommentGridColumn1.Visible = true;
+            this.CommentGridColumn1.Width = 87;
+            // 
+            // SQLPrefixGridColumn1
+            // 
+            this.SQLPrefixGridColumn1.Caption = "SQL-префикс";
+            this.SQLPrefixGridColumn1.FieldName = "SQLPrefix";
+            this.SQLPrefixGridColumn1.Name = "SQLPrefixGridColumn1";
+            this.SQLPrefixGridColumn1.Visible = true;
+            this.SQLPrefixGridColumn1.Width = 87;
+            // 
+            // DescriptionPrefixGridColumn1
+            // 
+            this.DescriptionPrefixGridColumn1.Caption = "Префикс в описании";
+            this.DescriptionPrefixGridColumn1.FieldName = "DescriptionPrefix";
+            this.DescriptionPrefixGridColumn1.Name = "DescriptionPrefixGridColumn1";
+            this.DescriptionPrefixGridColumn1.Visible = true;
+            this.DescriptionPrefixGridColumn1.Width = 87;
+            // 
+            // PortNameGridColumn1
+            // 
+            this.PortNameGridColumn1.Caption = "COM-порт";
+            this.PortNameGridColumn1.FieldName = "PortName";
+            this.PortNameGridColumn1.Name = "PortNameGridColumn1";
+            this.PortNameGridColumn1.Visible = true;
+            this.PortNameGridColumn1.Width = 87;
+            // 
+            // ReplacePointGridColumn1
+            // 
+            this.ReplacePointGridColumn1.Caption = "Замена точки на запятую";
+            this.ReplacePointGridColumn1.FieldName = "ReplacePoint";
+            this.ReplacePointGridColumn1.Name = "ReplacePointGridColumn1";
+            this.ReplacePointGridColumn1.Visible = true;
+            this.ReplacePointGridColumn1.Width = 88;
+            // 
+            // IsConnectedGridColumn1
+            // 
+            this.IsConnectedGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.IsConnectedGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.IsConnectedGridColumn1.Caption = "Соединен";
+            this.IsConnectedGridColumn1.FieldName = "IsConnected";
+            this.IsConnectedGridColumn1.Name = "IsConnectedGridColumn1";
+            this.IsConnectedGridColumn1.OptionsColumn.ReadOnly = true;
+            this.IsConnectedGridColumn1.Visible = true;
+            this.IsConnectedGridColumn1.Width = 87;
+            // 
+            // ItemsCountGridColumn1
+            // 
+            this.ItemsCountGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.ItemsCountGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.ItemsCountGridColumn1.Caption = "Кол-во элементов";
+            this.ItemsCountGridColumn1.FieldName = "ItemsCount";
+            this.ItemsCountGridColumn1.Name = "ItemsCountGridColumn1";
+            this.ItemsCountGridColumn1.OptionsColumn.ReadOnly = true;
+            this.ItemsCountGridColumn1.Visible = true;
+            this.ItemsCountGridColumn1.Width = 87;
+            // 
+            // UpdateTimeGridColumn1
+            // 
+            this.UpdateTimeGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.UpdateTimeGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.UpdateTimeGridColumn1.Caption = "Последнее обновление";
+            this.UpdateTimeGridColumn1.ColumnEdit = this.UpdateTimeRepositoryItemDateEdit1;
+            this.UpdateTimeGridColumn1.FieldName = "UpdateTime";
+            this.UpdateTimeGridColumn1.Name = "UpdateTimeGridColumn1";
+            this.UpdateTimeGridColumn1.OptionsColumn.ReadOnly = true;
+            this.UpdateTimeGridColumn1.Visible = true;
+            this.UpdateTimeGridColumn1.Width = 87;
+            // 
+            // UpdateTimeRepositoryItemDateEdit1
+            // 
+            this.UpdateTimeRepositoryItemDateEdit1.AutoHeight = false;
+            this.UpdateTimeRepositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.UpdateTimeRepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.UpdateTimeRepositoryItemDateEdit1.DisplayFormat.FormatString = "G";
+            this.UpdateTimeRepositoryItemDateEdit1.EditFormat.FormatString = "G";
+            this.UpdateTimeRepositoryItemDateEdit1.Mask.EditMask = "G";
+            this.UpdateTimeRepositoryItemDateEdit1.Name = "UpdateTimeRepositoryItemDateEdit1";
+            // 
+            // ReadTimeSpanGridColumn1
+            // 
+            this.ReadTimeSpanGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.ReadTimeSpanGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.ReadTimeSpanGridColumn1.Caption = "Время чтения, мс";
+            this.ReadTimeSpanGridColumn1.FieldName = "ReadTimeSpan";
+            this.ReadTimeSpanGridColumn1.Name = "ReadTimeSpanGridColumn1";
+            this.ReadTimeSpanGridColumn1.OptionsColumn.ReadOnly = true;
+            this.ReadTimeSpanGridColumn1.Visible = true;
+            this.ReadTimeSpanGridColumn1.Width = 87;
+            // 
+            // ConnectSuccessCountGridColumn1
+            // 
+            this.ConnectSuccessCountGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.ConnectSuccessCountGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.ConnectSuccessCountGridColumn1.Caption = "Кол-во удач. подкл.";
+            this.ConnectSuccessCountGridColumn1.FieldName = "ConnectSuccessCount";
+            this.ConnectSuccessCountGridColumn1.Name = "ConnectSuccessCountGridColumn1";
+            this.ConnectSuccessCountGridColumn1.OptionsColumn.ReadOnly = true;
+            this.ConnectSuccessCountGridColumn1.Visible = true;
+            this.ConnectSuccessCountGridColumn1.Width = 87;
+            // 
+            // ConnectFaultCountGridColumn1
+            // 
+            this.ConnectFaultCountGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.ConnectFaultCountGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.ConnectFaultCountGridColumn1.Caption = "Кол-во ошиб. покл.";
+            this.ConnectFaultCountGridColumn1.FieldName = "ConnectFaultCount";
+            this.ConnectFaultCountGridColumn1.Name = "ConnectFaultCountGridColumn1";
+            this.ConnectFaultCountGridColumn1.OptionsColumn.ReadOnly = true;
+            this.ConnectFaultCountGridColumn1.Visible = true;
+            this.ConnectFaultCountGridColumn1.Width = 87;
+            // 
+            // ReceiveSuccessCountGridColumn1
+            // 
+            this.ReceiveSuccessCountGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.ReceiveSuccessCountGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.ReceiveSuccessCountGridColumn1.Caption = "Кол-во получ.";
+            this.ReceiveSuccessCountGridColumn1.FieldName = "ReceiveSuccessCount";
+            this.ReceiveSuccessCountGridColumn1.Name = "ReceiveSuccessCountGridColumn1";
+            this.ReceiveSuccessCountGridColumn1.OptionsColumn.ReadOnly = true;
+            this.ReceiveSuccessCountGridColumn1.Visible = true;
+            this.ReceiveSuccessCountGridColumn1.Width = 87;
+            // 
+            // ReceiveFaultCountGridColumn1
+            // 
+            this.ReceiveFaultCountGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.ReceiveFaultCountGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.ReceiveFaultCountGridColumn1.Caption = "Кол-во неполуч.";
+            this.ReceiveFaultCountGridColumn1.FieldName = "ReceiveFaultCount";
+            this.ReceiveFaultCountGridColumn1.Name = "ReceiveFaultCountGridColumn1";
+            this.ReceiveFaultCountGridColumn1.OptionsColumn.ReadOnly = true;
+            this.ReceiveFaultCountGridColumn1.Visible = true;
+            this.ReceiveFaultCountGridColumn1.Width = 87;
+            // 
+            // MessageGridColumn1
+            // 
+            this.MessageGridColumn1.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            this.MessageGridColumn1.AppearanceCell.Options.UseBackColor = true;
+            this.MessageGridColumn1.Caption = "Сообщение";
+            this.MessageGridColumn1.FieldName = "Message";
+            this.MessageGridColumn1.Name = "MessageGridColumn1";
+            this.MessageGridColumn1.OptionsColumn.ReadOnly = true;
+            this.MessageGridColumn1.Visible = true;
+            this.MessageGridColumn1.Width = 87;
+            // 
+            // icons1
+            // 
+            this.icons1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("icons1.ImageStream")));
+            // 
+            // tableNavigatorControl1
+            // 
+            this.tableNavigatorControl1.Error = false;
+            this.tableNavigatorControl1.Location = new System.Drawing.Point(492, 12);
+            this.tableNavigatorControl1.Name = "tableNavigatorControl1";
+            this.tableNavigatorControl1.ShowToolTips = true;
+            this.tableNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.tableNavigatorControl1.StyleController = this.tableLayoutControl1;
+            this.tableNavigatorControl1.TabIndex = 5;
+            this.tableNavigatorControl1.TableCaption = "Технограф";
+            this.tableNavigatorControl1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            // 
+            // tableLayoutGroup1
+            // 
+            this.tableLayoutGroup1.CustomizationFormText = "Основная группа";
+            this.tableLayoutGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.tableLayoutGroup1.GroupBordersVisible = false;
+            this.tableLayoutGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.tableNavigatorLayoutItem1,
+            this.tableGridLayoutItem1});
+            this.tableLayoutGroup1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutGroup1.Name = "tableLayoutGroup1";
+            this.tableLayoutGroup1.Size = new System.Drawing.Size(1348, 634);
+            this.tableLayoutGroup1.TextVisible = false;
+            // 
+            // tableNavigatorLayoutItem1
+            // 
+            this.tableNavigatorLayoutItem1.Control = this.tableNavigatorControl1;
+            this.tableNavigatorLayoutItem1.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableNavigatorLayoutItem1.CustomizationFormText = "Панель навигации";
+            this.tableNavigatorLayoutItem1.Location = new System.Drawing.Point(0, 0);
+            this.tableNavigatorLayoutItem1.Name = "tableNavigatorLayoutItem1";
+            this.tableNavigatorLayoutItem1.Size = new System.Drawing.Size(1328, 23);
+            this.tableNavigatorLayoutItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.tableNavigatorLayoutItem1.TextVisible = false;
+            // 
+            // tableGridLayoutItem1
+            // 
+            this.tableGridLayoutItem1.Control = this.tableGridControl1;
+            this.tableGridLayoutItem1.CustomizationFormText = "Таблица";
+            this.tableGridLayoutItem1.Location = new System.Drawing.Point(0, 23);
+            this.tableGridLayoutItem1.Name = "tableGridLayoutItem1";
+            this.tableGridLayoutItem1.Size = new System.Drawing.Size(1328, 591);
+            this.tableGridLayoutItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.tableGridLayoutItem1.TextVisible = false;
+            // 
+            // formDockPanel1
+            // 
+            this.formDockPanel1.Controls.Add(this.formDockContainer1);
+            this.formDockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.formDockPanel1.FloatSize = new System.Drawing.Size(600, 600);
+            this.formDockPanel1.ID = new System.Guid("2ba3b502-2cc5-4239-a005-6847833af207");
+            this.formDockPanel1.Location = new System.Drawing.Point(31, 23);
+            this.formDockPanel1.Name = "formDockPanel1";
+            this.formDockPanel1.OriginalSize = new System.Drawing.Size(1102, 649);
+            this.formDockPanel1.Size = new System.Drawing.Size(1348, 634);
+            this.formDockPanel1.Text = "Форма";
+            // 
+            // formDockContainer1
+            // 
+            this.formDockContainer1.Controls.Add(this.formLayoutControl1);
+            this.formDockContainer1.Location = new System.Drawing.Point(0, 0);
+            this.formDockContainer1.Name = "formDockContainer1";
+            this.formDockContainer1.Size = new System.Drawing.Size(1348, 634);
+            this.formDockContainer1.TabIndex = 0;
+            // 
+            // formLayoutControl1
+            // 
+            this.formLayoutControl1.Controls.Add(this.formNavigatorControl1);
+            this.formLayoutControl1.Controls.Add(this.CaptionTextEdit1);
+            this.formLayoutControl1.Controls.Add(this.SQLPrefixTextEdit1);
+            this.formLayoutControl1.Controls.Add(this.DescriptionPrefixTextEdit1);
+            this.formLayoutControl1.Controls.Add(this.CommentTextEdit1);
+            this.formLayoutControl1.Controls.Add(this.PortNameTextEdit1);
+            this.formLayoutControl1.Controls.Add(this.IsConnectedCheckEdit1);
+            this.formLayoutControl1.Controls.Add(this.ItemsCountSpinEdit1);
+            this.formLayoutControl1.Controls.Add(this.ReceiveSuccessCountSpinEdit1);
+            this.formLayoutControl1.Controls.Add(this.ReceiveFaultCountSpinEdit1);
+            this.formLayoutControl1.Controls.Add(this.UpdateTimeDateEditEx1);
+            this.formLayoutControl1.Controls.Add(this.ReadTimeSpanSpinEdit1);
+            this.formLayoutControl1.Controls.Add(this.MessageTextEdit1);
+            this.formLayoutControl1.Controls.Add(this.ConnectSuccessCountSpinEdit1);
+            this.formLayoutControl1.Controls.Add(this.ConnectFaultCountSpinEdit1);
+            this.formLayoutControl1.Controls.Add(this.ReplacePointCheckEdit1);
+            this.formLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.formLayoutControl1.Images = this.icons1;
+            this.formLayoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.formLayoutControl1.Name = "formLayoutControl1";
+            this.formLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(572, 428, 404, 442);
+            this.formLayoutControl1.Root = this.formLayoutGroup1;
+            this.formLayoutControl1.Size = new System.Drawing.Size(1348, 634);
+            this.formLayoutControl1.TabIndex = 0;
+            // 
+            // formNavigatorControl1
+            // 
+            this.formNavigatorControl1.Error = false;
+            this.formNavigatorControl1.Location = new System.Drawing.Point(492, 12);
+            this.formNavigatorControl1.Name = "formNavigatorControl1";
+            this.formNavigatorControl1.ShowToolTips = true;
+            this.formNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.formNavigatorControl1.StyleController = this.formLayoutControl1;
+            this.formNavigatorControl1.TabIndex = 4;
+            this.formNavigatorControl1.TableCaption = "Технограф";
+            this.formNavigatorControl1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            // 
+            // CaptionTextEdit1
+            // 
+            this.CaptionTextEdit1.Location = new System.Drawing.Point(149, 66);
+            this.CaptionTextEdit1.Name = "CaptionTextEdit1";
+            this.CaptionTextEdit1.Size = new System.Drawing.Size(1175, 20);
+            this.CaptionTextEdit1.StyleController = this.formLayoutControl1;
+            this.CaptionTextEdit1.TabIndex = 5;
+            // 
+            // SQLPrefixTextEdit1
+            // 
+            this.SQLPrefixTextEdit1.Location = new System.Drawing.Point(149, 114);
+            this.SQLPrefixTextEdit1.Name = "SQLPrefixTextEdit1";
+            this.SQLPrefixTextEdit1.Size = new System.Drawing.Size(1175, 20);
+            this.SQLPrefixTextEdit1.StyleController = this.formLayoutControl1;
+            this.SQLPrefixTextEdit1.TabIndex = 6;
+            // 
+            // DescriptionPrefixTextEdit1
+            // 
+            this.DescriptionPrefixTextEdit1.Location = new System.Drawing.Point(149, 138);
+            this.DescriptionPrefixTextEdit1.Name = "DescriptionPrefixTextEdit1";
+            this.DescriptionPrefixTextEdit1.Size = new System.Drawing.Size(1175, 20);
+            this.DescriptionPrefixTextEdit1.StyleController = this.formLayoutControl1;
+            this.DescriptionPrefixTextEdit1.TabIndex = 7;
+            // 
+            // CommentTextEdit1
+            // 
+            this.CommentTextEdit1.Location = new System.Drawing.Point(149, 90);
+            this.CommentTextEdit1.Name = "CommentTextEdit1";
+            this.CommentTextEdit1.Size = new System.Drawing.Size(1175, 20);
+            this.CommentTextEdit1.StyleController = this.formLayoutControl1;
+            this.CommentTextEdit1.TabIndex = 8;
+            // 
+            // PortNameTextEdit1
+            // 
+            this.PortNameTextEdit1.Location = new System.Drawing.Point(149, 162);
+            this.PortNameTextEdit1.Name = "PortNameTextEdit1";
+            this.PortNameTextEdit1.Size = new System.Drawing.Size(1175, 20);
+            this.PortNameTextEdit1.StyleController = this.formLayoutControl1;
+            this.PortNameTextEdit1.TabIndex = 9;
+            // 
+            // IsConnectedCheckEdit1
+            // 
+            this.IsConnectedCheckEdit1.Location = new System.Drawing.Point(24, 209);
+            this.IsConnectedCheckEdit1.Name = "IsConnectedCheckEdit1";
+            this.IsConnectedCheckEdit1.Properties.Caption = "Соединен";
+            this.IsConnectedCheckEdit1.Properties.ReadOnly = true;
+            this.IsConnectedCheckEdit1.Size = new System.Drawing.Size(648, 19);
+            this.IsConnectedCheckEdit1.StyleController = this.formLayoutControl1;
+            this.IsConnectedCheckEdit1.TabIndex = 10;
+            // 
+            // ItemsCountSpinEdit1
+            // 
+            this.ItemsCountSpinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ItemsCountSpinEdit1.Location = new System.Drawing.Point(801, 209);
+            this.ItemsCountSpinEdit1.Name = "ItemsCountSpinEdit1";
+            this.ItemsCountSpinEdit1.Properties.ReadOnly = true;
+            this.ItemsCountSpinEdit1.Size = new System.Drawing.Size(523, 20);
+            this.ItemsCountSpinEdit1.StyleController = this.formLayoutControl1;
+            this.ItemsCountSpinEdit1.TabIndex = 11;
+            // 
+            // ReceiveSuccessCountSpinEdit1
+            // 
+            this.ReceiveSuccessCountSpinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ReceiveSuccessCountSpinEdit1.Location = new System.Drawing.Point(149, 281);
+            this.ReceiveSuccessCountSpinEdit1.Name = "ReceiveSuccessCountSpinEdit1";
+            this.ReceiveSuccessCountSpinEdit1.Properties.ReadOnly = true;
+            this.ReceiveSuccessCountSpinEdit1.Size = new System.Drawing.Size(523, 20);
+            this.ReceiveSuccessCountSpinEdit1.StyleController = this.formLayoutControl1;
+            this.ReceiveSuccessCountSpinEdit1.TabIndex = 12;
+            // 
+            // ReceiveFaultCountSpinEdit1
+            // 
+            this.ReceiveFaultCountSpinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ReceiveFaultCountSpinEdit1.Location = new System.Drawing.Point(801, 281);
+            this.ReceiveFaultCountSpinEdit1.Name = "ReceiveFaultCountSpinEdit1";
+            this.ReceiveFaultCountSpinEdit1.Properties.ReadOnly = true;
+            this.ReceiveFaultCountSpinEdit1.Size = new System.Drawing.Size(523, 20);
+            this.ReceiveFaultCountSpinEdit1.StyleController = this.formLayoutControl1;
+            this.ReceiveFaultCountSpinEdit1.TabIndex = 13;
+            // 
+            // UpdateTimeDateEditEx1
+            // 
+            this.UpdateTimeDateEditEx1.EditValue = new System.DateTime(2014, 9, 12, 0, 0, 0, 0);
+            this.UpdateTimeDateEditEx1.Location = new System.Drawing.Point(149, 233);
+            this.UpdateTimeDateEditEx1.Name = "UpdateTimeDateEditEx1";
+            this.UpdateTimeDateEditEx1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.UpdateTimeDateEditEx1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.UpdateTimeDateEditEx1.Properties.DisplayFormat.FormatString = "G";
+            this.UpdateTimeDateEditEx1.Properties.EditFormat.FormatString = "G";
+            this.UpdateTimeDateEditEx1.Properties.Mask.EditMask = "G";
+            this.UpdateTimeDateEditEx1.Properties.ReadOnly = true;
+            this.UpdateTimeDateEditEx1.Size = new System.Drawing.Size(523, 20);
+            this.UpdateTimeDateEditEx1.StyleController = this.formLayoutControl1;
+            this.UpdateTimeDateEditEx1.TabIndex = 14;
+            // 
+            // ReadTimeSpanSpinEdit1
+            // 
+            this.ReadTimeSpanSpinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ReadTimeSpanSpinEdit1.Location = new System.Drawing.Point(801, 233);
+            this.ReadTimeSpanSpinEdit1.Name = "ReadTimeSpanSpinEdit1";
+            this.ReadTimeSpanSpinEdit1.Properties.ReadOnly = true;
+            this.ReadTimeSpanSpinEdit1.Size = new System.Drawing.Size(523, 20);
+            this.ReadTimeSpanSpinEdit1.StyleController = this.formLayoutControl1;
+            this.ReadTimeSpanSpinEdit1.TabIndex = 15;
+            // 
+            // MessageTextEdit1
+            // 
+            this.MessageTextEdit1.Location = new System.Drawing.Point(149, 305);
+            this.MessageTextEdit1.Name = "MessageTextEdit1";
+            this.MessageTextEdit1.Properties.ReadOnly = true;
+            this.MessageTextEdit1.Size = new System.Drawing.Size(1175, 305);
+            this.MessageTextEdit1.StyleController = this.formLayoutControl1;
+            this.MessageTextEdit1.TabIndex = 16;
+            // 
+            // ConnectSuccessCountSpinEdit1
+            // 
+            this.ConnectSuccessCountSpinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ConnectSuccessCountSpinEdit1.Location = new System.Drawing.Point(149, 257);
+            this.ConnectSuccessCountSpinEdit1.Name = "ConnectSuccessCountSpinEdit1";
+            this.ConnectSuccessCountSpinEdit1.Properties.ReadOnly = true;
+            this.ConnectSuccessCountSpinEdit1.Size = new System.Drawing.Size(523, 20);
+            this.ConnectSuccessCountSpinEdit1.StyleController = this.formLayoutControl1;
+            this.ConnectSuccessCountSpinEdit1.TabIndex = 17;
+            // 
+            // ConnectFaultCountSpinEdit1
+            // 
+            this.ConnectFaultCountSpinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ConnectFaultCountSpinEdit1.Location = new System.Drawing.Point(801, 257);
+            this.ConnectFaultCountSpinEdit1.Name = "ConnectFaultCountSpinEdit1";
+            this.ConnectFaultCountSpinEdit1.Properties.ReadOnly = true;
+            this.ConnectFaultCountSpinEdit1.Size = new System.Drawing.Size(523, 20);
+            this.ConnectFaultCountSpinEdit1.StyleController = this.formLayoutControl1;
+            this.ConnectFaultCountSpinEdit1.TabIndex = 18;
+            // 
+            // ReplacePointCheckEdit1
+            // 
+            this.ReplacePointCheckEdit1.Location = new System.Drawing.Point(24, 186);
+            this.ReplacePointCheckEdit1.Name = "ReplacePointCheckEdit1";
+            this.ReplacePointCheckEdit1.Properties.Caption = "Замена точки на запятую";
+            this.ReplacePointCheckEdit1.Size = new System.Drawing.Size(1300, 19);
+            this.ReplacePointCheckEdit1.StyleController = this.formLayoutControl1;
+            this.ReplacePointCheckEdit1.TabIndex = 19;
+            // 
+            // formLayoutGroup1
+            // 
+            this.formLayoutGroup1.CustomizationFormText = "Основная группа формы";
+            this.formLayoutGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.formLayoutGroup1.GroupBordersVisible = false;
+            this.formLayoutGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.formNavigatorLayoutItem1,
+            this.formDataLayoutGroup1});
+            this.formLayoutGroup1.Location = new System.Drawing.Point(0, 0);
+            this.formLayoutGroup1.Name = "formLayoutGroup1";
+            this.formLayoutGroup1.Size = new System.Drawing.Size(1348, 634);
+            this.formLayoutGroup1.TextVisible = false;
+            // 
+            // formNavigatorLayoutItem1
+            // 
+            this.formNavigatorLayoutItem1.Control = this.formNavigatorControl1;
+            this.formNavigatorLayoutItem1.ControlAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.formNavigatorLayoutItem1.CustomizationFormText = "Панель навигации";
+            this.formNavigatorLayoutItem1.Location = new System.Drawing.Point(0, 0);
+            this.formNavigatorLayoutItem1.Name = "formNavigatorLayoutItem1";
+            this.formNavigatorLayoutItem1.Size = new System.Drawing.Size(1328, 23);
+            this.formNavigatorLayoutItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.formNavigatorLayoutItem1.TextVisible = false;
+            // 
+            // formDataLayoutGroup1
+            // 
+            this.formDataLayoutGroup1.AppearanceGroup.BackColor = System.Drawing.Color.Gainsboro;
+            this.formDataLayoutGroup1.AppearanceGroup.Options.UseBackColor = true;
+            this.formDataLayoutGroup1.CustomizationFormText = "Основные данные";
+            this.formDataLayoutGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.CaptionLayoutItem1,
+            this.SQLPrefixLayoutItem1,
+            this.DescriptionPrefixLayoutItem1,
+            this.PortNameLayoutItem1,
+            this.IsConnectedLayoutItem1,
+            this.ReceiveSuccessCountLayoutItem1,
+            this.MessageLayoutItem1,
+            this.CommentLayoutItem1,
+            this.UpdateTimeLayoutItem1,
+            this.ReceiveFaultCountLayoutItem1,
+            this.ConnectSuccessCountLayoutItem1,
+            this.ConnectFaultCountLayoutItem1,
+            this.ItemsCountLayoutItem1,
+            this.ReadTimeSpanLayoutItem1,
+            this.ReplacePointLayoutItem1});
+            this.formDataLayoutGroup1.Location = new System.Drawing.Point(0, 23);
+            this.formDataLayoutGroup1.Name = "formDataLayoutGroup1";
+            this.formDataLayoutGroup1.Size = new System.Drawing.Size(1328, 591);
+            this.formDataLayoutGroup1.Text = "Основные данные";
+            // 
+            // CaptionLayoutItem1
+            // 
+            this.CaptionLayoutItem1.Control = this.CaptionTextEdit1;
+            this.CaptionLayoutItem1.CustomizationFormText = "Название";
+            this.CaptionLayoutItem1.Location = new System.Drawing.Point(0, 0);
+            this.CaptionLayoutItem1.Name = "CaptionLayoutItem1";
+            this.CaptionLayoutItem1.Size = new System.Drawing.Size(1304, 24);
+            this.CaptionLayoutItem1.Text = "Название:";
+            this.CaptionLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // SQLPrefixLayoutItem1
+            // 
+            this.SQLPrefixLayoutItem1.Control = this.SQLPrefixTextEdit1;
+            this.SQLPrefixLayoutItem1.CustomizationFormText = "SQL-префикс";
+            this.SQLPrefixLayoutItem1.Location = new System.Drawing.Point(0, 48);
+            this.SQLPrefixLayoutItem1.Name = "SQLPrefixLayoutItem1";
+            this.SQLPrefixLayoutItem1.Size = new System.Drawing.Size(1304, 24);
+            this.SQLPrefixLayoutItem1.Text = "SQL-префикс:";
+            this.SQLPrefixLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // DescriptionPrefixLayoutItem1
+            // 
+            this.DescriptionPrefixLayoutItem1.Control = this.DescriptionPrefixTextEdit1;
+            this.DescriptionPrefixLayoutItem1.CustomizationFormText = "Префикс в описании";
+            this.DescriptionPrefixLayoutItem1.Location = new System.Drawing.Point(0, 72);
+            this.DescriptionPrefixLayoutItem1.Name = "DescriptionPrefixLayoutItem1";
+            this.DescriptionPrefixLayoutItem1.Size = new System.Drawing.Size(1304, 24);
+            this.DescriptionPrefixLayoutItem1.Text = "Префикс в описании:";
+            this.DescriptionPrefixLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // PortNameLayoutItem1
+            // 
+            this.PortNameLayoutItem1.Control = this.PortNameTextEdit1;
+            this.PortNameLayoutItem1.CustomizationFormText = "COM-порт";
+            this.PortNameLayoutItem1.Location = new System.Drawing.Point(0, 96);
+            this.PortNameLayoutItem1.Name = "PortNameLayoutItem1";
+            this.PortNameLayoutItem1.Size = new System.Drawing.Size(1304, 24);
+            this.PortNameLayoutItem1.Text = "COM-порт:";
+            this.PortNameLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // IsConnectedLayoutItem1
+            // 
+            this.IsConnectedLayoutItem1.Control = this.IsConnectedCheckEdit1;
+            this.IsConnectedLayoutItem1.CustomizationFormText = "Соединен";
+            this.IsConnectedLayoutItem1.Location = new System.Drawing.Point(0, 143);
+            this.IsConnectedLayoutItem1.Name = "IsConnectedLayoutItem1";
+            this.IsConnectedLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.IsConnectedLayoutItem1.Text = "Соединен:";
+            this.IsConnectedLayoutItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.IsConnectedLayoutItem1.TextVisible = false;
+            // 
+            // ReceiveSuccessCountLayoutItem1
+            // 
+            this.ReceiveSuccessCountLayoutItem1.Control = this.ReceiveSuccessCountSpinEdit1;
+            this.ReceiveSuccessCountLayoutItem1.CustomizationFormText = "Кол-во получ.";
+            this.ReceiveSuccessCountLayoutItem1.Location = new System.Drawing.Point(0, 215);
+            this.ReceiveSuccessCountLayoutItem1.Name = "ReceiveSuccessCountLayoutItem1";
+            this.ReceiveSuccessCountLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.ReceiveSuccessCountLayoutItem1.Text = "Кол-во получ.:";
+            this.ReceiveSuccessCountLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // MessageLayoutItem1
+            // 
+            this.MessageLayoutItem1.Control = this.MessageTextEdit1;
+            this.MessageLayoutItem1.CustomizationFormText = "Сообщение";
+            this.MessageLayoutItem1.Location = new System.Drawing.Point(0, 239);
+            this.MessageLayoutItem1.Name = "MessageLayoutItem1";
+            this.MessageLayoutItem1.Size = new System.Drawing.Size(1304, 309);
+            this.MessageLayoutItem1.Text = "Сообщение:";
+            this.MessageLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // CommentLayoutItem1
+            // 
+            this.CommentLayoutItem1.Control = this.CommentTextEdit1;
+            this.CommentLayoutItem1.CustomizationFormText = "Комментарий";
+            this.CommentLayoutItem1.Location = new System.Drawing.Point(0, 24);
+            this.CommentLayoutItem1.Name = "CommentLayoutItem1";
+            this.CommentLayoutItem1.Size = new System.Drawing.Size(1304, 24);
+            this.CommentLayoutItem1.Text = "Комментарий:";
+            this.CommentLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // UpdateTimeLayoutItem1
+            // 
+            this.UpdateTimeLayoutItem1.Control = this.UpdateTimeDateEditEx1;
+            this.UpdateTimeLayoutItem1.CustomizationFormText = "Последнее обновление";
+            this.UpdateTimeLayoutItem1.Location = new System.Drawing.Point(0, 167);
+            this.UpdateTimeLayoutItem1.Name = "UpdateTimeLayoutItem1";
+            this.UpdateTimeLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.UpdateTimeLayoutItem1.Text = "Последнее обновление:";
+            this.UpdateTimeLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // ReceiveFaultCountLayoutItem1
+            // 
+            this.ReceiveFaultCountLayoutItem1.Control = this.ReceiveFaultCountSpinEdit1;
+            this.ReceiveFaultCountLayoutItem1.CustomizationFormText = "Кол-во неполуч.";
+            this.ReceiveFaultCountLayoutItem1.Location = new System.Drawing.Point(652, 215);
+            this.ReceiveFaultCountLayoutItem1.Name = "ReceiveFaultCountLayoutItem1";
+            this.ReceiveFaultCountLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.ReceiveFaultCountLayoutItem1.Text = "Кол-во неполуч.:";
+            this.ReceiveFaultCountLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // ConnectSuccessCountLayoutItem1
+            // 
+            this.ConnectSuccessCountLayoutItem1.Control = this.ConnectSuccessCountSpinEdit1;
+            this.ConnectSuccessCountLayoutItem1.CustomizationFormText = "Кол-во удач. подкл.";
+            this.ConnectSuccessCountLayoutItem1.Location = new System.Drawing.Point(0, 191);
+            this.ConnectSuccessCountLayoutItem1.Name = "ConnectSuccessCountLayoutItem1";
+            this.ConnectSuccessCountLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.ConnectSuccessCountLayoutItem1.Text = "Кол-во удач. подкл.:";
+            this.ConnectSuccessCountLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // ConnectFaultCountLayoutItem1
+            // 
+            this.ConnectFaultCountLayoutItem1.Control = this.ConnectFaultCountSpinEdit1;
+            this.ConnectFaultCountLayoutItem1.CustomizationFormText = "Кол-во ошиб. покл.";
+            this.ConnectFaultCountLayoutItem1.Location = new System.Drawing.Point(652, 191);
+            this.ConnectFaultCountLayoutItem1.Name = "ConnectFaultCountLayoutItem1";
+            this.ConnectFaultCountLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.ConnectFaultCountLayoutItem1.Text = "Кол-во ошиб. покл.:";
+            this.ConnectFaultCountLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // ItemsCountLayoutItem1
+            // 
+            this.ItemsCountLayoutItem1.Control = this.ItemsCountSpinEdit1;
+            this.ItemsCountLayoutItem1.CustomizationFormText = "Кол-во элементов";
+            this.ItemsCountLayoutItem1.Location = new System.Drawing.Point(652, 143);
+            this.ItemsCountLayoutItem1.Name = "ItemsCountLayoutItem1";
+            this.ItemsCountLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.ItemsCountLayoutItem1.Text = "Кол-во элементов:";
+            this.ItemsCountLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // ReadTimeSpanLayoutItem1
+            // 
+            this.ReadTimeSpanLayoutItem1.Control = this.ReadTimeSpanSpinEdit1;
+            this.ReadTimeSpanLayoutItem1.CustomizationFormText = "Время чтения, мс";
+            this.ReadTimeSpanLayoutItem1.Location = new System.Drawing.Point(652, 167);
+            this.ReadTimeSpanLayoutItem1.Name = "ReadTimeSpanLayoutItem1";
+            this.ReadTimeSpanLayoutItem1.Size = new System.Drawing.Size(652, 24);
+            this.ReadTimeSpanLayoutItem1.Text = "Время чтения, мс:";
+            this.ReadTimeSpanLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
+            // 
+            // ReplacePointLayoutItem1
+            // 
+            this.ReplacePointLayoutItem1.Control = this.ReplacePointCheckEdit1;
+            this.ReplacePointLayoutItem1.CustomizationFormText = "Замена точки на запятую";
+            this.ReplacePointLayoutItem1.Location = new System.Drawing.Point(0, 120);
+            this.ReplacePointLayoutItem1.Name = "ReplacePointLayoutItem1";
+            this.ReplacePointLayoutItem1.Size = new System.Drawing.Size(1304, 23);
+            this.ReplacePointLayoutItem1.Text = "Замена точки на запятую:";
+            this.ReplacePointLayoutItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.ReplacePointLayoutItem1.TextVisible = false;
+            // 
+            // dockManager1
+            // 
+            this.dockManager1.Form = this._dbInterface1;
+            this.dockManager1.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel2});
+            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanelMerge1});
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanel2.ID = new System.Guid("5a51710f-e837-4c03-b218-82f75ef05c71");
+            this.dockPanel2.Location = new System.Drawing.Point(31, 23);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel2.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanel2.SavedIndex = 2;
+            this.dockPanel2.SavedParent = this.dockPanelMerge1;
+            this.dockPanel2.SavedTabbed = true;
+            this.dockPanel2.Size = new System.Drawing.Size(833, 626);
+            this.dockPanel2.Text = "dockPanel2";
+            this.dockPanel2.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Controls.Add(this.simpleButton1);
+            this.dockPanel2_Container.Controls.Add(this.memoEdit1);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(833, 626);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(307, 480);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(124, 23);
+            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // memoEdit1
+            // 
+            this.memoEdit1.EditValue = " 16:56 16.09.14 K1 026.2 K2 023.6 K3 007.0 K4 007.2 K5 006.5 K6 010.9 K7-000.2 K8" +
+    "-000.4 K9 190.0 KA 190.0 Kb 190.0 KC 190.0";
+            this.memoEdit1.Location = new System.Drawing.Point(223, 195);
+            this.memoEdit1.Name = "memoEdit1";
+            this.memoEdit1.Size = new System.Drawing.Size(492, 205);
+            this.memoEdit1.TabIndex = 0;
+            // 
+            // itemString1
+            // 
+            this.itemString1.Caption = "Название";
+            this.itemString1.ControlName = "Caption";
+            this.itemString1.DBInterface = this._dbInterface1;
+            this.itemString1.FieldName = "Caption";
+            this.itemString1.FormEdit = this.CaptionTextEdit1;
+            this.itemString1.FormGridColumn = null;
+            this.itemString1.FormLayoutItem = this.CaptionLayoutItem1;
+            this.itemString1.ImageName = "";
+            this.itemString1.Images = this.icons1;
+            this.itemString1.Parent = null;
+            this.itemString1.TableGridColumn = this.CaptionGridColumn1;
+            // 
+            // itemString4
+            // 
+            this.itemString4.Caption = "Комментарий";
+            this.itemString4.ControlName = "Comment";
+            this.itemString4.DBInterface = this._dbInterface1;
+            this.itemString4.FieldName = "Comment";
+            this.itemString4.FormEdit = this.CommentTextEdit1;
+            this.itemString4.FormGridColumn = null;
+            this.itemString4.FormLayoutItem = this.CommentLayoutItem1;
+            this.itemString4.ImageName = "";
+            this.itemString4.Images = this.icons1;
+            this.itemString4.Parent = null;
+            this.itemString4.TableGridColumn = this.CommentGridColumn1;
+            // 
+            // itemString2
+            // 
+            this.itemString2.Caption = "SQL-префикс";
+            this.itemString2.ControlName = "SQLPrefix";
+            this.itemString2.DBInterface = this._dbInterface1;
+            this.itemString2.FieldName = "SQLPrefix";
+            this.itemString2.FormEdit = this.SQLPrefixTextEdit1;
+            this.itemString2.FormGridColumn = null;
+            this.itemString2.FormLayoutItem = this.SQLPrefixLayoutItem1;
+            this.itemString2.ImageName = "";
+            this.itemString2.Images = this.icons1;
+            this.itemString2.Parent = null;
+            this.itemString2.TableGridColumn = this.SQLPrefixGridColumn1;
+            // 
+            // itemString3
+            // 
+            this.itemString3.Caption = "Префикс в описании";
+            this.itemString3.ControlName = "DescriptionPrefix";
+            this.itemString3.DBInterface = this._dbInterface1;
+            this.itemString3.FieldName = "DescriptionPrefix";
+            this.itemString3.FormEdit = this.DescriptionPrefixTextEdit1;
+            this.itemString3.FormGridColumn = null;
+            this.itemString3.FormLayoutItem = this.DescriptionPrefixLayoutItem1;
+            this.itemString3.ImageName = "";
+            this.itemString3.Images = this.icons1;
+            this.itemString3.Parent = null;
+            this.itemString3.TableGridColumn = this.DescriptionPrefixGridColumn1;
+            // 
+            // itemString5
+            // 
+            this.itemString5.Caption = "COM-порт";
+            this.itemString5.ControlName = "PortName";
+            this.itemString5.DBInterface = this._dbInterface1;
+            this.itemString5.FieldName = "PortName";
+            this.itemString5.FormEdit = this.PortNameTextEdit1;
+            this.itemString5.FormGridColumn = null;
+            this.itemString5.FormLayoutItem = this.PortNameLayoutItem1;
+            this.itemString5.ImageName = "";
+            this.itemString5.Images = this.icons1;
+            this.itemString5.Parent = null;
+            this.itemString5.TableGridColumn = this.PortNameGridColumn1;
+            // 
+            // itemBoolean2
+            // 
+            this.itemBoolean2.Caption = "Замена точки на запятую";
+            this.itemBoolean2.ControlName = "ReplacePoint";
+            this.itemBoolean2.DBInterface = this._dbInterface1;
+            this.itemBoolean2.FieldName = "ReplacePoint";
+            this.itemBoolean2.FormEdit = this.ReplacePointCheckEdit1;
+            this.itemBoolean2.FormGridColumn = null;
+            this.itemBoolean2.FormLayoutItem = this.ReplacePointLayoutItem1;
+            this.itemBoolean2.ImageName = "";
+            this.itemBoolean2.Images = this.icons1;
+            this.itemBoolean2.Parent = null;
+            this.itemBoolean2.TableGridColumn = this.ReplacePointGridColumn1;
+            // 
+            // itemBoolean1
+            // 
+            this.itemBoolean1.Caption = "Соединен";
+            this.itemBoolean1.ControlName = "IsConnected";
+            this.itemBoolean1.DBInterface = this._dbInterface1;
+            this.itemBoolean1.FieldName = "IsConnected";
+            this.itemBoolean1.FormEdit = this.IsConnectedCheckEdit1;
+            this.itemBoolean1.FormGridColumn = null;
+            this.itemBoolean1.FormLayoutItem = this.IsConnectedLayoutItem1;
+            this.itemBoolean1.ImageName = "";
+            this.itemBoolean1.Images = this.icons1;
+            this.itemBoolean1.Parent = null;
+            this.itemBoolean1.TableGridColumn = this.IsConnectedGridColumn1;
+            // 
+            // itemNumeric1
+            // 
+            this.itemNumeric1.Caption = "Кол-во элементов";
+            this.itemNumeric1.ControlName = "ItemsCount";
+            this.itemNumeric1.DBInterface = this._dbInterface1;
+            this.itemNumeric1.FieldName = "ItemsCount";
+            this.itemNumeric1.FormEdit = this.ItemsCountSpinEdit1;
+            this.itemNumeric1.FormGridColumn = null;
+            this.itemNumeric1.FormLayoutItem = this.ItemsCountLayoutItem1;
+            this.itemNumeric1.ImageName = "";
+            this.itemNumeric1.Images = this.icons1;
+            this.itemNumeric1.Parent = null;
+            this.itemNumeric1.TableGridColumn = this.ItemsCountGridColumn1;
+            // 
+            // itemNumeric5
+            // 
+            this.itemNumeric5.Caption = "Кол-во удач. подкл.";
+            this.itemNumeric5.ControlName = "ConnectSuccessCount";
+            this.itemNumeric5.DBInterface = this._dbInterface1;
+            this.itemNumeric5.FieldName = "ConnectSuccessCount";
+            this.itemNumeric5.FormEdit = this.ConnectSuccessCountSpinEdit1;
+            this.itemNumeric5.FormGridColumn = null;
+            this.itemNumeric5.FormLayoutItem = this.ConnectSuccessCountLayoutItem1;
+            this.itemNumeric5.ImageName = "";
+            this.itemNumeric5.Images = this.icons1;
+            this.itemNumeric5.Parent = null;
+            this.itemNumeric5.TableGridColumn = this.ConnectSuccessCountGridColumn1;
+            // 
+            // itemNumeric6
+            // 
+            this.itemNumeric6.Caption = "Кол-во ошиб. покл.";
+            this.itemNumeric6.ControlName = "ConnectFaultCount";
+            this.itemNumeric6.DBInterface = this._dbInterface1;
+            this.itemNumeric6.FieldName = "ConnectFaultCount";
+            this.itemNumeric6.FormEdit = this.ConnectFaultCountSpinEdit1;
+            this.itemNumeric6.FormGridColumn = null;
+            this.itemNumeric6.FormLayoutItem = this.ConnectFaultCountLayoutItem1;
+            this.itemNumeric6.ImageName = "";
+            this.itemNumeric6.Images = this.icons1;
+            this.itemNumeric6.Parent = null;
+            this.itemNumeric6.TableGridColumn = this.ConnectFaultCountGridColumn1;
+            // 
+            // itemNumeric2
+            // 
+            this.itemNumeric2.Caption = "Кол-во получ.";
+            this.itemNumeric2.ControlName = "ReceiveSuccessCount";
+            this.itemNumeric2.DBInterface = this._dbInterface1;
+            this.itemNumeric2.FieldName = "ReceiveSuccessCount";
+            this.itemNumeric2.FormEdit = this.ReceiveSuccessCountSpinEdit1;
+            this.itemNumeric2.FormGridColumn = null;
+            this.itemNumeric2.FormLayoutItem = this.ReceiveSuccessCountLayoutItem1;
+            this.itemNumeric2.ImageName = "";
+            this.itemNumeric2.Images = this.icons1;
+            this.itemNumeric2.Parent = null;
+            this.itemNumeric2.TableGridColumn = this.ReceiveSuccessCountGridColumn1;
+            // 
+            // itemNumeric3
+            // 
+            this.itemNumeric3.Caption = "Кол-во неполуч.";
+            this.itemNumeric3.ControlName = "ReceiveFaultCount";
+            this.itemNumeric3.DBInterface = this._dbInterface1;
+            this.itemNumeric3.FieldName = "ReceiveFaultCount";
+            this.itemNumeric3.FormEdit = this.ReceiveFaultCountSpinEdit1;
+            this.itemNumeric3.FormGridColumn = null;
+            this.itemNumeric3.FormLayoutItem = this.ReceiveFaultCountLayoutItem1;
+            this.itemNumeric3.ImageName = "";
+            this.itemNumeric3.Images = this.icons1;
+            this.itemNumeric3.Parent = null;
+            this.itemNumeric3.TableGridColumn = this.ReceiveFaultCountGridColumn1;
+            // 
+            // itemDateTime1
+            // 
+            this.itemDateTime1.Caption = "Последнее обновление";
+            this.itemDateTime1.ControlName = "UpdateTime";
+            this.itemDateTime1.DBInterface = this._dbInterface1;
+            this.itemDateTime1.FieldName = "UpdateTime";
+            this.itemDateTime1.FormEdit = this.UpdateTimeDateEditEx1;
+            this.itemDateTime1.FormGridColumn = null;
+            this.itemDateTime1.FormLayoutItem = this.UpdateTimeLayoutItem1;
+            this.itemDateTime1.ImageName = "";
+            this.itemDateTime1.Images = this.icons1;
+            this.itemDateTime1.Parent = null;
+            this.itemDateTime1.RepositoryItemDateEdit = this.UpdateTimeRepositoryItemDateEdit1;
+            this.itemDateTime1.TableGridColumn = this.UpdateTimeGridColumn1;
+            // 
+            // itemNumeric4
+            // 
+            this.itemNumeric4.Caption = "Время чтения, мс";
+            this.itemNumeric4.ControlName = "ReadTimeSpan";
+            this.itemNumeric4.DBInterface = this._dbInterface1;
+            this.itemNumeric4.FieldName = "ReadTimeSpan";
+            this.itemNumeric4.FormEdit = this.ReadTimeSpanSpinEdit1;
+            this.itemNumeric4.FormGridColumn = null;
+            this.itemNumeric4.FormLayoutItem = this.ReadTimeSpanLayoutItem1;
+            this.itemNumeric4.ImageName = "";
+            this.itemNumeric4.Images = this.icons1;
+            this.itemNumeric4.Parent = null;
+            this.itemNumeric4.TableGridColumn = this.ReadTimeSpanGridColumn1;
+            // 
+            // itemString6
+            // 
+            this.itemString6.Caption = "Сообщение";
+            this.itemString6.ControlName = "Message";
+            this.itemString6.DBInterface = this._dbInterface1;
+            this.itemString6.FieldName = "Message";
+            this.itemString6.FormEdit = this.MessageTextEdit1;
+            this.itemString6.FormGridColumn = null;
+            this.itemString6.FormLayoutItem = this.MessageLayoutItem1;
+            this.itemString6.ImageName = "";
+            this.itemString6.Images = this.icons1;
+            this.itemString6.Parent = null;
+            this.itemString6.TableGridColumn = this.MessageGridColumn1;
+            // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanel1.ID = new System.Guid("58f13f5f-8bd4-407e-854c-6ab52ac7d70b");
+            this.dockPanel1.Location = new System.Drawing.Point(31, 23);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(833, 626);
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(833, 626);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // TechnographView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._dbInterface1);
+            this.DBInterface = this._dbInterface1;
+            this.Name = "TechnographView";
+            this.Size = new System.Drawing.Size(1383, 661);
+            this.FormUpdate += new System.EventHandler(this.TechnographView_FormUpdate);
+            this._dbInterface1.ResumeLayout(false);
+            this.dockPanelMerge1.ResumeLayout(false);
+            this.tableDockPanel1.ResumeLayout(false);
+            this.tableDockContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableLayoutControl1)).EndInit();
+            this.tableLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeRepositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeRepositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icons1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableLayoutGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableNavigatorLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableGridLayoutItem1)).EndInit();
+            this.formDockPanel1.ResumeLayout(false);
+            this.formDockContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.formLayoutControl1)).EndInit();
+            this.formLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CaptionTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SQLPrefixTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescriptionPrefixTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PortNameTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IsConnectedCheckEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemsCountSpinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveSuccessCountSpinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveFaultCountSpinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeDateEditEx1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeDateEditEx1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadTimeSpanSpinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MessageTextEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectSuccessCountSpinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectFaultCountSpinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplacePointCheckEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formLayoutGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formNavigatorLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formDataLayoutGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CaptionLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SQLPrefixLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescriptionPrefixLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PortNameLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IsConnectedLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveSuccessCountLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MessageLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpdateTimeLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReceiveFaultCountLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectSuccessCountLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConnectFaultCountLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemsCountLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadTimeSpanLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplacePointLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel2_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private RapidInterface.DBInterface _dbInterface1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanelMerge1;
+        private DevExpress.XtraBars.Docking.DockPanel formDockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer formDockContainer1;
+        private RapidInterface.LayoutControlEx formLayoutControl1;
+        private RapidInterface.DataNavigatorEx formNavigatorControl1;
+        private DevExpress.Utils.ImageCollection icons1;
+        private DevExpress.XtraLayout.LayoutControlGroup formLayoutGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem formNavigatorLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlGroup formDataLayoutGroup1;
+        private DevExpress.XtraBars.Docking.DockPanel tableDockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer tableDockContainer1;
+        private RapidInterface.LayoutControlEx tableLayoutControl1;
+        private RapidInterface.GridControlEx tableGridControl1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView tableGridView1;
+        private RapidInterface.DataNavigatorEx tableNavigatorControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup tableLayoutGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem tableNavigatorLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem tableGridLayoutItem1;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraEditors.TextEdit CaptionTextEdit1;
+        private DevExpress.XtraEditors.TextEdit SQLPrefixTextEdit1;
+        private DevExpress.XtraEditors.TextEdit DescriptionPrefixTextEdit1;
+        private DevExpress.XtraEditors.TextEdit CommentTextEdit1;
+        private DevExpress.XtraEditors.TextEdit PortNameTextEdit1;
+        private DevExpress.XtraEditors.CheckEdit IsConnectedCheckEdit1;
+        private DevExpress.XtraEditors.SpinEdit ItemsCountSpinEdit1;
+        private DevExpress.XtraEditors.SpinEdit ReceiveSuccessCountSpinEdit1;
+        private DevExpress.XtraEditors.SpinEdit ReceiveFaultCountSpinEdit1;
+        private RapidInterface.DateEditEx UpdateTimeDateEditEx1;
+        private DevExpress.XtraEditors.SpinEdit ReadTimeSpanSpinEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem CaptionLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem SQLPrefixLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem DescriptionPrefixLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem CommentLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem PortNameLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem IsConnectedLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem ItemsCountLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem ReceiveSuccessCountLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem ReceiveFaultCountLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem UpdateTimeLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem ReadTimeSpanLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem MessageLayoutItem1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CaptionGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn SQLPrefixGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn DescriptionPrefixGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CommentGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn PortNameGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn IsConnectedGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ItemsCountGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ReceiveSuccessCountGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ReceiveFaultCountGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn UpdateTimeGridColumn1;
+        private RapidInterface.RepositoryItemDateEditEx UpdateTimeRepositoryItemDateEdit1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ReadTimeSpanGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn MessageGridColumn1;
+        private RapidInterface.DBInterfaceItemString itemString1;
+        private RapidInterface.DBInterfaceItemString itemString2;
+        private RapidInterface.DBInterfaceItemString itemString3;
+        private RapidInterface.DBInterfaceItemString itemString4;
+        private RapidInterface.DBInterfaceItemString itemString5;
+        private RapidInterface.DBInterfaceItemBoolean itemBoolean1;
+        private RapidInterface.DBInterfaceItemNumeric itemNumeric1;
+        private RapidInterface.DBInterfaceItemNumeric itemNumeric2;
+        private RapidInterface.DBInterfaceItemNumeric itemNumeric3;
+        private RapidInterface.DBInterfaceItemDateTime itemDateTime1;
+        private RapidInterface.DBInterfaceItemNumeric itemNumeric4;
+        private RapidInterface.DBInterfaceItemString itemString6;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand tableGridBand1;
+        private DevExpress.XtraEditors.MemoEdit MessageTextEdit1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.SpinEdit ConnectSuccessCountSpinEdit1;
+        private DevExpress.XtraEditors.SpinEdit ConnectFaultCountSpinEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem ConnectSuccessCountLayoutItem1;
+        private DevExpress.XtraLayout.LayoutControlItem ConnectFaultCountLayoutItem1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ConnectSuccessCountGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ConnectFaultCountGridColumn1;
+        private RapidInterface.DBInterfaceItemNumeric itemNumeric5;
+        private RapidInterface.DBInterfaceItemNumeric itemNumeric6;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ReplacePointGridColumn1;
+        private DevExpress.XtraEditors.CheckEdit ReplacePointCheckEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem ReplacePointLayoutItem1;
+        private RapidInterface.DBInterfaceItemBoolean itemBoolean2;
+
+    }
+}
