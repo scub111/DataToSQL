@@ -13,7 +13,6 @@ using System.IO;
 using DevExpress.Data.Filtering;
 using Usable;
 
-
 namespace DataToSQL
 {
     /// <summary>
