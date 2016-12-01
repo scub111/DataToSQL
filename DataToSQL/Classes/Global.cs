@@ -73,6 +73,7 @@ namespace DataToSQL
             TextWriter textWriter = new StreamWriter(FilePath);
             xmlSer.Serialize(textWriter, this);
             textWriter.Close();
+
         }
 
         /// <summary>
