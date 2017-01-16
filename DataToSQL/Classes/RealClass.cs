@@ -277,6 +277,11 @@ namespace DataToSQL
         public int TimeOut { get; set; }
 
         /// <summary>
+        /// Комментарий.
+        /// </summary>
+        public string Comment { get; set; }
+
+        /// <summary>
         /// Готовность к работе.
         /// </summary>
         public bool Ready { get; set; }
@@ -311,6 +316,7 @@ namespace DataToSQL
             ItemID = item.ItemID;
             SQLTrend = item.SQLTrend;
             TimeOut = item.TimeOut;
+            Comment = item.Comment;
         }
 
         public override void SendDataToXPObject()
@@ -1409,7 +1415,9 @@ namespace DataToSQL
             ReadTimeSpan = DateTime.Now - ReadTimeT0;
 
             base.ReadData();
-        }
+
+
+    }
 
         /// <summary>
         /// Задержка в посылке данных.
@@ -2585,7 +2593,8 @@ namespace DataToSQL
                             MinValue = {6}, 
                             MaxValue = {7}, 
                             DataType = {8}, 
-                            TimeOut = {9} 
+                            TimeOut = {9}, 
+                            Comment = '{10}'
                             WHERE DataName = '{1}'; ",
                         /*0*/ValuesCurrentTableName,
                         /*1*/item.SQLTableName,
@@ -2595,8 +2604,9 @@ namespace DataToSQL
                         /*5*/item.FormatValue,
                         /*6*/item.MinValue,
                         /*7*/item.MaxValue,
-                        /*9*/(short)item.CanonicalDataTypeSimple,
-                        /*9*/item.TimeOut);
+                        /*8*/(short)item.CanonicalDataTypeSimple,
+                        /*9*/item.TimeOut,
+                        /*10*/item.Comment);
 
                     // Создание таблицы тренда.
                     if (item.SQLTrend)
@@ -2612,7 +2622,6 @@ namespace DataToSQL
             }
             return statement;
         }
-
 
         /// <summary>
         /// Функция, в которой будет выполняться в потоке инициализации таблиц в БД.
@@ -2630,9 +2639,9 @@ namespace DataToSQL
                     string statement = string.Format(@"IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='{0}') CREATE TABLE {0} (
                         DataName char(100), 
                         Trend bit, 
-                        Description char(500), 
-                        Unit char(50), 
-                        FormatValue char(50), 
+                        Description char(500) DEFAULT '', 
+                        Unit char(50) DEFAULT '', 
+                        FormatValue char(50) DEFAULT '', 
                         MinValue float, 
                         MaxValue float, 
                         DataType tinyint, 
@@ -2640,7 +2649,8 @@ namespace DataToSQL
                         Quality int DEFAULT 0, 
                         SqlTime datetime DEFAULT GETDATE(), 
                         DeviceTime datetime DEFAULT '{1}', 
-                        TimeOut int); ",
+                        TimeOut int,
+                        Comment char(500) DEFAULT ''); ",
                         /*0*/ValuesCurrentTableName,
                         /*1*/(new DateTime(1900, 1, 1)).ToString(DateTimeFormat));
 
@@ -2685,9 +2695,8 @@ namespace DataToSQL
                                 TankVolume float,
                                 TankDensity float,
                                 TankTemperature float); ",
-                                    /*0*/kmazsServerReal.TIDELOGTableName);
+                                /*0*/kmazsServerReal.TIDELOGTableName);
                         }
-
                     }
                     else
                         statement += SQLInitItems(ItemForceRealCollection);

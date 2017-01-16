@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using RapidInterface;
+using DevExpress.XtraGrid.Menu;
+using DevExpress.Utils.Menu;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace DataToSQL
 {
@@ -36,6 +34,41 @@ namespace DataToSQL
                 pingServer.SendDataToXPObject();
 
             tableGridControl1.RefreshDataSource();
+        }
+
+        //Create a menu item 
+        DXMenuCheckItem CreateCheckItem(string caption, GridColumn column, Image image, EventHandler eventHandler)
+        {
+            DXMenuCheckItem item = new DXMenuCheckItem(caption, false, image, eventHandler);
+            item.Tag = column;
+            return item;
+        }
+
+        private void tableGridView1_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
+        {
+            if (e.MenuType == GridMenuType.Column)
+            {
+                GridViewColumnMenu menu = e.Menu as GridViewColumnMenu;
+                if (menu.Column == null)
+                {
+                    menu.Items.Add(CreateCheckItem("Заполнить остальные поля", menu.Column, null, new EventHandler(FillEmptyField)));
+                }
+            }
+        }
+
+        private void FillEmptyField(object sender, EventArgs e)
+        {            
+            foreach (PingServer pingServer in Global.Default.PingServerCollection)
+            {
+                if (string.IsNullOrEmpty(pingServer.Caption))
+                    pingServer.Caption = string.Format("Узел сети {0}", pingServer.Address);
+                if (string.IsNullOrEmpty(pingServer.Comment))
+                    pingServer.Comment = "{" + string.Format("{0};-;1", pingServer.Address) + "}";
+                if (string.IsNullOrEmpty(pingServer.SQLPrefix))
+                    pingServer.SQLPrefix = string.Format("ping_{0}_", Item.GetSQLTableName(pingServer.Address));
+                if (string.IsNullOrEmpty(pingServer.DescriptionPrefix))
+                    pingServer.DescriptionPrefix = string.Format("Узел сети {0}. ", pingServer.Address);
+            }
         }
     }
 }

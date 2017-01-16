@@ -65,7 +65,7 @@ namespace DataToSQL
         public string AppName;
 
         /// <summary>
-        /// Сохранить данные в XML-файл.
+        /// Сохранить данные в XML-файл.гз
         /// </summary>
         public void SaveToXML()
         {
@@ -200,7 +200,7 @@ namespace DataToSQL
         /// </summary>
         public void Init()
         {
-            Version = "v1.20.31";
+            Version = "v1.21.02";
 
             InitTime = DateTime.Now;
 

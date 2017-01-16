@@ -112,7 +112,7 @@
             this._dbForm1.BaseNavBarGroup = this.baseNavBarGroup1;
             this._dbForm1.BaseTabbedView = this.baseTabbedView1;
             this._dbForm1.Controls.Add(this.baseLayoutControl1);
-            this._dbForm1.CountOpenDesigner = 21;
+            this._dbForm1.CountOpenDesigner = 22;
             this._dbForm1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dbForm1.FilterClearButton = this.filterClearButton1;
             this._dbForm1.FilterClearLayoutItem = this.filterClearLayoutItem1;
@@ -663,6 +663,7 @@
             this.dbConnection1.DataBase = "Settings.mdb";
             this.dbConnection1.DataBaseType = RapidInterface.DBConnection.SQLType.Access;
             this.dbConnection1.OwnerForm = this;
+            this.dbConnection1.OwnerFormInited = false;
             this.dbConnection1.Password = null;
             this.dbConnection1.Server = null;
             this.dbConnection1.User = null;
@@ -703,6 +704,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.filterClearLayoutItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbConnection1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

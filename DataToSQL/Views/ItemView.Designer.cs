@@ -126,6 +126,10 @@
             this.itemNumeric1 = new RapidInterface.DBInterfaceItemNumeric();
             this.itemNumeric2 = new RapidInterface.DBInterfaceItemNumeric();
             this.itemNumeric3 = new RapidInterface.DBInterfaceItemNumeric();
+            this.itemString21 = new RapidInterface.DBInterfaceItemString();
+            this.CommentLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.CommentGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CommentTextEdit1 = new DevExpress.XtraEditors.TextEdit();
             this._dbInterface1.SuspendLayout();
             this.dockPanelMerge1.SuspendLayout();
             this.tableDockPanel1.SuspendLayout();
@@ -184,6 +188,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemIDLayoutItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QualityDefLayoutItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentTextEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // _dbInterface1
@@ -191,7 +197,7 @@
             this._dbInterface1.BaseUnitOfWork = null;
             this._dbInterface1.BaseXPCollecton = null;
             this._dbInterface1.Controls.Add(this.dockPanelMerge1);
-            this._dbInterface1.CountOpenDesigner = 40;
+            this._dbInterface1.CountOpenDesigner = 41;
             this._dbInterface1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dbInterface1.DockManager = this.dockManager1;
             this._dbInterface1.DockPanelMerge = this.dockPanelMerge1;
@@ -220,6 +226,7 @@
             this._dbInterface1.Items.Add(this.itemNumeric1);
             this._dbInterface1.Items.Add(this.itemNumeric2);
             this._dbInterface1.Items.Add(this.itemNumeric3);
+            this._dbInterface1.Items.Add(this.itemString21);
             this._dbInterface1.ItemsSeq.Add(this.itemString1);
             this._dbInterface1.ItemsSeq.Add(this.itemString7);
             this._dbInterface1.ItemsSeq.Add(this.itemString8);
@@ -237,8 +244,10 @@
             this._dbInterface1.ItemsSeq.Add(this.itemString18);
             this._dbInterface1.ItemsSeq.Add(this.itemString19);
             this._dbInterface1.ItemsSeq.Add(this.itemString20);
+            this._dbInterface1.ItemsSeq.Add(this.itemString21);
             this._dbInterface1.Location = new System.Drawing.Point(0, 0);
             this._dbInterface1.Name = "_dbInterface1";
+            this._dbInterface1.ProgramDesign = false;
             this._dbInterface1.Size = new System.Drawing.Size(925, 574);
             this._dbInterface1.TabIndex = 0;
             this._dbInterface1.TableDockContainer = this.tableDockContainer1;
@@ -255,7 +264,7 @@
             // 
             // dockPanelMerge1
             // 
-            this.dockPanelMerge1.ActiveChild = this.tableDockPanel1;
+            this.dockPanelMerge1.ActiveChild = this.formDockPanel1;
             this.dockPanelMerge1.Controls.Add(this.formDockPanel1);
             this.dockPanelMerge1.Controls.Add(this.tableDockPanel1);
             this.dockPanelMerge1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
@@ -342,7 +351,8 @@
             this.FormatValueGridColumn1,
             this.DeviceTimeGridColumn1,
             this.TimeOutGridColumn1,
-            this.QualityDefGridColumn1});
+            this.QualityDefGridColumn1,
+            this.CommentGridColumn3});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             styleFormatCondition1.Appearance.Options.UseBackColor = true;
             styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
@@ -356,6 +366,7 @@
             this.tableGridView1.OptionsDetail.AllowExpandEmptyDetails = true;
             this.tableGridView1.OptionsView.ShowAutoFilterRow = true;
             this.tableGridView1.OptionsView.ShowGroupPanel = false;
+            this.tableGridView1.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.tableGridView1_PopupMenuShowing);
             // 
             // tableGridBand1
             // 
@@ -370,6 +381,7 @@
             this.tableGridBand1.Columns.Add(this.MaxValueGridColumn1);
             this.tableGridBand1.Columns.Add(this.SQLTrendGridColumn1);
             this.tableGridBand1.Columns.Add(this.TimeOutGridColumn1);
+            this.tableGridBand1.Columns.Add(this.CommentGridColumn3);
             this.tableGridBand1.Columns.Add(this.CanonicalDataTypeGridColumn1);
             this.tableGridBand1.Columns.Add(this.DataValueGridColumn1);
             this.tableGridBand1.Columns.Add(this.QualityGridColumn1);
@@ -388,7 +400,7 @@
             this.DataSourceGridColumn1.ImageIndex = 0;
             this.DataSourceGridColumn1.Name = "DataSourceGridColumn1";
             this.DataSourceGridColumn1.Visible = true;
-            this.DataSourceGridColumn1.Width = 53;
+            this.DataSourceGridColumn1.Width = 49;
             // 
             // DataSourceRepGridLookUpEdit1
             // 
@@ -443,7 +455,7 @@
             this.ItemIDGridColumn1.FieldName = "ItemID";
             this.ItemIDGridColumn1.Name = "ItemIDGridColumn1";
             this.ItemIDGridColumn1.Visible = true;
-            this.ItemIDGridColumn1.Width = 53;
+            this.ItemIDGridColumn1.Width = 49;
             // 
             // repItem
             // 
@@ -459,7 +471,7 @@
             this.SQLTableNameGridColumn1.FieldName = "SQLTableName";
             this.SQLTableNameGridColumn1.Name = "SQLTableNameGridColumn1";
             this.SQLTableNameGridColumn1.Visible = true;
-            this.SQLTableNameGridColumn1.Width = 53;
+            this.SQLTableNameGridColumn1.Width = 49;
             // 
             // DescriptionGridColumn1
             // 
@@ -467,7 +479,7 @@
             this.DescriptionGridColumn1.FieldName = "Description";
             this.DescriptionGridColumn1.Name = "DescriptionGridColumn1";
             this.DescriptionGridColumn1.Visible = true;
-            this.DescriptionGridColumn1.Width = 53;
+            this.DescriptionGridColumn1.Width = 49;
             // 
             // UnitGridColumn1
             // 
@@ -475,7 +487,7 @@
             this.UnitGridColumn1.FieldName = "Unit";
             this.UnitGridColumn1.Name = "UnitGridColumn1";
             this.UnitGridColumn1.Visible = true;
-            this.UnitGridColumn1.Width = 53;
+            this.UnitGridColumn1.Width = 49;
             // 
             // FormatValueGridColumn1
             // 
@@ -483,7 +495,7 @@
             this.FormatValueGridColumn1.FieldName = "FormatValue";
             this.FormatValueGridColumn1.Name = "FormatValueGridColumn1";
             this.FormatValueGridColumn1.Visible = true;
-            this.FormatValueGridColumn1.Width = 53;
+            this.FormatValueGridColumn1.Width = 49;
             // 
             // MinValueGridColumn1
             // 
@@ -491,7 +503,7 @@
             this.MinValueGridColumn1.FieldName = "MinValue";
             this.MinValueGridColumn1.Name = "MinValueGridColumn1";
             this.MinValueGridColumn1.Visible = true;
-            this.MinValueGridColumn1.Width = 53;
+            this.MinValueGridColumn1.Width = 49;
             // 
             // MaxValueGridColumn1
             // 
@@ -499,7 +511,7 @@
             this.MaxValueGridColumn1.FieldName = "MaxValue";
             this.MaxValueGridColumn1.Name = "MaxValueGridColumn1";
             this.MaxValueGridColumn1.Visible = true;
-            this.MaxValueGridColumn1.Width = 53;
+            this.MaxValueGridColumn1.Width = 49;
             // 
             // SQLTrendGridColumn1
             // 
@@ -507,7 +519,7 @@
             this.SQLTrendGridColumn1.FieldName = "SQLTrend";
             this.SQLTrendGridColumn1.Name = "SQLTrendGridColumn1";
             this.SQLTrendGridColumn1.Visible = true;
-            this.SQLTrendGridColumn1.Width = 53;
+            this.SQLTrendGridColumn1.Width = 49;
             // 
             // TimeOutGridColumn1
             // 
@@ -515,7 +527,7 @@
             this.TimeOutGridColumn1.FieldName = "TimeOut";
             this.TimeOutGridColumn1.Name = "TimeOutGridColumn1";
             this.TimeOutGridColumn1.Visible = true;
-            this.TimeOutGridColumn1.Width = 53;
+            this.TimeOutGridColumn1.Width = 49;
             // 
             // CanonicalDataTypeGridColumn1
             // 
@@ -526,7 +538,7 @@
             this.CanonicalDataTypeGridColumn1.Name = "CanonicalDataTypeGridColumn1";
             this.CanonicalDataTypeGridColumn1.OptionsColumn.ReadOnly = true;
             this.CanonicalDataTypeGridColumn1.Visible = true;
-            this.CanonicalDataTypeGridColumn1.Width = 53;
+            this.CanonicalDataTypeGridColumn1.Width = 49;
             // 
             // DataValueGridColumn1
             // 
@@ -537,7 +549,7 @@
             this.DataValueGridColumn1.Name = "DataValueGridColumn1";
             this.DataValueGridColumn1.OptionsColumn.ReadOnly = true;
             this.DataValueGridColumn1.Visible = true;
-            this.DataValueGridColumn1.Width = 53;
+            this.DataValueGridColumn1.Width = 49;
             // 
             // QualityGridColumn1
             // 
@@ -548,7 +560,7 @@
             this.QualityGridColumn1.Name = "QualityGridColumn1";
             this.QualityGridColumn1.OptionsColumn.ReadOnly = true;
             this.QualityGridColumn1.Visible = true;
-            this.QualityGridColumn1.Width = 53;
+            this.QualityGridColumn1.Width = 49;
             // 
             // QualityDefGridColumn1
             // 
@@ -559,7 +571,7 @@
             this.QualityDefGridColumn1.Name = "QualityDefGridColumn1";
             this.QualityDefGridColumn1.OptionsColumn.ReadOnly = true;
             this.QualityDefGridColumn1.Visible = true;
-            this.QualityDefGridColumn1.Width = 53;
+            this.QualityDefGridColumn1.Width = 49;
             // 
             // DeviceTimeGridColumn1
             // 
@@ -571,7 +583,7 @@
             this.DeviceTimeGridColumn1.Name = "DeviceTimeGridColumn1";
             this.DeviceTimeGridColumn1.OptionsColumn.ReadOnly = true;
             this.DeviceTimeGridColumn1.Visible = true;
-            this.DeviceTimeGridColumn1.Width = 53;
+            this.DeviceTimeGridColumn1.Width = 49;
             // 
             // DeviceTimeRepositoryItemDateEdit1
             // 
@@ -581,7 +593,10 @@
             this.DeviceTimeRepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.DeviceTimeRepositoryItemDateEdit1.DisplayFormat.FormatString = "G";
+            this.DeviceTimeRepositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.DeviceTimeRepositoryItemDateEdit1.EditFormat.FormatString = "G";
+            this.DeviceTimeRepositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.DeviceTimeRepositoryItemDateEdit1.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.DeviceTimeRepositoryItemDateEdit1.Mask.EditMask = "G";
             this.DeviceTimeRepositoryItemDateEdit1.Name = "DeviceTimeRepositoryItemDateEdit1";
             // 
@@ -591,7 +606,7 @@
             this.SQLTrendChartColumn1.ColumnEdit = this.repSQLTrend;
             this.SQLTrendChartColumn1.Name = "SQLTrendChartColumn1";
             this.SQLTrendChartColumn1.Visible = true;
-            this.SQLTrendChartColumn1.Width = 53;
+            this.SQLTrendChartColumn1.Width = 49;
             // 
             // repSQLTrend
             // 
@@ -605,10 +620,10 @@
             // tableNavigatorControl1
             // 
             this.tableNavigatorControl1.Error = false;
-            this.tableNavigatorControl1.Location = new System.Drawing.Point(263, 12);
+            this.tableNavigatorControl1.Location = new System.Drawing.Point(264, 12);
             this.tableNavigatorControl1.Name = "tableNavigatorControl1";
             this.tableNavigatorControl1.ShowToolTips = true;
-            this.tableNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.tableNavigatorControl1.Size = new System.Drawing.Size(361, 19);
             this.tableNavigatorControl1.StyleController = this.tableLayoutControl1;
             this.tableNavigatorControl1.TabIndex = 5;
             this.tableNavigatorControl1.TableCaption = "Элемент";
@@ -686,6 +701,7 @@
             this.formLayoutControl1.Controls.Add(this.DataSourceGridLookUpEdit1);
             this.formLayoutControl1.Controls.Add(this.ItemIDTextEdit1);
             this.formLayoutControl1.Controls.Add(this.QualityDefTextEdit1);
+            this.formLayoutControl1.Controls.Add(this.CommentTextEdit1);
             this.formLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formLayoutControl1.Images = this.icons1;
             this.formLayoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -697,10 +713,10 @@
             // formNavigatorControl1
             // 
             this.formNavigatorControl1.Error = false;
-            this.formNavigatorControl1.Location = new System.Drawing.Point(263, 12);
+            this.formNavigatorControl1.Location = new System.Drawing.Point(264, 12);
             this.formNavigatorControl1.Name = "formNavigatorControl1";
             this.formNavigatorControl1.ShowToolTips = true;
-            this.formNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.formNavigatorControl1.Size = new System.Drawing.Size(361, 19);
             this.formNavigatorControl1.StyleController = this.formLayoutControl1;
             this.formNavigatorControl1.TabIndex = 4;
             this.formNavigatorControl1.TableCaption = "Элемент";
@@ -708,7 +724,7 @@
             // 
             // SQLTableNameTextEdit1
             // 
-            this.SQLTableNameTextEdit1.Location = new System.Drawing.Point(122, 90);
+            this.SQLTableNameTextEdit1.Location = new System.Drawing.Point(122, 89);
             this.SQLTableNameTextEdit1.Name = "SQLTableNameTextEdit1";
             this.SQLTableNameTextEdit1.Size = new System.Drawing.Size(744, 20);
             this.SQLTableNameTextEdit1.StyleController = this.formLayoutControl1;
@@ -716,7 +732,7 @@
             // 
             // DescriptionTextEdit1
             // 
-            this.DescriptionTextEdit1.Location = new System.Drawing.Point(122, 137);
+            this.DescriptionTextEdit1.Location = new System.Drawing.Point(122, 136);
             this.DescriptionTextEdit1.Name = "DescriptionTextEdit1";
             this.DescriptionTextEdit1.Size = new System.Drawing.Size(744, 20);
             this.DescriptionTextEdit1.StyleController = this.formLayoutControl1;
@@ -724,7 +740,7 @@
             // 
             // DataValueTextEdit1
             // 
-            this.DataValueTextEdit1.Location = new System.Drawing.Point(122, 257);
+            this.DataValueTextEdit1.Location = new System.Drawing.Point(122, 280);
             this.DataValueTextEdit1.Name = "DataValueTextEdit1";
             this.DataValueTextEdit1.Properties.ReadOnly = true;
             this.DataValueTextEdit1.Size = new System.Drawing.Size(744, 20);
@@ -733,7 +749,7 @@
             // 
             // QualityTextEdit1
             // 
-            this.QualityTextEdit1.Location = new System.Drawing.Point(122, 281);
+            this.QualityTextEdit1.Location = new System.Drawing.Point(122, 304);
             this.QualityTextEdit1.Name = "QualityTextEdit1";
             this.QualityTextEdit1.Properties.ReadOnly = true;
             this.QualityTextEdit1.Size = new System.Drawing.Size(744, 20);
@@ -742,7 +758,7 @@
             // 
             // CanonicalDataTypeTextEdit1
             // 
-            this.CanonicalDataTypeTextEdit1.Location = new System.Drawing.Point(122, 161);
+            this.CanonicalDataTypeTextEdit1.Location = new System.Drawing.Point(122, 160);
             this.CanonicalDataTypeTextEdit1.Name = "CanonicalDataTypeTextEdit1";
             this.CanonicalDataTypeTextEdit1.Properties.ReadOnly = true;
             this.CanonicalDataTypeTextEdit1.Size = new System.Drawing.Size(744, 20);
@@ -751,7 +767,7 @@
             // 
             // SQLTrendCheckEdit1
             // 
-            this.SQLTrendCheckEdit1.Location = new System.Drawing.Point(24, 114);
+            this.SQLTrendCheckEdit1.Location = new System.Drawing.Point(24, 113);
             this.SQLTrendCheckEdit1.Name = "SQLTrendCheckEdit1";
             this.SQLTrendCheckEdit1.Properties.Caption = "Тренд";
             this.SQLTrendCheckEdit1.Size = new System.Drawing.Size(842, 19);
@@ -765,7 +781,7 @@
             0,
             0,
             0});
-            this.MinValueSpinEdit1.Location = new System.Drawing.Point(122, 209);
+            this.MinValueSpinEdit1.Location = new System.Drawing.Point(122, 208);
             this.MinValueSpinEdit1.Name = "MinValueSpinEdit1";
             this.MinValueSpinEdit1.Size = new System.Drawing.Size(321, 20);
             this.MinValueSpinEdit1.StyleController = this.formLayoutControl1;
@@ -778,7 +794,7 @@
             0,
             0,
             0});
-            this.MaxValueSpinEdit1.Location = new System.Drawing.Point(545, 209);
+            this.MaxValueSpinEdit1.Location = new System.Drawing.Point(545, 208);
             this.MaxValueSpinEdit1.Name = "MaxValueSpinEdit1";
             this.MaxValueSpinEdit1.Size = new System.Drawing.Size(321, 20);
             this.MaxValueSpinEdit1.StyleController = this.formLayoutControl1;
@@ -786,7 +802,7 @@
             // 
             // UnitTextEdit1
             // 
-            this.UnitTextEdit1.Location = new System.Drawing.Point(122, 185);
+            this.UnitTextEdit1.Location = new System.Drawing.Point(122, 184);
             this.UnitTextEdit1.Name = "UnitTextEdit1";
             this.UnitTextEdit1.Size = new System.Drawing.Size(321, 20);
             this.UnitTextEdit1.StyleController = this.formLayoutControl1;
@@ -794,7 +810,7 @@
             // 
             // FormatValueTextEdit1
             // 
-            this.FormatValueTextEdit1.Location = new System.Drawing.Point(545, 185);
+            this.FormatValueTextEdit1.Location = new System.Drawing.Point(545, 184);
             this.FormatValueTextEdit1.Name = "FormatValueTextEdit1";
             this.FormatValueTextEdit1.Size = new System.Drawing.Size(321, 20);
             this.FormatValueTextEdit1.StyleController = this.formLayoutControl1;
@@ -803,7 +819,7 @@
             // DeviceTimeDateEditEx1
             // 
             this.DeviceTimeDateEditEx1.EditValue = new System.DateTime(2014, 8, 26, 0, 0, 0, 0);
-            this.DeviceTimeDateEditEx1.Location = new System.Drawing.Point(122, 305);
+            this.DeviceTimeDateEditEx1.Location = new System.Drawing.Point(122, 328);
             this.DeviceTimeDateEditEx1.Name = "DeviceTimeDateEditEx1";
             this.DeviceTimeDateEditEx1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -811,7 +827,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.DeviceTimeDateEditEx1.Properties.DisplayFormat.FormatString = "G";
+            this.DeviceTimeDateEditEx1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.DeviceTimeDateEditEx1.Properties.EditFormat.FormatString = "G";
+            this.DeviceTimeDateEditEx1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.DeviceTimeDateEditEx1.Properties.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.DeviceTimeDateEditEx1.Properties.Mask.EditMask = "G";
             this.DeviceTimeDateEditEx1.Properties.ReadOnly = true;
             this.DeviceTimeDateEditEx1.Size = new System.Drawing.Size(744, 20);
@@ -825,7 +844,7 @@
             0,
             0,
             0});
-            this.TimeOutSpinEdit1.Location = new System.Drawing.Point(122, 233);
+            this.TimeOutSpinEdit1.Location = new System.Drawing.Point(122, 232);
             this.TimeOutSpinEdit1.Name = "TimeOutSpinEdit1";
             this.TimeOutSpinEdit1.Size = new System.Drawing.Size(744, 20);
             this.TimeOutSpinEdit1.StyleController = this.formLayoutControl1;
@@ -833,7 +852,7 @@
             // 
             // DataSourceGridLookUpEdit1
             // 
-            this.DataSourceGridLookUpEdit1.Location = new System.Drawing.Point(122, 66);
+            this.DataSourceGridLookUpEdit1.Location = new System.Drawing.Point(122, 65);
             this.DataSourceGridLookUpEdit1.Name = "DataSourceGridLookUpEdit1";
             this.DataSourceGridLookUpEdit1.Properties.DisplayMember = "DisplayMember";
             this.DataSourceGridLookUpEdit1.Properties.NullText = "";
@@ -875,7 +894,7 @@
             // 
             // ItemIDTextEdit1
             // 
-            this.ItemIDTextEdit1.Location = new System.Drawing.Point(545, 66);
+            this.ItemIDTextEdit1.Location = new System.Drawing.Point(545, 65);
             this.ItemIDTextEdit1.Name = "ItemIDTextEdit1";
             this.ItemIDTextEdit1.Size = new System.Drawing.Size(321, 20);
             this.ItemIDTextEdit1.StyleController = this.formLayoutControl1;
@@ -883,7 +902,7 @@
             // 
             // QualityDefTextEdit1
             // 
-            this.QualityDefTextEdit1.Location = new System.Drawing.Point(122, 329);
+            this.QualityDefTextEdit1.Location = new System.Drawing.Point(122, 352);
             this.QualityDefTextEdit1.Name = "QualityDefTextEdit1";
             this.QualityDefTextEdit1.Properties.ReadOnly = true;
             this.QualityDefTextEdit1.Size = new System.Drawing.Size(744, 20);
@@ -934,7 +953,8 @@
             this.TimeOutLayoutItem1,
             this.DataSourceLayoutItem1,
             this.ItemIDLayoutItem1,
-            this.QualityDefLayoutItem1});
+            this.QualityDefLayoutItem1,
+            this.CommentLayoutItem1});
             this.formDataLayoutGroup1.Location = new System.Drawing.Point(0, 23);
             this.formDataLayoutGroup1.Name = "formDataLayoutGroup1";
             this.formDataLayoutGroup1.Size = new System.Drawing.Size(870, 504);
@@ -964,7 +984,7 @@
             // 
             this.DataValueLayoutItem1.Control = this.DataValueTextEdit1;
             this.DataValueLayoutItem1.CustomizationFormText = "Значение";
-            this.DataValueLayoutItem1.Location = new System.Drawing.Point(0, 191);
+            this.DataValueLayoutItem1.Location = new System.Drawing.Point(0, 215);
             this.DataValueLayoutItem1.Name = "DataValueLayoutItem1";
             this.DataValueLayoutItem1.Size = new System.Drawing.Size(846, 24);
             this.DataValueLayoutItem1.Text = "Значение:";
@@ -974,7 +994,7 @@
             // 
             this.QualityLayoutItem1.Control = this.QualityTextEdit1;
             this.QualityLayoutItem1.CustomizationFormText = "Качество";
-            this.QualityLayoutItem1.Location = new System.Drawing.Point(0, 215);
+            this.QualityLayoutItem1.Location = new System.Drawing.Point(0, 239);
             this.QualityLayoutItem1.Name = "QualityLayoutItem1";
             this.QualityLayoutItem1.Size = new System.Drawing.Size(846, 24);
             this.QualityLayoutItem1.Text = "Качество:";
@@ -1035,7 +1055,7 @@
             // 
             this.DeviceTimeLayoutItem1.Control = this.DeviceTimeDateEditEx1;
             this.DeviceTimeLayoutItem1.CustomizationFormText = "Время устройства";
-            this.DeviceTimeLayoutItem1.Location = new System.Drawing.Point(0, 239);
+            this.DeviceTimeLayoutItem1.Location = new System.Drawing.Point(0, 263);
             this.DeviceTimeLayoutItem1.Name = "DeviceTimeLayoutItem1";
             this.DeviceTimeLayoutItem1.Size = new System.Drawing.Size(846, 24);
             this.DeviceTimeLayoutItem1.Text = "Время устройства:";
@@ -1086,9 +1106,9 @@
             // 
             this.QualityDefLayoutItem1.Control = this.QualityDefTextEdit1;
             this.QualityDefLayoutItem1.CustomizationFormText = "Качество опр.";
-            this.QualityDefLayoutItem1.Location = new System.Drawing.Point(0, 263);
+            this.QualityDefLayoutItem1.Location = new System.Drawing.Point(0, 287);
             this.QualityDefLayoutItem1.Name = "QualityDefLayoutItem1";
-            this.QualityDefLayoutItem1.Size = new System.Drawing.Size(846, 198);
+            this.QualityDefLayoutItem1.Size = new System.Drawing.Size(846, 175);
             this.QualityDefLayoutItem1.Text = "Качество опр.:";
             this.QualityDefLayoutItem1.TextSize = new System.Drawing.Size(95, 13);
             // 
@@ -1347,6 +1367,46 @@
             this.itemNumeric3.Parent = null;
             this.itemNumeric3.TableGridColumn = this.TimeOutGridColumn1;
             // 
+            // itemString21
+            // 
+            this.itemString21.Caption = "Комментарий";
+            this.itemString21.ControlName = "Comment";
+            this.itemString21.DBInterface = this._dbInterface1;
+            this.itemString21.FieldName = "Comment";
+            this.itemString21.FormEdit = this.CommentTextEdit1;
+            this.itemString21.FormGridColumn = null;
+            this.itemString21.FormLayoutItem = this.CommentLayoutItem1;
+            this.itemString21.ImageName = "";
+            this.itemString21.Images = this.icons1;
+            this.itemString21.Parent = null;
+            this.itemString21.TableGridColumn = this.CommentGridColumn3;
+            // 
+            // CommentLayoutItem1
+            // 
+            this.CommentLayoutItem1.Control = this.CommentTextEdit1;
+            this.CommentLayoutItem1.CustomizationFormText = "Комментарий";
+            this.CommentLayoutItem1.Location = new System.Drawing.Point(0, 191);
+            this.CommentLayoutItem1.Name = "CommentLayoutItem1";
+            this.CommentLayoutItem1.Size = new System.Drawing.Size(846, 24);
+            this.CommentLayoutItem1.Text = "Комментарий:";
+            this.CommentLayoutItem1.TextSize = new System.Drawing.Size(95, 13);
+            // 
+            // CommentGridColumn3
+            // 
+            this.CommentGridColumn3.Caption = "Комментарий";
+            this.CommentGridColumn3.FieldName = "Comment";
+            this.CommentGridColumn3.Name = "CommentGridColumn3";
+            this.CommentGridColumn3.Visible = true;
+            this.CommentGridColumn3.Width = 64;
+            // 
+            // CommentTextEdit1
+            // 
+            this.CommentTextEdit1.Location = new System.Drawing.Point(122, 256);
+            this.CommentTextEdit1.Name = "CommentTextEdit1";
+            this.CommentTextEdit1.Size = new System.Drawing.Size(744, 20);
+            this.CommentTextEdit1.StyleController = this.formLayoutControl1;
+            this.CommentTextEdit1.TabIndex = 30;
+            // 
             // ItemView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1414,6 +1474,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemIDLayoutItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QualityDefLayoutItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommentTextEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1514,7 +1576,9 @@
         private DevExpress.XtraEditors.TextEdit QualityDefTextEdit1;
         private DevExpress.XtraLayout.LayoutControlItem QualityDefLayoutItem1;
         private RapidInterface.DBInterfaceItemString itemString20;
-
-
+        private DevExpress.XtraEditors.TextEdit CommentTextEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem CommentLayoutItem1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CommentGridColumn3;
+        private RapidInterface.DBInterfaceItemString itemString21;
     }
 }

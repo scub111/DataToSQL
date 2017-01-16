@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using RapidInterface;
-using DevExpress.Xpo;
 using DevExpress.XtraEditors;
+using DevExpress.Utils.Menu;
+using DevExpress.XtraGrid.Columns;
+using System.Drawing;
+using DevExpress.XtraGrid.Menu;
+using DevExpress.XtraGrid.Views.Grid;
+using System.Collections.Generic;
+using DevExpress.Xpo;
 
 namespace DataToSQL
 {
@@ -31,7 +31,7 @@ namespace DataToSQL
         private void repItem_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             Item opcItem = tableGridView1.GetFocusedRow() as Item;
-            if (opcItem != null && 
+            if (opcItem != null &&
                 opcItem.DataSource != null)
             {
 
@@ -65,6 +65,76 @@ namespace DataToSQL
                 opcItem.SendDataToXPObject();
 
             tableGridControl1.RefreshDataSource();
+        }
+
+        //Create a menu item 
+        DXMenuCheckItem CreateCheckItem(string caption, GridColumn column, Image image, EventHandler eventHandler)
+        {
+            DXMenuCheckItem item = new DXMenuCheckItem(caption, false, image, eventHandler);
+            item.Tag = column;
+            return item;
+        }
+
+        private void tableGridView1_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
+        {
+            if (e.MenuType == GridMenuType.Column)
+            {
+                GridViewColumnMenu menu = e.Menu as GridViewColumnMenu;
+                if (menu.Column == null)
+                {
+                    menu.Items.Add(CreateCheckItem("Добавить недостающие записи Пинг-серверов", menu.Column, null, new EventHandler(AddPingServers)));
+                }
+            }
+        }
+
+        private void AddPingServers(object sender, EventArgs e)
+        {
+            Dictionary<string, Item> itemDict = new Dictionary<string, Item>();
+
+            foreach (Item item in Global.Default.ItemCollection)
+                if (!itemDict.ContainsKey(item.SQLTableName))
+                    itemDict.Add(item.SQLTableName, item);
+
+            XPCollection<PingServer> pingServers = new XPCollection<PingServer>(Global.Default.ItemCollection.Session);
+
+            foreach (PingServer pingServer in pingServers)
+            {
+                if (!itemDict.ContainsKey(string.Format("{0}Status", pingServer.SQLPrefix)))
+                {
+                    Item itemNew = new Item(Global.Default.ItemCollection.Session);
+                    itemNew.DataSource = pingServer;
+                    itemNew.ItemID = "Status";
+                    Global.Default.ItemCollection.Add(itemNew);
+                }
+
+                if (!itemDict.ContainsKey(string.Format("{0}ReplyTime", pingServer.SQLPrefix)))
+                {
+                    Item itemNew = new Item(Global.Default.ItemCollection.Session);
+                    itemNew.DataSource = pingServer;
+                    itemNew.ItemID = "ReplyTime";
+                    Global.Default.ItemCollection.Add(itemNew);
+                }
+            }
+
+            foreach (Item item in Global.Default.ItemCollection)
+            {
+                if (item.DataSource is PingServer)
+                {
+                    if (item.ItemID == "Status")
+                    {
+                        item.Description = string.Format("{0}Статус", item.DataSource.DescriptionPrefix);
+                        item.Unit = "";
+                        item.FormatValue = "";
+                    }
+                    else if (item.ItemID == "ReplyTime")
+                    {
+                        item.Description = string.Format("{0}Время отлика", item.DataSource.DescriptionPrefix);
+                        item.Unit = "мс";
+                        item.FormatValue = "0";
+                    }
+                    item.Comment = item.DataSource.Comment;
+                }
+            }
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PingServerView));
             this._dbInterface1 = new RapidInterface.DBInterface();
             this.dockPanelMerge1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -167,7 +167,7 @@
             this._dbInterface1.BaseUnitOfWork = null;
             this._dbInterface1.BaseXPCollecton = null;
             this._dbInterface1.Controls.Add(this.dockPanelMerge1);
-            this._dbInterface1.CountOpenDesigner = 8;
+            this._dbInterface1.CountOpenDesigner = 10;
             this._dbInterface1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dbInterface1.DockManager = this.dockManager1;
             this._dbInterface1.DockPanelMerge = this.dockPanelMerge1;
@@ -210,6 +210,7 @@
             this._dbInterface1.ItemsSeq.Add(this.itemNumeric7);
             this._dbInterface1.Location = new System.Drawing.Point(0, 0);
             this._dbInterface1.Name = "_dbInterface1";
+            this._dbInterface1.ProgramDesign = false;
             this._dbInterface1.Size = new System.Drawing.Size(1363, 703);
             this._dbInterface1.TabIndex = 0;
             this._dbInterface1.TableDockContainer = this.tableDockContainer1;
@@ -226,7 +227,7 @@
             // 
             // dockPanelMerge1
             // 
-            this.dockPanelMerge1.ActiveChild = this.tableDockPanel1;
+            this.dockPanelMerge1.ActiveChild = this.formDockPanel1;
             this.dockPanelMerge1.Controls.Add(this.formDockPanel1);
             this.dockPanelMerge1.Controls.Add(this.tableDockPanel1);
             this.dockPanelMerge1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
@@ -309,12 +310,12 @@
             this.ConnectFaultCountGridColumn1,
             this.ReceiveSuccessCountGridColumn1,
             this.ReceiveFaultCountGridColumn1});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "IsConnected";
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "IsConnected";
             this.tableGridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1});
+            styleFormatCondition2});
             this.tableGridView1.GridControl = this.tableGridControl1;
             this.tableGridView1.Images = this.icons1;
             this.tableGridView1.Name = "tableGridView1";
@@ -322,16 +323,17 @@
             this.tableGridView1.OptionsDetail.AllowExpandEmptyDetails = true;
             this.tableGridView1.OptionsView.ShowAutoFilterRow = true;
             this.tableGridView1.OptionsView.ShowGroupPanel = false;
+            this.tableGridView1.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.tableGridView1_PopupMenuShowing);
             // 
             // tableGridBand1
             // 
             this.tableGridBand1.Caption = "Основные данные";
             this.tableGridBand1.Columns.Add(this.CaptionGridColumn1);
-            this.tableGridBand1.Columns.Add(this.CommentGridColumn1);
             this.tableGridBand1.Columns.Add(this.SQLPrefixGridColumn1);
             this.tableGridBand1.Columns.Add(this.DescriptionPrefixGridColumn1);
             this.tableGridBand1.Columns.Add(this.AddressGridColumn1);
             this.tableGridBand1.Columns.Add(this.TimeOutGridColumn1);
+            this.tableGridBand1.Columns.Add(this.CommentGridColumn1);
             this.tableGridBand1.Columns.Add(this.IsConnectedGridColumn1);
             this.tableGridBand1.Columns.Add(this.ItemsCountGridColumn1);
             this.tableGridBand1.Columns.Add(this.UpdateTimeGridColumn1);
@@ -434,7 +436,10 @@
             this.UpdateTimeRepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.UpdateTimeRepositoryItemDateEdit1.DisplayFormat.FormatString = "G";
+            this.UpdateTimeRepositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.UpdateTimeRepositoryItemDateEdit1.EditFormat.FormatString = "G";
+            this.UpdateTimeRepositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.UpdateTimeRepositoryItemDateEdit1.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.UpdateTimeRepositoryItemDateEdit1.Mask.EditMask = "G";
             this.UpdateTimeRepositoryItemDateEdit1.Name = "UpdateTimeRepositoryItemDateEdit1";
             // 
@@ -500,10 +505,10 @@
             // tableNavigatorControl1
             // 
             this.tableNavigatorControl1.Error = false;
-            this.tableNavigatorControl1.Location = new System.Drawing.Point(482, 12);
+            this.tableNavigatorControl1.Location = new System.Drawing.Point(483, 12);
             this.tableNavigatorControl1.Name = "tableNavigatorControl1";
             this.tableNavigatorControl1.ShowToolTips = true;
-            this.tableNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.tableNavigatorControl1.Size = new System.Drawing.Size(361, 19);
             this.tableNavigatorControl1.StyleController = this.tableLayoutControl1;
             this.tableNavigatorControl1.TabIndex = 5;
             this.tableNavigatorControl1.TableCaption = "Пинг";
@@ -591,10 +596,10 @@
             // formNavigatorControl1
             // 
             this.formNavigatorControl1.Error = false;
-            this.formNavigatorControl1.Location = new System.Drawing.Point(482, 12);
+            this.formNavigatorControl1.Location = new System.Drawing.Point(483, 12);
             this.formNavigatorControl1.Name = "formNavigatorControl1";
             this.formNavigatorControl1.ShowToolTips = true;
-            this.formNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.formNavigatorControl1.Size = new System.Drawing.Size(361, 19);
             this.formNavigatorControl1.StyleController = this.formLayoutControl1;
             this.formNavigatorControl1.TabIndex = 4;
             this.formNavigatorControl1.TableCaption = "Пинг";
@@ -602,7 +607,7 @@
             // 
             // CaptionTextEdit1
             // 
-            this.CaptionTextEdit1.Location = new System.Drawing.Point(149, 66);
+            this.CaptionTextEdit1.Location = new System.Drawing.Point(149, 65);
             this.CaptionTextEdit1.Name = "CaptionTextEdit1";
             this.CaptionTextEdit1.Size = new System.Drawing.Size(1155, 20);
             this.CaptionTextEdit1.StyleController = this.formLayoutControl1;
@@ -610,7 +615,7 @@
             // 
             // CommentTextEdit1
             // 
-            this.CommentTextEdit1.Location = new System.Drawing.Point(149, 90);
+            this.CommentTextEdit1.Location = new System.Drawing.Point(149, 161);
             this.CommentTextEdit1.Name = "CommentTextEdit1";
             this.CommentTextEdit1.Size = new System.Drawing.Size(1155, 20);
             this.CommentTextEdit1.StyleController = this.formLayoutControl1;
@@ -618,7 +623,7 @@
             // 
             // SQLPrefixTextEdit1
             // 
-            this.SQLPrefixTextEdit1.Location = new System.Drawing.Point(149, 114);
+            this.SQLPrefixTextEdit1.Location = new System.Drawing.Point(149, 89);
             this.SQLPrefixTextEdit1.Name = "SQLPrefixTextEdit1";
             this.SQLPrefixTextEdit1.Size = new System.Drawing.Size(1155, 20);
             this.SQLPrefixTextEdit1.StyleController = this.formLayoutControl1;
@@ -626,7 +631,7 @@
             // 
             // DescriptionPrefixTextEdit1
             // 
-            this.DescriptionPrefixTextEdit1.Location = new System.Drawing.Point(149, 138);
+            this.DescriptionPrefixTextEdit1.Location = new System.Drawing.Point(149, 113);
             this.DescriptionPrefixTextEdit1.Name = "DescriptionPrefixTextEdit1";
             this.DescriptionPrefixTextEdit1.Size = new System.Drawing.Size(1155, 20);
             this.DescriptionPrefixTextEdit1.StyleController = this.formLayoutControl1;
@@ -634,9 +639,9 @@
             // 
             // AddressTextEdit1
             // 
-            this.AddressTextEdit1.Location = new System.Drawing.Point(149, 162);
+            this.AddressTextEdit1.Location = new System.Drawing.Point(149, 137);
             this.AddressTextEdit1.Name = "AddressTextEdit1";
-            this.AddressTextEdit1.Size = new System.Drawing.Size(1155, 20);
+            this.AddressTextEdit1.Size = new System.Drawing.Size(513, 20);
             this.AddressTextEdit1.StyleController = this.formLayoutControl1;
             this.AddressTextEdit1.TabIndex = 9;
             // 
@@ -647,15 +652,15 @@
             0,
             0,
             0});
-            this.TimeOutSpinEdit1.Location = new System.Drawing.Point(149, 186);
+            this.TimeOutSpinEdit1.Location = new System.Drawing.Point(791, 137);
             this.TimeOutSpinEdit1.Name = "TimeOutSpinEdit1";
-            this.TimeOutSpinEdit1.Size = new System.Drawing.Size(1155, 20);
+            this.TimeOutSpinEdit1.Size = new System.Drawing.Size(513, 20);
             this.TimeOutSpinEdit1.StyleController = this.formLayoutControl1;
             this.TimeOutSpinEdit1.TabIndex = 10;
             // 
             // IsConnectedCheckEdit1
             // 
-            this.IsConnectedCheckEdit1.Location = new System.Drawing.Point(24, 210);
+            this.IsConnectedCheckEdit1.Location = new System.Drawing.Point(24, 185);
             this.IsConnectedCheckEdit1.Name = "IsConnectedCheckEdit1";
             this.IsConnectedCheckEdit1.Properties.Caption = "Соединен";
             this.IsConnectedCheckEdit1.Properties.ReadOnly = true;
@@ -670,7 +675,7 @@
             0,
             0,
             0});
-            this.ItemsCountSpinEdit1.Location = new System.Drawing.Point(791, 210);
+            this.ItemsCountSpinEdit1.Location = new System.Drawing.Point(791, 185);
             this.ItemsCountSpinEdit1.Name = "ItemsCountSpinEdit1";
             this.ItemsCountSpinEdit1.Properties.ReadOnly = true;
             this.ItemsCountSpinEdit1.Size = new System.Drawing.Size(513, 20);
@@ -680,7 +685,7 @@
             // UpdateTimeDateEditEx1
             // 
             this.UpdateTimeDateEditEx1.EditValue = new System.DateTime(2014, 12, 9, 0, 0, 0, 0);
-            this.UpdateTimeDateEditEx1.Location = new System.Drawing.Point(149, 234);
+            this.UpdateTimeDateEditEx1.Location = new System.Drawing.Point(149, 209);
             this.UpdateTimeDateEditEx1.Name = "UpdateTimeDateEditEx1";
             this.UpdateTimeDateEditEx1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -688,7 +693,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.UpdateTimeDateEditEx1.Properties.DisplayFormat.FormatString = "G";
+            this.UpdateTimeDateEditEx1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.UpdateTimeDateEditEx1.Properties.EditFormat.FormatString = "G";
+            this.UpdateTimeDateEditEx1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.UpdateTimeDateEditEx1.Properties.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.UpdateTimeDateEditEx1.Properties.Mask.EditMask = "G";
             this.UpdateTimeDateEditEx1.Properties.ReadOnly = true;
             this.UpdateTimeDateEditEx1.Size = new System.Drawing.Size(513, 20);
@@ -702,7 +710,7 @@
             0,
             0,
             0});
-            this.ReadTimeSpanSpinEdit1.Location = new System.Drawing.Point(791, 234);
+            this.ReadTimeSpanSpinEdit1.Location = new System.Drawing.Point(791, 209);
             this.ReadTimeSpanSpinEdit1.Name = "ReadTimeSpanSpinEdit1";
             this.ReadTimeSpanSpinEdit1.Properties.ReadOnly = true;
             this.ReadTimeSpanSpinEdit1.Size = new System.Drawing.Size(513, 20);
@@ -716,7 +724,7 @@
             0,
             0,
             0});
-            this.ConnectSuccessCountSpinEdit1.Location = new System.Drawing.Point(149, 258);
+            this.ConnectSuccessCountSpinEdit1.Location = new System.Drawing.Point(149, 233);
             this.ConnectSuccessCountSpinEdit1.Name = "ConnectSuccessCountSpinEdit1";
             this.ConnectSuccessCountSpinEdit1.Properties.ReadOnly = true;
             this.ConnectSuccessCountSpinEdit1.Size = new System.Drawing.Size(513, 20);
@@ -730,7 +738,7 @@
             0,
             0,
             0});
-            this.ConnectFaultCountSpinEdit1.Location = new System.Drawing.Point(791, 258);
+            this.ConnectFaultCountSpinEdit1.Location = new System.Drawing.Point(791, 233);
             this.ConnectFaultCountSpinEdit1.Name = "ConnectFaultCountSpinEdit1";
             this.ConnectFaultCountSpinEdit1.Properties.ReadOnly = true;
             this.ConnectFaultCountSpinEdit1.Size = new System.Drawing.Size(513, 20);
@@ -744,7 +752,7 @@
             0,
             0,
             0});
-            this.ReceiveSuccessCountSpinEdit1.Location = new System.Drawing.Point(149, 282);
+            this.ReceiveSuccessCountSpinEdit1.Location = new System.Drawing.Point(149, 257);
             this.ReceiveSuccessCountSpinEdit1.Name = "ReceiveSuccessCountSpinEdit1";
             this.ReceiveSuccessCountSpinEdit1.Properties.ReadOnly = true;
             this.ReceiveSuccessCountSpinEdit1.Size = new System.Drawing.Size(513, 20);
@@ -758,7 +766,7 @@
             0,
             0,
             0});
-            this.ReceiveFaultCountSpinEdit1.Location = new System.Drawing.Point(791, 282);
+            this.ReceiveFaultCountSpinEdit1.Location = new System.Drawing.Point(791, 257);
             this.ReceiveFaultCountSpinEdit1.Name = "ReceiveFaultCountSpinEdit1";
             this.ReceiveFaultCountSpinEdit1.Properties.ReadOnly = true;
             this.ReceiveFaultCountSpinEdit1.Size = new System.Drawing.Size(513, 20);
@@ -796,11 +804,9 @@
             this.formDataLayoutGroup1.CustomizationFormText = "Основные данные";
             this.formDataLayoutGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.CaptionLayoutItem1,
-            this.CommentLayoutItem1,
             this.SQLPrefixLayoutItem1,
             this.DescriptionPrefixLayoutItem1,
             this.AddressLayoutItem1,
-            this.TimeOutLayoutItem1,
             this.IsConnectedLayoutItem1,
             this.UpdateTimeLayoutItem1,
             this.ConnectSuccessCountLayoutItem1,
@@ -808,7 +814,9 @@
             this.ItemsCountLayoutItem1,
             this.ReadTimeSpanLayoutItem1,
             this.ConnectFaultCountLayoutItem1,
-            this.ReceiveFaultCountLayoutItem1});
+            this.ReceiveFaultCountLayoutItem1,
+            this.CommentLayoutItem1,
+            this.TimeOutLayoutItem1});
             this.formDataLayoutGroup1.Location = new System.Drawing.Point(0, 23);
             this.formDataLayoutGroup1.Name = "formDataLayoutGroup1";
             this.formDataLayoutGroup1.Size = new System.Drawing.Size(1308, 633);
@@ -828,7 +836,7 @@
             // 
             this.CommentLayoutItem1.Control = this.CommentTextEdit1;
             this.CommentLayoutItem1.CustomizationFormText = "Комментарий";
-            this.CommentLayoutItem1.Location = new System.Drawing.Point(0, 24);
+            this.CommentLayoutItem1.Location = new System.Drawing.Point(0, 96);
             this.CommentLayoutItem1.Name = "CommentLayoutItem1";
             this.CommentLayoutItem1.Size = new System.Drawing.Size(1284, 24);
             this.CommentLayoutItem1.Text = "Комментарий:";
@@ -838,7 +846,7 @@
             // 
             this.SQLPrefixLayoutItem1.Control = this.SQLPrefixTextEdit1;
             this.SQLPrefixLayoutItem1.CustomizationFormText = "SQL-префикс";
-            this.SQLPrefixLayoutItem1.Location = new System.Drawing.Point(0, 48);
+            this.SQLPrefixLayoutItem1.Location = new System.Drawing.Point(0, 24);
             this.SQLPrefixLayoutItem1.Name = "SQLPrefixLayoutItem1";
             this.SQLPrefixLayoutItem1.Size = new System.Drawing.Size(1284, 24);
             this.SQLPrefixLayoutItem1.Text = "SQL-префикс:";
@@ -848,7 +856,7 @@
             // 
             this.DescriptionPrefixLayoutItem1.Control = this.DescriptionPrefixTextEdit1;
             this.DescriptionPrefixLayoutItem1.CustomizationFormText = "Префикс в описании";
-            this.DescriptionPrefixLayoutItem1.Location = new System.Drawing.Point(0, 72);
+            this.DescriptionPrefixLayoutItem1.Location = new System.Drawing.Point(0, 48);
             this.DescriptionPrefixLayoutItem1.Name = "DescriptionPrefixLayoutItem1";
             this.DescriptionPrefixLayoutItem1.Size = new System.Drawing.Size(1284, 24);
             this.DescriptionPrefixLayoutItem1.Text = "Префикс в описании:";
@@ -858,9 +866,9 @@
             // 
             this.AddressLayoutItem1.Control = this.AddressTextEdit1;
             this.AddressLayoutItem1.CustomizationFormText = "Адрес";
-            this.AddressLayoutItem1.Location = new System.Drawing.Point(0, 96);
+            this.AddressLayoutItem1.Location = new System.Drawing.Point(0, 72);
             this.AddressLayoutItem1.Name = "AddressLayoutItem1";
-            this.AddressLayoutItem1.Size = new System.Drawing.Size(1284, 24);
+            this.AddressLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.AddressLayoutItem1.Text = "Адрес:";
             this.AddressLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
             // 
@@ -868,9 +876,9 @@
             // 
             this.TimeOutLayoutItem1.Control = this.TimeOutSpinEdit1;
             this.TimeOutLayoutItem1.CustomizationFormText = "Таймаут, мс";
-            this.TimeOutLayoutItem1.Location = new System.Drawing.Point(0, 120);
+            this.TimeOutLayoutItem1.Location = new System.Drawing.Point(642, 72);
             this.TimeOutLayoutItem1.Name = "TimeOutLayoutItem1";
-            this.TimeOutLayoutItem1.Size = new System.Drawing.Size(1284, 24);
+            this.TimeOutLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.TimeOutLayoutItem1.Text = "Таймаут, мс:";
             this.TimeOutLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
             // 
@@ -878,7 +886,7 @@
             // 
             this.IsConnectedLayoutItem1.Control = this.IsConnectedCheckEdit1;
             this.IsConnectedLayoutItem1.CustomizationFormText = "Соединен";
-            this.IsConnectedLayoutItem1.Location = new System.Drawing.Point(0, 144);
+            this.IsConnectedLayoutItem1.Location = new System.Drawing.Point(0, 120);
             this.IsConnectedLayoutItem1.Name = "IsConnectedLayoutItem1";
             this.IsConnectedLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.IsConnectedLayoutItem1.Text = "Соединен:";
@@ -889,7 +897,7 @@
             // 
             this.UpdateTimeLayoutItem1.Control = this.UpdateTimeDateEditEx1;
             this.UpdateTimeLayoutItem1.CustomizationFormText = "Последнее обновление";
-            this.UpdateTimeLayoutItem1.Location = new System.Drawing.Point(0, 168);
+            this.UpdateTimeLayoutItem1.Location = new System.Drawing.Point(0, 144);
             this.UpdateTimeLayoutItem1.Name = "UpdateTimeLayoutItem1";
             this.UpdateTimeLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.UpdateTimeLayoutItem1.Text = "Последнее обновление:";
@@ -899,7 +907,7 @@
             // 
             this.ConnectSuccessCountLayoutItem1.Control = this.ConnectSuccessCountSpinEdit1;
             this.ConnectSuccessCountLayoutItem1.CustomizationFormText = "Кол-во удач. подкл.";
-            this.ConnectSuccessCountLayoutItem1.Location = new System.Drawing.Point(0, 192);
+            this.ConnectSuccessCountLayoutItem1.Location = new System.Drawing.Point(0, 168);
             this.ConnectSuccessCountLayoutItem1.Name = "ConnectSuccessCountLayoutItem1";
             this.ConnectSuccessCountLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.ConnectSuccessCountLayoutItem1.Text = "Кол-во удач. подкл.:";
@@ -909,9 +917,9 @@
             // 
             this.ReceiveSuccessCountLayoutItem1.Control = this.ReceiveSuccessCountSpinEdit1;
             this.ReceiveSuccessCountLayoutItem1.CustomizationFormText = "Кол-во получ.";
-            this.ReceiveSuccessCountLayoutItem1.Location = new System.Drawing.Point(0, 216);
+            this.ReceiveSuccessCountLayoutItem1.Location = new System.Drawing.Point(0, 192);
             this.ReceiveSuccessCountLayoutItem1.Name = "ReceiveSuccessCountLayoutItem1";
-            this.ReceiveSuccessCountLayoutItem1.Size = new System.Drawing.Size(642, 374);
+            this.ReceiveSuccessCountLayoutItem1.Size = new System.Drawing.Size(642, 399);
             this.ReceiveSuccessCountLayoutItem1.Text = "Кол-во получ.:";
             this.ReceiveSuccessCountLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
             // 
@@ -919,7 +927,7 @@
             // 
             this.ItemsCountLayoutItem1.Control = this.ItemsCountSpinEdit1;
             this.ItemsCountLayoutItem1.CustomizationFormText = "Кол-во элементов";
-            this.ItemsCountLayoutItem1.Location = new System.Drawing.Point(642, 144);
+            this.ItemsCountLayoutItem1.Location = new System.Drawing.Point(642, 120);
             this.ItemsCountLayoutItem1.Name = "ItemsCountLayoutItem1";
             this.ItemsCountLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.ItemsCountLayoutItem1.Text = "Кол-во элементов:";
@@ -929,7 +937,7 @@
             // 
             this.ReadTimeSpanLayoutItem1.Control = this.ReadTimeSpanSpinEdit1;
             this.ReadTimeSpanLayoutItem1.CustomizationFormText = "Время чтения, мс";
-            this.ReadTimeSpanLayoutItem1.Location = new System.Drawing.Point(642, 168);
+            this.ReadTimeSpanLayoutItem1.Location = new System.Drawing.Point(642, 144);
             this.ReadTimeSpanLayoutItem1.Name = "ReadTimeSpanLayoutItem1";
             this.ReadTimeSpanLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.ReadTimeSpanLayoutItem1.Text = "Время чтения, мс:";
@@ -939,7 +947,7 @@
             // 
             this.ConnectFaultCountLayoutItem1.Control = this.ConnectFaultCountSpinEdit1;
             this.ConnectFaultCountLayoutItem1.CustomizationFormText = "Кол-во ошиб. покл.";
-            this.ConnectFaultCountLayoutItem1.Location = new System.Drawing.Point(642, 192);
+            this.ConnectFaultCountLayoutItem1.Location = new System.Drawing.Point(642, 168);
             this.ConnectFaultCountLayoutItem1.Name = "ConnectFaultCountLayoutItem1";
             this.ConnectFaultCountLayoutItem1.Size = new System.Drawing.Size(642, 24);
             this.ConnectFaultCountLayoutItem1.Text = "Кол-во ошиб. покл.:";
@@ -949,9 +957,9 @@
             // 
             this.ReceiveFaultCountLayoutItem1.Control = this.ReceiveFaultCountSpinEdit1;
             this.ReceiveFaultCountLayoutItem1.CustomizationFormText = "Кол-во неполуч.";
-            this.ReceiveFaultCountLayoutItem1.Location = new System.Drawing.Point(642, 216);
+            this.ReceiveFaultCountLayoutItem1.Location = new System.Drawing.Point(642, 192);
             this.ReceiveFaultCountLayoutItem1.Name = "ReceiveFaultCountLayoutItem1";
-            this.ReceiveFaultCountLayoutItem1.Size = new System.Drawing.Size(642, 374);
+            this.ReceiveFaultCountLayoutItem1.Size = new System.Drawing.Size(642, 399);
             this.ReceiveFaultCountLayoutItem1.Text = "Кол-во неполуч.:";
             this.ReceiveFaultCountLayoutItem1.TextSize = new System.Drawing.Size(122, 13);
             // 

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using RapidInterface;
 using DevExpress.Xpo;
-using System.Windows.Forms;
 
 namespace DataToSQL
 {
@@ -163,6 +159,18 @@ namespace DataToSQL
         {
             get { return _TimeOut; }
             set { SetPropertyValueEx("TimeOut", ref _TimeOut, value); }
+        }
+
+        string _Comment;
+        /// <summary>
+        /// Комментарий.
+        /// </summary>
+        [DisplayName("Комментарий")]
+        [Size(SizeAttribute.Unlimited)]
+        public string Comment
+        {
+            get { return _Comment; }
+            set { SetPropertyValueEx("Comment", ref _Comment, value); }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -763,6 +771,11 @@ namespace DataToSQL
 
         public PingServer(Session session) : base(session) { }
 
+        /// <summary>
+        /// Последний выбранный адрес.
+        /// </summary>
+        public static string AddressLast { get; set; }
+
         string _Address;
         /// <summary>
         /// Адрес.
@@ -775,11 +788,15 @@ namespace DataToSQL
             set 
             { 
                 SetPropertyValueEx("Address", ref _Address, value);
+                /*
                 if (!IsLoading)
                 {
                     if (SQLPrefix == null || SQLPrefix == "")
                         SQLPrefix = "ping_" + Item.GetSQLTableName(Address) + "_";
                 }
+                */
+
+                AddressLast = value;
             }
         }
 
@@ -799,7 +816,8 @@ namespace DataToSQL
             base.Init();
             if (!IsLoading)
             {
-                Address = "172.31.106.121";
+                //Address = "172.31.";
+                Address = AddressLast;
                 TimeOut = 3000;
             }
         }
@@ -1157,4 +1175,5 @@ namespace DataToSQL
         }
     }
     #endregion
+
 }
