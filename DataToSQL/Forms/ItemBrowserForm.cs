@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Collections;
@@ -83,7 +77,6 @@ namespace DataToSQL
         /// Список всех ОРС-переменных.
         /// </summary>
         public Collection<ItemDef> ItemDefs { get; set; }
-
 
         private void OpcItemBrowserForm_FormClosing(object sender, FormClosingEventArgs e)
         {

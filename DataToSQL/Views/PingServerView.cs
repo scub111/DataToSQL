@@ -5,6 +5,7 @@ using DevExpress.XtraGrid.Menu;
 using DevExpress.Utils.Menu;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Collections.Generic;
 
 namespace DataToSQL
 {
@@ -51,7 +52,9 @@ namespace DataToSQL
                 GridViewColumnMenu menu = e.Menu as GridViewColumnMenu;
                 if (menu.Column == null)
                 {
-                    menu.Items.Add(CreateCheckItem("Заполнить остальные поля", menu.Column, null, new EventHandler(FillEmptyField)));
+                    menu.Items.Add(CreateCheckItem("Заполнить остальные поля", menu.Column, null, FillEmptyField));
+                    menu.Items.Add(CreateCheckItem("Найти совпадения адресов", menu.Column, null, FindEqualAddresses));
+                    menu.Items.Add(CreateCheckItem("Сгенерировать IP-адреса", menu.Column, null, GenerateIPAddress));
                 }
             }
         }
@@ -69,6 +72,68 @@ namespace DataToSQL
                 if (string.IsNullOrEmpty(pingServer.DescriptionPrefix))
                     pingServer.DescriptionPrefix = string.Format("Узел сети {0}. ", pingServer.Address);
             }
+        }
+
+        private void FindEqualAddresses(object sender, EventArgs e)
+        {
+            Dictionary<string, PingServer> pingDict = new Dictionary<string, PingServer>();
+
+            Dictionary<string, PingServer> equalAddresses = new Dictionary<string, PingServer>();
+
+            foreach (PingServer ping in Global.Default.PingServerCollection)
+            {
+                if (!pingDict.ContainsKey(ping.Address))
+                    pingDict.Add(ping.Address, ping);
+                else
+                    if (!equalAddresses.ContainsKey(ping.Address))
+                        equalAddresses.Add(ping.Address, ping);
+            }
+
+            string result = "";
+
+            foreach (var address in equalAddresses)
+                result += address.Key + "; ";
+
+            EqualAddressForm equalAddressForm = new EqualAddressForm(equalAddresses);
+            equalAddressForm.ShowDialog();
+        }
+
+        static void GenerateIPAddress(string network, int from, int to, Dictionary<string, PingServer> pingServerDict)
+        {
+            string address;
+            for (int i = from; i <= to; i++)
+            {
+                address = string.Format("{0}.{1}", network, i);
+                if (!pingServerDict.ContainsKey(address))
+                {
+                    PingServer pingServer = new PingServer(Global.Default.PingServerCollection.Session) { Address = address };
+                    Global.Default.PingServerCollection.Add(pingServer);
+                }
+            }
+        }
+
+        private void GenerateIPAddress(object sender, EventArgs e)
+        {
+            Dictionary<string, PingServer> pingServerDict = new Dictionary<string, PingServer>();
+
+            foreach (PingServer item in Global.Default.PingServerCollection)
+                if (!pingServerDict.ContainsKey(item.Address))
+                    pingServerDict.Add(item.Address, item);
+
+            // Рудоуправление.
+            GenerateIPAddress("172.31.106", 1, 255, pingServerDict);
+
+            // Ангидрит.
+            GenerateIPAddress("172.24.92", 1, 255, pingServerDict);
+
+            // Известняки.
+            GenerateIPAddress("172.24.43", 193, 255, pingServerDict);
+
+            // Скальный.
+            GenerateIPAddress("172.24.88", 65, 94, pingServerDict);
+
+            // Кайерканский.
+            GenerateIPAddress("172.24.228", 1, 128, pingServerDict);
         }
     }
 }

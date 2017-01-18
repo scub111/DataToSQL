@@ -1605,22 +1605,25 @@ namespace DataToSQL
             }
         }
 
-        public string ToString()
+        public string ToString
         {
-            return string.Format("{0}, K1 = {1}, K2 = {2}, K3 = {3}, K4 = {4}, K5 = {5}, K6 = {6}, K7 = {7}, K8 = {8}, K9 = {9}, KA = {10}, KB = {11}, KC = {12}",
-                UpdateTime,
-                K1,
-                K2,
-                K3,
-                K4,
-                K5,
-                K6,
-                K7,
-                K8,
-                K9,
-                K10,
-                K11,
-                K12);
+            get
+            {
+                return string.Format("{0}, K1 = {1}, K2 = {2}, K3 = {3}, K4 = {4}, K5 = {5}, K6 = {6}, K7 = {7}, K8 = {8}, K9 = {9}, KA = {10}, KB = {11}, KC = {12}",
+                                UpdateTime,
+                                K1,
+                                K2,
+                                K3,
+                                K4,
+                                K5,
+                                K6,
+                                K7,
+                                K8,
+                                K9,
+                                K10,
+                                K11,
+                                K12);
+            }
         }
     }
     #endregion

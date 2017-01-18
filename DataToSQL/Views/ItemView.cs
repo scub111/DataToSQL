@@ -95,9 +95,7 @@ namespace DataToSQL
                 if (!itemDict.ContainsKey(item.SQLTableName))
                     itemDict.Add(item.SQLTableName, item);
 
-            XPCollection<PingServer> pingServers = new XPCollection<PingServer>(Global.Default.ItemCollection.Session);
-
-            foreach (PingServer pingServer in pingServers)
+            foreach (PingServer pingServer in new XPCollection<PingServer>(Global.Default.ItemCollection.Session))
             {
                 if (!itemDict.ContainsKey(string.Format("{0}Status", pingServer.SQLPrefix)))
                 {

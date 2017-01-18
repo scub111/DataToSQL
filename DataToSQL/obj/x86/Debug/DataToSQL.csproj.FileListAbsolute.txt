@@ -116,3 +116,4 @@ D:\_Projects\DataToSQL\DataToSQL\bin\Debug\ja\DevExpress.Sparkline.v15.2.Core.re
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\ru\DevExpress.Sparkline.v15.2.Core.resources.dll
 D:\_Projects\DataToSQL\DataToSQL\obj\x86\Debug\DataToSQL.exe
 D:\_Projects\DataToSQL\DataToSQL\obj\x86\Debug\DataToSQL.pdb
+D:\_Projects\DataToSQL\DataToSQL\obj\x86\Debug\DataToSQL.EqualAddressForm.resources
