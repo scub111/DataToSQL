@@ -458,6 +458,7 @@
             this.TransactionLastRepositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.TransactionLastRepositoryItemDateEdit1.EditFormat.FormatString = "G";
             this.TransactionLastRepositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.TransactionLastRepositoryItemDateEdit1.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.TransactionLastRepositoryItemDateEdit1.Mask.EditMask = "G";
             this.TransactionLastRepositoryItemDateEdit1.Name = "TransactionLastRepositoryItemDateEdit1";
             // 
@@ -466,7 +467,7 @@
             this._dbInterface1.BaseUnitOfWork = null;
             this._dbInterface1.BaseXPCollecton = null;
             this._dbInterface1.Controls.Add(this.dockPanelMerge1);
-            this._dbInterface1.CountOpenDesigner = 20;
+            this._dbInterface1.CountOpenDesigner = 21;
             this._dbInterface1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dbInterface1.DockManager = this.dockManager1;
             this._dbInterface1.DockPanelMerge = this.dockPanelMerge1;
@@ -574,10 +575,10 @@
             // tableNavigatorControl1
             // 
             this.tableNavigatorControl1.Error = false;
-            this.tableNavigatorControl1.Location = new System.Drawing.Point(287, 12);
+            this.tableNavigatorControl1.Location = new System.Drawing.Point(289, 12);
             this.tableNavigatorControl1.Name = "tableNavigatorControl1";
             this.tableNavigatorControl1.ShowToolTips = true;
-            this.tableNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.tableNavigatorControl1.Size = new System.Drawing.Size(361, 19);
             this.tableNavigatorControl1.StyleController = this.tableLayoutControl1;
             this.tableNavigatorControl1.TabIndex = 5;
             this.tableNavigatorControl1.TableCaption = "SQL";
@@ -666,7 +667,7 @@
             // 
             // ceAutoUpdate
             // 
-            this.ceAutoUpdate.Location = new System.Drawing.Point(696, 242);
+            this.ceAutoUpdate.Location = new System.Drawing.Point(696, 241);
             this.ceAutoUpdate.Name = "ceAutoUpdate";
             this.ceAutoUpdate.Properties.Caption = "Автообновление";
             this.ceAutoUpdate.Size = new System.Drawing.Size(207, 19);
@@ -676,11 +677,11 @@
             // 
             // gridUpdate
             // 
-            this.gridUpdate.Location = new System.Drawing.Point(36, 268);
+            this.gridUpdate.Location = new System.Drawing.Point(36, 267);
             this.gridUpdate.MainView = this.gridUpdateView;
             this.gridUpdate.Name = "gridUpdate";
             this.gridUpdate.ShowOnlyPredefinedDetails = true;
-            this.gridUpdate.Size = new System.Drawing.Size(867, 392);
+            this.gridUpdate.Size = new System.Drawing.Size(867, 393);
             this.gridUpdate.TabIndex = 17;
             this.gridUpdate.UseEmbeddedNavigator = true;
             this.gridUpdate.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -695,7 +696,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(36, 242);
+            this.btnUpdate.Location = new System.Drawing.Point(36, 241);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(656, 22);
             this.btnUpdate.StyleController = this.formLayoutControl1;
@@ -706,10 +707,10 @@
             // formNavigatorControl1
             // 
             this.formNavigatorControl1.Error = false;
-            this.formNavigatorControl1.Location = new System.Drawing.Point(287, 12);
+            this.formNavigatorControl1.Location = new System.Drawing.Point(289, 12);
             this.formNavigatorControl1.Name = "formNavigatorControl1";
             this.formNavigatorControl1.ShowToolTips = true;
-            this.formNavigatorControl1.Size = new System.Drawing.Size(364, 19);
+            this.formNavigatorControl1.Size = new System.Drawing.Size(361, 19);
             this.formNavigatorControl1.StyleController = this.formLayoutControl1;
             this.formNavigatorControl1.TabIndex = 4;
             this.formNavigatorControl1.TableCaption = "SQL";
@@ -717,7 +718,7 @@
             // 
             // SQLNameTextEdit1
             // 
-            this.SQLNameTextEdit1.Location = new System.Drawing.Point(148, 89);
+            this.SQLNameTextEdit1.Location = new System.Drawing.Point(148, 88);
             this.SQLNameTextEdit1.Name = "SQLNameTextEdit1";
             this.SQLNameTextEdit1.Size = new System.Drawing.Size(94, 20);
             this.SQLNameTextEdit1.StyleController = this.formLayoutControl1;
@@ -725,7 +726,7 @@
             // 
             // ConnectionStringTextEdit1
             // 
-            this.ConnectionStringTextEdit1.Location = new System.Drawing.Point(148, 113);
+            this.ConnectionStringTextEdit1.Location = new System.Drawing.Point(148, 112);
             this.ConnectionStringTextEdit1.Name = "ConnectionStringTextEdit1";
             this.ConnectionStringTextEdit1.Size = new System.Drawing.Size(767, 20);
             this.ConnectionStringTextEdit1.StyleController = this.formLayoutControl1;
@@ -733,7 +734,7 @@
             // 
             // CommentTextEdit1
             // 
-            this.CommentTextEdit1.Location = new System.Drawing.Point(370, 89);
+            this.CommentTextEdit1.Location = new System.Drawing.Point(370, 88);
             this.CommentTextEdit1.Name = "CommentTextEdit1";
             this.CommentTextEdit1.Size = new System.Drawing.Size(545, 20);
             this.CommentTextEdit1.StyleController = this.formLayoutControl1;
@@ -741,7 +742,7 @@
             // 
             // TableInitiatedCheckEdit1
             // 
-            this.TableInitiatedCheckEdit1.Location = new System.Drawing.Point(24, 161);
+            this.TableInitiatedCheckEdit1.Location = new System.Drawing.Point(24, 160);
             this.TableInitiatedCheckEdit1.Name = "TableInitiatedCheckEdit1";
             this.TableInitiatedCheckEdit1.Properties.Caption = "Инициализация";
             this.TableInitiatedCheckEdit1.Properties.ReadOnly = true;
@@ -756,7 +757,7 @@
             0,
             0,
             0});
-            this.SendSuccessCountSpinEdit1.Location = new System.Drawing.Point(148, 184);
+            this.SendSuccessCountSpinEdit1.Location = new System.Drawing.Point(148, 183);
             this.SendSuccessCountSpinEdit1.Name = "SendSuccessCountSpinEdit1";
             this.SendSuccessCountSpinEdit1.Properties.ReadOnly = true;
             this.SendSuccessCountSpinEdit1.Size = new System.Drawing.Size(94, 20);
@@ -770,7 +771,7 @@
             0,
             0,
             0});
-            this.SendFaultCountSpinEdit1.Location = new System.Drawing.Point(370, 184);
+            this.SendFaultCountSpinEdit1.Location = new System.Drawing.Point(370, 183);
             this.SendFaultCountSpinEdit1.Name = "SendFaultCountSpinEdit1";
             this.SendFaultCountSpinEdit1.Properties.ReadOnly = true;
             this.SendFaultCountSpinEdit1.Size = new System.Drawing.Size(93, 20);
@@ -784,7 +785,7 @@
             0,
             0,
             0});
-            this.WriteTimeSpanSpinEdit1.Location = new System.Drawing.Point(591, 184);
+            this.WriteTimeSpanSpinEdit1.Location = new System.Drawing.Point(591, 183);
             this.WriteTimeSpanSpinEdit1.Name = "WriteTimeSpanSpinEdit1";
             this.WriteTimeSpanSpinEdit1.Properties.ReadOnly = true;
             this.WriteTimeSpanSpinEdit1.Size = new System.Drawing.Size(101, 20);
@@ -794,7 +795,7 @@
             // TransactionLastDateEditEx1
             // 
             this.TransactionLastDateEditEx1.EditValue = new System.DateTime(2014, 7, 24, 0, 0, 0, 0);
-            this.TransactionLastDateEditEx1.Location = new System.Drawing.Point(820, 184);
+            this.TransactionLastDateEditEx1.Location = new System.Drawing.Point(820, 183);
             this.TransactionLastDateEditEx1.Name = "TransactionLastDateEditEx1";
             this.TransactionLastDateEditEx1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -805,6 +806,7 @@
             this.TransactionLastDateEditEx1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.TransactionLastDateEditEx1.Properties.EditFormat.FormatString = "G";
             this.TransactionLastDateEditEx1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.TransactionLastDateEditEx1.Properties.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.TransactionLastDateEditEx1.Properties.Mask.EditMask = "G";
             this.TransactionLastDateEditEx1.Properties.ReadOnly = true;
             this.TransactionLastDateEditEx1.Size = new System.Drawing.Size(95, 20);
@@ -813,7 +815,7 @@
             // 
             // DateTimeFormatTextEdit1
             // 
-            this.DateTimeFormatTextEdit1.Location = new System.Drawing.Point(148, 137);
+            this.DateTimeFormatTextEdit1.Location = new System.Drawing.Point(148, 136);
             this.DateTimeFormatTextEdit1.Name = "DateTimeFormatTextEdit1";
             this.DateTimeFormatTextEdit1.Size = new System.Drawing.Size(767, 20);
             this.DateTimeFormatTextEdit1.StyleController = this.formLayoutControl1;
@@ -821,7 +823,7 @@
             // 
             // IsSendingCheckEdit1
             // 
-            this.IsSendingCheckEdit1.Location = new System.Drawing.Point(472, 161);
+            this.IsSendingCheckEdit1.Location = new System.Drawing.Point(472, 160);
             this.IsSendingCheckEdit1.Name = "IsSendingCheckEdit1";
             this.IsSendingCheckEdit1.Properties.Caption = "Отправляемый";
             this.IsSendingCheckEdit1.Properties.ReadOnly = true;
@@ -835,13 +837,13 @@
             this.SQLServerItemForceCollectionGridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.SQLServerItemForceCollectionGridControl1.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.SQLServerItemForceCollectionGridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.SQLServerItemForceCollectionGridControl1.Location = new System.Drawing.Point(36, 242);
+            this.SQLServerItemForceCollectionGridControl1.Location = new System.Drawing.Point(36, 241);
             this.SQLServerItemForceCollectionGridControl1.MainView = this.SQLServerItemForceCollectionGridView1;
             this.SQLServerItemForceCollectionGridControl1.Name = "SQLServerItemForceCollectionGridControl1";
             this.SQLServerItemForceCollectionGridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ItemRepGridLookUpEdit1});
             this.SQLServerItemForceCollectionGridControl1.ShowOnlyPredefinedDetails = true;
-            this.SQLServerItemForceCollectionGridControl1.Size = new System.Drawing.Size(867, 418);
+            this.SQLServerItemForceCollectionGridControl1.Size = new System.Drawing.Size(867, 419);
             this.SQLServerItemForceCollectionGridControl1.TabIndex = 21;
             this.SQLServerItemForceCollectionGridControl1.UseEmbeddedNavigator = true;
             this.SQLServerItemForceCollectionGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -919,7 +921,7 @@
             // 
             // SendAllCheckEdit1
             // 
-            this.SendAllCheckEdit1.Location = new System.Drawing.Point(24, 66);
+            this.SendAllCheckEdit1.Location = new System.Drawing.Point(24, 65);
             this.SendAllCheckEdit1.Name = "SendAllCheckEdit1";
             this.SendAllCheckEdit1.Properties.Caption = "Отправить все";
             this.SendAllCheckEdit1.Size = new System.Drawing.Size(891, 19);
@@ -1081,7 +1083,7 @@
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
             this.tabbedControlGroup1.SelectedTabPage = this.SQLServerItemForceCollectionLayoutGroup1;
             this.tabbedControlGroup1.SelectedTabPageIndex = 0;
-            this.tabbedControlGroup1.Size = new System.Drawing.Size(895, 468);
+            this.tabbedControlGroup1.Size = new System.Drawing.Size(895, 469);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.SQLServerItemForceCollectionLayoutGroup1,
             this.layoutControlGroup2});
@@ -1095,7 +1097,7 @@
             this.SQLServerItemForceCollectionLayoutItem1});
             this.SQLServerItemForceCollectionLayoutGroup1.Location = new System.Drawing.Point(0, 0);
             this.SQLServerItemForceCollectionLayoutGroup1.Name = "SQLServerItemForceCollectionLayoutGroup1";
-            this.SQLServerItemForceCollectionLayoutGroup1.Size = new System.Drawing.Size(871, 422);
+            this.SQLServerItemForceCollectionLayoutGroup1.Size = new System.Drawing.Size(871, 423);
             this.SQLServerItemForceCollectionLayoutGroup1.Text = "Отправляемые элементы";
             // 
             // SQLServerItemForceCollectionLayoutItem1
@@ -1104,7 +1106,7 @@
             this.SQLServerItemForceCollectionLayoutItem1.CustomizationFormText = "Отправляемые элементы";
             this.SQLServerItemForceCollectionLayoutItem1.Location = new System.Drawing.Point(0, 0);
             this.SQLServerItemForceCollectionLayoutItem1.Name = "SQLServerItemForceCollectionLayoutItem1";
-            this.SQLServerItemForceCollectionLayoutItem1.Size = new System.Drawing.Size(871, 422);
+            this.SQLServerItemForceCollectionLayoutItem1.Size = new System.Drawing.Size(871, 423);
             this.SQLServerItemForceCollectionLayoutItem1.Text = "Отправляемые элементы:";
             this.SQLServerItemForceCollectionLayoutItem1.TextSize = new System.Drawing.Size(0, 0);
             this.SQLServerItemForceCollectionLayoutItem1.TextVisible = false;
@@ -1117,7 +1119,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(871, 422);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(871, 423);
             this.layoutControlGroup2.Text = "Данные";
             // 
             // layoutControlItem2
@@ -1126,7 +1128,7 @@
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(871, 396);
+            this.layoutControlItem2.Size = new System.Drawing.Size(871, 397);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 

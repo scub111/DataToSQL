@@ -25,7 +25,7 @@ namespace DataToSQL
         /// </summary>
         public VarXml()
         {
-            this.FileXml = "Config.xml";
+            FileXml = "Config.xml";
             Init();
         }
 
@@ -200,7 +200,7 @@ namespace DataToSQL
         /// </summary>
         public void Init()
         {
-            Version = "v1.21.02";
+            Version = "v1.21.03";
 
             InitTime = DateTime.Now;
 

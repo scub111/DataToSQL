@@ -16,6 +16,7 @@ using NDde.Client;
 using System.Net.NetworkInformation;
 using FirebirdSql.Data.FirebirdClient;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace DataToSQL
 {
@@ -2254,6 +2255,7 @@ namespace DataToSQL
             ValuesCurrentTableName = "_ValuesCurrent";
             LogsTableName = "_Logs";
             CliensTableName = "_Cliens";
+            TransactionLast = DateTime.Now;
         }
 
 
@@ -2284,6 +2286,7 @@ namespace DataToSQL
             {
                 _SendSuccessCount = value;
                 IsSending = true;
+                WriteTimeSpan = DateTime.Now - TransactionLast;
                 TransactionLast = DateTime.Now;
             }
         }
@@ -2731,7 +2734,7 @@ namespace DataToSQL
         /// <summary>
         /// Формирование SQL-запроса для отправки элементов в БД.
         /// </summary>
-        string SQLSendItems(Collection<ItemReal> itemRealCollection)
+        string CreateSQLItemsStatement(Collection<ItemReal> itemRealCollection)
         {
             string statement = "";
 
@@ -2783,6 +2786,35 @@ namespace DataToSQL
             return statement;
         }
 
+        void SendSQLItemsEx()
+        {
+            Task task = Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection));
+            task.Wait();
+        }
+
+        /// <summary>
+        /// Отправка данных в БД, разделенная на потоки.
+        /// </summary>
+        void SendSQLItems(Collection<ItemReal> itemRealCollection)
+        {
+            SqlConnection connection = new SqlConnection(ConnectionString);
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(CreateSQLItemsStatement(itemRealCollection), connection);
+                command.ExecuteNonQuery();
+                SendSuccessCount++;
+            }
+            catch (Exception ex)
+            {
+                SendFaultCount++;
+                Program.SaveLog(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         /// <summary>
         /// Функция, в которой будет выполняться в потоке отправки данных в БД.
         /// </summary>
@@ -2793,7 +2825,6 @@ namespace DataToSQL
                 SqlConnection connection = new SqlConnection(ConnectionString);
                 try
                 {
-                    WriteTimeT0 = DateTime.Now;
 
                     connection.Open();
                     string statement = "";
@@ -2801,7 +2832,8 @@ namespace DataToSQL
                     // Отправка записей элементов.
                     if (SendAll)
                     {
-                        statement += SQLSendItems(ItemRealCollection);
+                        //statement += CreateSQLItemsStatement(ItemRealCollection);
+                        SendSQLItemsEx();
 
                         foreach (KMAZSServerReal kmazsServerReal in Global.Default.KMAZSServerRealCollection)
                         {
@@ -2848,17 +2880,15 @@ namespace DataToSQL
                         }
                     }
                     else
-                        statement += SQLSendItems(ItemForceRealCollection);
+                        //statement += CreateSQLItemsStatement(ItemForceRealCollection);
+                        SendSQLItemsEx();
 
-                    if (statement != "")
+                    if (!string.IsNullOrEmpty(statement))
                     {
                         //Program.SaveLog(statement);
                         SqlCommand command = new SqlCommand(statement, connection);
                         command.ExecuteNonQuery();
-                        SendSuccessCount++;                        
                     }
-
-                    WriteTimeSpan = DateTime.Now - WriteTimeT0;
                 }
                 catch (Exception ex)
                 {
