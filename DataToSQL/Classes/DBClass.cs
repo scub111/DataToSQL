@@ -1127,6 +1127,7 @@ namespace DataToSQL
             {
                 DateTimeFormat = "yyyy/dd/MM HH:mm:ss";
                 SendAll = true;
+                ThreadCount = 2;
             }
         }
     }

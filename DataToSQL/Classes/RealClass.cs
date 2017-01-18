@@ -542,6 +542,9 @@ namespace DataToSQL
         /// </summary>
         public int CursorDeactivationLost { get; set; }
 
+        //Занятость потока
+        public bool IsBusy { get; set; }
+
         /// <summary>
         /// Триггер на изменение X-позиции.
         /// </summary>
@@ -2267,6 +2270,8 @@ namespace DataToSQL
 
         public bool SendAll { get; set; }
 
+        public int ThreadCount { get; set; }
+
         /// <summary>
         /// Инициализация таблиц.
         /// </summary>
@@ -2462,6 +2467,7 @@ namespace DataToSQL
             ConnectionString = server.ConnectionString;
             DateTimeFormat = server.DateTimeFormat;
             SendAll = server.SendAll;
+            ThreadCount = server.ThreadCount;
         }
 
         public override void SendDataToXPObject()
@@ -2790,12 +2796,11 @@ namespace DataToSQL
         {
             List<Task> SendSQLTaskList = new List<Task>();
 
-            int threadCount = 10;
-            double itemPerThread = 0;
+            double itemPerThread;
             int from, to;
-            for (int i = 0; i < threadCount; i++)
+            for (int i = 0; i < ThreadCount; i++)
             {
-                itemPerThread = ItemRealCollection.Count / (double)threadCount;
+                itemPerThread = ItemRealCollection.Count / (double)ThreadCount;
 
                 Collection<ItemReal> itemRealCollection = new Collection<ItemReal>();
 
@@ -2805,7 +2810,6 @@ namespace DataToSQL
                 for (int j = from; j < to; j++)
                     itemRealCollection.Add(ItemRealCollection[j]);
 
-                //SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection)));
                 SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(itemRealCollection)));
             }
             //Task task = Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection));

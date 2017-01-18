@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SQLServerView));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.SQLServerItemForceCollectionGridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ItemIDGridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ItemRepGridLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -129,6 +129,10 @@
             this.itemString5 = new RapidInterface.DBInterfaceItemString();
             this.itemString6 = new RapidInterface.DBInterfaceItemString();
             this.itemString7 = new RapidInterface.DBInterfaceItemString();
+            this.itemNumeric5 = new RapidInterface.DBInterfaceItemNumeric();
+            this.ThreadCountLayoutItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ThreadCountGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ThreadCountSpinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.SQLServerItemForceCollectionGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemRepGridLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemGridView2)).BeginInit();
@@ -191,6 +195,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SendAllLayoutItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThreadCountLayoutItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThreadCountSpinEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // SQLServerItemForceCollectionGridView2
@@ -272,10 +278,10 @@
             this.tableGridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.tableGridControl1.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.tableGridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            gridLevelNode1.LevelTemplate = this.SQLServerItemForceCollectionGridView2;
-            gridLevelNode1.RelationName = "SQLServerItemForceCollection";
+            gridLevelNode2.LevelTemplate = this.SQLServerItemForceCollectionGridView2;
+            gridLevelNode2.RelationName = "SQLServerItemForceCollection";
             this.tableGridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.tableGridControl1.Location = new System.Drawing.Point(12, 35);
             this.tableGridControl1.MainView = this.tableGridView1;
             this.tableGridControl1.Name = "tableGridControl1";
@@ -307,13 +313,14 @@
             this.TransactionLastGridColumn1,
             this.DateTimeFormatGridColumn1,
             this.IsSendingGridColumn1,
-            this.SendAllGridColumn1});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "IsConnected";
+            this.SendAllGridColumn1,
+            this.ThreadCountGridColumn1});
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "IsConnected";
             this.tableGridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1});
+            styleFormatCondition2});
             this.tableGridView1.GridControl = this.tableGridControl1;
             this.tableGridView1.Images = this.icons1;
             this.tableGridView1.Name = "tableGridView1";
@@ -330,6 +337,7 @@
             this.tableGridBand1.Columns.Add(this.ConnectionStringGridColumn1);
             this.tableGridBand1.Columns.Add(this.CommentGridColumn1);
             this.tableGridBand1.Columns.Add(this.DateTimeFormatGridColumn1);
+            this.tableGridBand1.Columns.Add(this.ThreadCountGridColumn1);
             this.tableGridBand1.Columns.Add(this.TableInitiatedGridColumn1);
             this.tableGridBand1.Columns.Add(this.IsSendingGridColumn1);
             this.tableGridBand1.Columns.Add(this.SendSuccessCountGridColumn1);
@@ -346,7 +354,7 @@
             this.SendAllGridColumn1.FieldName = "SendAll";
             this.SendAllGridColumn1.Name = "SendAllGridColumn1";
             this.SendAllGridColumn1.Visible = true;
-            this.SendAllGridColumn1.Width = 87;
+            this.SendAllGridColumn1.Width = 74;
             // 
             // SQLNameGridColumn1
             // 
@@ -354,7 +362,7 @@
             this.SQLNameGridColumn1.FieldName = "SQLName";
             this.SQLNameGridColumn1.Name = "SQLNameGridColumn1";
             this.SQLNameGridColumn1.Visible = true;
-            this.SQLNameGridColumn1.Width = 81;
+            this.SQLNameGridColumn1.Width = 74;
             // 
             // ConnectionStringGridColumn1
             // 
@@ -362,7 +370,7 @@
             this.ConnectionStringGridColumn1.FieldName = "ConnectionString";
             this.ConnectionStringGridColumn1.Name = "ConnectionStringGridColumn1";
             this.ConnectionStringGridColumn1.Visible = true;
-            this.ConnectionStringGridColumn1.Width = 81;
+            this.ConnectionStringGridColumn1.Width = 74;
             // 
             // CommentGridColumn1
             // 
@@ -370,7 +378,7 @@
             this.CommentGridColumn1.FieldName = "Comment";
             this.CommentGridColumn1.Name = "CommentGridColumn1";
             this.CommentGridColumn1.Visible = true;
-            this.CommentGridColumn1.Width = 81;
+            this.CommentGridColumn1.Width = 74;
             // 
             // DateTimeFormatGridColumn1
             // 
@@ -378,7 +386,7 @@
             this.DateTimeFormatGridColumn1.FieldName = "DateTimeFormat";
             this.DateTimeFormatGridColumn1.Name = "DateTimeFormatGridColumn1";
             this.DateTimeFormatGridColumn1.Visible = true;
-            this.DateTimeFormatGridColumn1.Width = 81;
+            this.DateTimeFormatGridColumn1.Width = 74;
             // 
             // TableInitiatedGridColumn1
             // 
@@ -389,7 +397,7 @@
             this.TableInitiatedGridColumn1.Name = "TableInitiatedGridColumn1";
             this.TableInitiatedGridColumn1.OptionsColumn.ReadOnly = true;
             this.TableInitiatedGridColumn1.Visible = true;
-            this.TableInitiatedGridColumn1.Width = 81;
+            this.TableInitiatedGridColumn1.Width = 74;
             // 
             // IsSendingGridColumn1
             // 
@@ -400,7 +408,7 @@
             this.IsSendingGridColumn1.Name = "IsSendingGridColumn1";
             this.IsSendingGridColumn1.OptionsColumn.ReadOnly = true;
             this.IsSendingGridColumn1.Visible = true;
-            this.IsSendingGridColumn1.Width = 81;
+            this.IsSendingGridColumn1.Width = 74;
             // 
             // SendSuccessCountGridColumn1
             // 
@@ -411,7 +419,7 @@
             this.SendSuccessCountGridColumn1.Name = "SendSuccessCountGridColumn1";
             this.SendSuccessCountGridColumn1.OptionsColumn.ReadOnly = true;
             this.SendSuccessCountGridColumn1.Visible = true;
-            this.SendSuccessCountGridColumn1.Width = 81;
+            this.SendSuccessCountGridColumn1.Width = 74;
             // 
             // SendFaultCountGridColumn1
             // 
@@ -422,7 +430,7 @@
             this.SendFaultCountGridColumn1.Name = "SendFaultCountGridColumn1";
             this.SendFaultCountGridColumn1.OptionsColumn.ReadOnly = true;
             this.SendFaultCountGridColumn1.Visible = true;
-            this.SendFaultCountGridColumn1.Width = 81;
+            this.SendFaultCountGridColumn1.Width = 74;
             // 
             // WriteTimeSpanGridColumn1
             // 
@@ -433,7 +441,7 @@
             this.WriteTimeSpanGridColumn1.Name = "WriteTimeSpanGridColumn1";
             this.WriteTimeSpanGridColumn1.OptionsColumn.ReadOnly = true;
             this.WriteTimeSpanGridColumn1.Visible = true;
-            this.WriteTimeSpanGridColumn1.Width = 81;
+            this.WriteTimeSpanGridColumn1.Width = 74;
             // 
             // TransactionLastGridColumn1
             // 
@@ -445,7 +453,7 @@
             this.TransactionLastGridColumn1.Name = "TransactionLastGridColumn1";
             this.TransactionLastGridColumn1.OptionsColumn.ReadOnly = true;
             this.TransactionLastGridColumn1.Visible = true;
-            this.TransactionLastGridColumn1.Width = 81;
+            this.TransactionLastGridColumn1.Width = 74;
             // 
             // TransactionLastRepositoryItemDateEdit1
             // 
@@ -467,7 +475,7 @@
             this._dbInterface1.BaseUnitOfWork = null;
             this._dbInterface1.BaseXPCollecton = null;
             this._dbInterface1.Controls.Add(this.dockPanelMerge1);
-            this._dbInterface1.CountOpenDesigner = 21;
+            this._dbInterface1.CountOpenDesigner = 22;
             this._dbInterface1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dbInterface1.DockManager = this.dockManager1;
             this._dbInterface1.DockPanelMerge = this.dockPanelMerge1;
@@ -485,6 +493,7 @@
             this._dbInterface1.Items.Add(this.itemString2);
             this._dbInterface1.Items.Add(this.itemString3);
             this._dbInterface1.Items.Add(this.itemString4);
+            this._dbInterface1.Items.Add(this.itemNumeric5);
             this._dbInterface1.Items.Add(this.itemBoolean2);
             this._dbInterface1.Items.Add(this.itemBoolean4);
             this._dbInterface1.Items.Add(this.itemNumeric2);
@@ -508,6 +517,7 @@
             this._dbInterface1.ItemsSeq.Add(this.itemString6);
             this._dbInterface1.ItemsSeq.Add(this.itemString7);
             this._dbInterface1.ItemsSeq.Add(this.itemBoolean5);
+            this._dbInterface1.ItemsSeq.Add(this.itemNumeric5);
             this._dbInterface1.Location = new System.Drawing.Point(0, 0);
             this._dbInterface1.Name = "_dbInterface1";
             this._dbInterface1.ProgramDesign = false;
@@ -527,7 +537,7 @@
             // 
             // dockPanelMerge1
             // 
-            this.dockPanelMerge1.ActiveChild = this.tableDockPanel1;
+            this.dockPanelMerge1.ActiveChild = this.formDockPanel1;
             this.dockPanelMerge1.Controls.Add(this.formDockPanel1);
             this.dockPanelMerge1.Controls.Add(this.tableDockPanel1);
             this.dockPanelMerge1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
@@ -656,6 +666,7 @@
             this.formLayoutControl1.Controls.Add(this.IsSendingCheckEdit1);
             this.formLayoutControl1.Controls.Add(this.SQLServerItemForceCollectionGridControl1);
             this.formLayoutControl1.Controls.Add(this.SendAllCheckEdit1);
+            this.formLayoutControl1.Controls.Add(this.ThreadCountSpinEdit1);
             this.formLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formLayoutControl1.Images = this.icons1;
             this.formLayoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -815,9 +826,9 @@
             // 
             // DateTimeFormatTextEdit1
             // 
-            this.DateTimeFormatTextEdit1.Location = new System.Drawing.Point(148, 136);
+            this.DateTimeFormatTextEdit1.Location = new System.Drawing.Point(595, 136);
             this.DateTimeFormatTextEdit1.Name = "DateTimeFormatTextEdit1";
-            this.DateTimeFormatTextEdit1.Size = new System.Drawing.Size(767, 20);
+            this.DateTimeFormatTextEdit1.Size = new System.Drawing.Size(320, 20);
             this.DateTimeFormatTextEdit1.StyleController = this.formLayoutControl1;
             this.DateTimeFormatTextEdit1.TabIndex = 15;
             // 
@@ -969,7 +980,8 @@
             this.CommentLayoutItem1,
             this.IsSendingLayoutItem1,
             this.tabbedControlGroup1,
-            this.SendAllLayoutItem1});
+            this.SendAllLayoutItem1,
+            this.ThreadCountLayoutItem1});
             this.formDataLayoutGroup1.Location = new System.Drawing.Point(0, 23);
             this.formDataLayoutGroup1.Name = "formDataLayoutGroup1";
             this.formDataLayoutGroup1.Size = new System.Drawing.Size(919, 653);
@@ -1009,9 +1021,9 @@
             // 
             this.DateTimeFormatLayoutItem1.Control = this.DateTimeFormatTextEdit1;
             this.DateTimeFormatLayoutItem1.CustomizationFormText = "Формат времени";
-            this.DateTimeFormatLayoutItem1.Location = new System.Drawing.Point(0, 71);
+            this.DateTimeFormatLayoutItem1.Location = new System.Drawing.Point(447, 71);
             this.DateTimeFormatLayoutItem1.Name = "DateTimeFormatLayoutItem1";
-            this.DateTimeFormatLayoutItem1.Size = new System.Drawing.Size(895, 24);
+            this.DateTimeFormatLayoutItem1.Size = new System.Drawing.Size(448, 24);
             this.DateTimeFormatLayoutItem1.Text = "Формат времени:";
             this.DateTimeFormatLayoutItem1.TextSize = new System.Drawing.Size(121, 13);
             // 
@@ -1344,7 +1356,7 @@
             this.itemXPCollection1.Parent = null;
             this.itemXPCollection1.TableGridColumn = null;
             this.itemXPCollection1.TableGridView = this.SQLServerItemForceCollectionGridView2;
-            this.itemXPCollection1.TableLevelNode = gridLevelNode1;
+            this.itemXPCollection1.TableLevelNode = gridLevelNode2;
             // 
             // itemXPObject1
             // 
@@ -1412,6 +1424,51 @@
             this.itemString7.Owner = this.itemXPCollection1.Items;
             this.itemString7.Parent = this.itemXPCollection1;
             this.itemString7.TableGridColumn = this.CommentGridColumn3;
+            // 
+            // itemNumeric5
+            // 
+            this.itemNumeric5.Caption = "Кол-во потоков";
+            this.itemNumeric5.ControlName = "ThreadCount";
+            this.itemNumeric5.DBInterface = this._dbInterface1;
+            this.itemNumeric5.FieldName = "ThreadCount";
+            this.itemNumeric5.FormEdit = this.ThreadCountSpinEdit1;
+            this.itemNumeric5.FormGridColumn = null;
+            this.itemNumeric5.FormLayoutItem = this.ThreadCountLayoutItem1;
+            this.itemNumeric5.ImageName = "";
+            this.itemNumeric5.Images = this.icons1;
+            this.itemNumeric5.Parent = null;
+            this.itemNumeric5.TableGridColumn = this.ThreadCountGridColumn1;
+            // 
+            // ThreadCountLayoutItem1
+            // 
+            this.ThreadCountLayoutItem1.Control = this.ThreadCountSpinEdit1;
+            this.ThreadCountLayoutItem1.CustomizationFormText = "Кол-во потоков";
+            this.ThreadCountLayoutItem1.Location = new System.Drawing.Point(0, 71);
+            this.ThreadCountLayoutItem1.Name = "ThreadCountLayoutItem1";
+            this.ThreadCountLayoutItem1.Size = new System.Drawing.Size(447, 24);
+            this.ThreadCountLayoutItem1.Text = "Кол-во потоков:";
+            this.ThreadCountLayoutItem1.TextSize = new System.Drawing.Size(121, 13);
+            // 
+            // ThreadCountGridColumn1
+            // 
+            this.ThreadCountGridColumn1.Caption = "Кол-во потоков";
+            this.ThreadCountGridColumn1.FieldName = "ThreadCount";
+            this.ThreadCountGridColumn1.Name = "ThreadCountGridColumn1";
+            this.ThreadCountGridColumn1.Visible = true;
+            this.ThreadCountGridColumn1.Width = 83;
+            // 
+            // ThreadCountSpinEdit1
+            // 
+            this.ThreadCountSpinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.ThreadCountSpinEdit1.Location = new System.Drawing.Point(148, 136);
+            this.ThreadCountSpinEdit1.Name = "ThreadCountSpinEdit1";
+            this.ThreadCountSpinEdit1.Size = new System.Drawing.Size(319, 20);
+            this.ThreadCountSpinEdit1.StyleController = this.formLayoutControl1;
+            this.ThreadCountSpinEdit1.TabIndex = 23;
             // 
             // SQLServerView
             // 
@@ -1484,6 +1541,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SendAllLayoutItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThreadCountLayoutItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThreadCountSpinEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1587,7 +1646,9 @@
         private DevExpress.XtraEditors.CheckEdit SendAllCheckEdit1;
         private DevExpress.XtraLayout.LayoutControlItem SendAllLayoutItem1;
         private RapidInterface.DBInterfaceItemBoolean itemBoolean5;
-
-
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ThreadCountGridColumn1;
+        private DevExpress.XtraEditors.SpinEdit ThreadCountSpinEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem ThreadCountLayoutItem1;
+        private RapidInterface.DBInterfaceItemNumeric itemNumeric5;
     }
 }
