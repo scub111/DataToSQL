@@ -965,6 +965,17 @@ namespace DataToSQL
             set { SetPropertyValueEx("Active", ref _SendAll, value); }
         }
 
+        int _ThreadCount;
+        /// <summary>
+        /// Кол-во потоков.
+        /// </summary>
+        [DisplayName("Кол-во потоков")]
+        public int ThreadCount
+        {
+            get { return _ThreadCount; }
+            set { SetPropertyValueEx("ThreadCount", ref _ThreadCount, value); }
+        }
+
         /// <summary>
         /// Таблица-коллекция "Исключительные элементы".
         /// </summary>

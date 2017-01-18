@@ -2788,8 +2788,29 @@ namespace DataToSQL
 
         void SendSQLItemsEx()
         {
-            Task task = Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection));
-            task.Wait();
+            List<Task> SendSQLTaskList = new List<Task>();
+
+            int threadCount = 10;
+            double itemPerThread = 0;
+            int from, to;
+            for (int i = 0; i < threadCount; i++)
+            {
+                itemPerThread = ItemRealCollection.Count / (double)threadCount;
+
+                Collection<ItemReal> itemRealCollection = new Collection<ItemReal>();
+
+                from = (int)(i * itemPerThread);
+                to = (int)((i + 1) * itemPerThread);
+
+                for (int j = from; j < to; j++)
+                    itemRealCollection.Add(ItemRealCollection[j]);
+
+                //SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection)));
+                SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(itemRealCollection)));
+            }
+            //Task task = Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection));
+            //task.Wait();
+            Task.WaitAll(SendSQLTaskList.ToArray());
         }
 
         /// <summary>
@@ -2803,7 +2824,6 @@ namespace DataToSQL
                 connection.Open();
                 SqlCommand command = new SqlCommand(CreateSQLItemsStatement(itemRealCollection), connection);
                 command.ExecuteNonQuery();
-                SendSuccessCount++;
             }
             catch (Exception ex)
             {
@@ -2822,18 +2842,15 @@ namespace DataToSQL
         {
             if (SendAll || ItemForceRealCollection.Count > 0)
             {
-                SqlConnection connection = new SqlConnection(ConnectionString);
                 try
                 {
-
-                    connection.Open();
-                    string statement = "";
 
                     // Отправка записей элементов.
                     if (SendAll)
                     {
                         //statement += CreateSQLItemsStatement(ItemRealCollection);
                         SendSQLItemsEx();
+                        string statement = "";
 
                         foreach (KMAZSServerReal kmazsServerReal in Global.Default.KMAZSServerRealCollection)
                         {
@@ -2878,26 +2895,27 @@ namespace DataToSQL
                                 }
                             }
                         }
+
+                        if (!string.IsNullOrEmpty(statement))
+                        {
+                            SqlConnection connection = new SqlConnection(ConnectionString);
+                            connection.Open();
+                            SqlCommand command = new SqlCommand(statement, connection);
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+
                     }
                     else
                         //statement += CreateSQLItemsStatement(ItemForceRealCollection);
                         SendSQLItemsEx();
 
-                    if (!string.IsNullOrEmpty(statement))
-                    {
-                        //Program.SaveLog(statement);
-                        SqlCommand command = new SqlCommand(statement, connection);
-                        command.ExecuteNonQuery();
-                    }
+                    SendSuccessCount++;
                 }
                 catch (Exception ex)
                 {
                     SendFaultCount++;
                     Program.SaveLog(ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
                 }
             }
         }
