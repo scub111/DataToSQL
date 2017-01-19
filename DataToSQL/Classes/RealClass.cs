@@ -2600,7 +2600,7 @@ namespace DataToSQL
         string InitSQLItemStatement(Collection<ItemReal> itemRealCollection)
         {
             string statement = "";
-            foreach (ItemReal item in ItemRealCollection)
+            foreach (ItemReal item in itemRealCollection)
             {
                 if (item.Ready &&
                     item.SQLTableName != null)
