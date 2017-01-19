@@ -126,7 +126,7 @@
     <Reference Include="OPCdotNETLib, Version=1.0.5311.41940, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\OPCdotNETLib\bin\Debug\OPCdotNETLib.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="RapidInterface">
       <HintPath>..\..\RapidInterface\RapidInterface\bin\Debug\RapidInterface.dll</HintPath>

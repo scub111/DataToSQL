@@ -72,14 +72,12 @@ D:\Мои документы\!Projects\DataToSQL\DataToSQL\obj\x86\Debug\DataToS
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DataToSQL.exe.config
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DataToSQL.exe
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DataToSQL.pdb
-D:\_Projects\DataToSQL\DataToSQL\bin\Debug\OPCdotNETLib.dll
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\RapidInterface.dll
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\Usable.dll
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DevExpress.Pdf.v15.2.Core.dll
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DevExpress.Pdf.v15.2.Drawing.dll
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DevExpress.Sparkline.v15.2.Core.dll
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DevExpress.BonusSkins.v15.2.dll
-D:\_Projects\DataToSQL\DataToSQL\bin\Debug\OPCdotNETLib.pdb
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\RapidInterface.pdb
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\Usable.pdb
 D:\_Projects\DataToSQL\DataToSQL\bin\Debug\DevExpress.Pdf.v15.2.Core.xml
