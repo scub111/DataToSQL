@@ -891,7 +891,7 @@ namespace DataToSQL
                             break;
 
                         case "ThreadMainCountWork":
-                            itemReal.DataValue = Global.Default.ThreadMain.WorkCount;
+                            itemReal.DataValue = Global.Default.ThreadMain.CycleCount;
                             break;
 
                     }
@@ -2349,12 +2349,12 @@ namespace DataToSQL
         bool LogIsBusy { get; set; }        
 
         /// <summary>
-        /// Коллекция элементов, которые будут логироваться в БД.
+        /// Коллекция элементов, которые будут отравляться в БД.
         /// </summary>
         public Collection<ItemReal> ItemRealCollection { get; set; }
 
         /// <summary>
-        /// Коллекция исключительных элементов, которые будут логироваться в БД.
+        /// Коллекция исключительных элементов, которые будут отправляться в БД.
         /// </summary>
         public Collection<ItemReal> ItemForceRealCollection { get; set; }
 
@@ -2748,7 +2748,7 @@ namespace DataToSQL
         /// </summary>
         public void SendDataAsync()
         {
-            if (/*TableInitiated && */!SendIsBusy)
+            if (TableInitiated && !SendIsBusy)
             {
                 SendIsBusy = true;
                 Thread thread = new Thread(SendItems);
@@ -2811,25 +2811,25 @@ namespace DataToSQL
             return statement;
         }
 
-        void SendSQLItemsEx()
+        void SendSQLItemsWithThreads(Collection<ItemReal> itemRealCollection, int threadCount)
         {
             List<Task> SendSQLTaskList = new List<Task>();
 
             double itemPerThread;
             int from, to;
-            for (int i = 0; i < ThreadCount; i++)
+            for (int i = 0; i < threadCount; i++)
             {
-                itemPerThread = ItemRealCollection.Count / (double)ThreadCount;
+                itemPerThread = itemRealCollection.Count / (double)threadCount;
 
-                Collection<ItemReal> itemRealCollection = new Collection<ItemReal>();
+                Collection<ItemReal> items = new Collection<ItemReal>();
 
                 from = (int)(i * itemPerThread);
                 to = (int)((i + 1) * itemPerThread);
 
                 for (int j = from; j < to; j++)
-                    itemRealCollection.Add(ItemRealCollection[j]);
+                    items.Add(itemRealCollection[j]);
 
-                SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(itemRealCollection)));
+                SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(items)));
             }
             //Task task = Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection));
             //task.Wait();
@@ -2871,7 +2871,7 @@ namespace DataToSQL
                     if (SendAll)
                     {
                         //statement += CreateSQLItemsStatement(ItemRealCollection);
-                        SendSQLItemsEx();
+                        SendSQLItemsWithThreads(ItemRealCollection, ThreadCount);
                         string statement = "";
 
                         foreach (KMAZSServerReal kmazsServerReal in Global.Default.KMAZSServerRealCollection)
@@ -2929,7 +2929,7 @@ namespace DataToSQL
                     }
                     else
                         //statement += CreateSQLItemsStatement(ItemForceRealCollection);
-                        SendSQLItemsEx();
+                        SendSQLItemsWithThreads(ItemForceRealCollection, ThreadCount);
 
                     SendSuccessCount++;
                 }

@@ -156,7 +156,8 @@
     <Reference Include="System.XML">
       <Private>False</Private>
     </Reference>
-    <Reference Include="Usable">
+    <Reference Include="Usable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Usable\Usable\bin\Debug\Usable.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -202,6 +203,12 @@
     </Compile>
     <Compile Include="Forms\OpcServerBrowserForm.Designer.cs">
       <DependentUpon>OpcServerBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ItemsEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemsEditForm.Designer.cs">
+      <DependentUpon>ItemsEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -283,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemsEditForm.resx">
+      <DependentUpon>ItemsEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemTrendForm.resx">
       <DependentUpon>ItemTrendForm.cs</DependentUpon>

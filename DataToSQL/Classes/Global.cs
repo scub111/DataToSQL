@@ -208,6 +208,7 @@ namespace DataToSQL
             varXml.LoadFromXML();
 
             CollectionWithUnits = new XPCollectionWithUnits();
+
             DataSourceCollection = (CollectionWithUnits.Add(typeof(DataSource))).Collection;
             StatisticsCollection = (CollectionWithUnits.Add(typeof(Statistics))).Collection;
             OPCServerCollection = (CollectionWithUnits.Add(typeof(OPCServer))).Collection;
@@ -349,7 +350,7 @@ namespace DataToSQL
         void ThreadMain_WorkChanged(object sender, EventArgs e)
         {
             // Инициализация таблиц в БД.
-            if (ThreadMain.WorkCount > 2)
+            if (ThreadMain.CycleCount > 2)
                 foreach (SQLServerReal sqlServer in SQLServerRealCollection)
                     if (!sqlServer.TableInitiated)
                         sqlServer.TableInitAsync();

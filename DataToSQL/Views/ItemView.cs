@@ -82,7 +82,8 @@ namespace DataToSQL
                 GridViewColumnMenu menu = e.Menu as GridViewColumnMenu;
                 if (menu.Column == null)
                 {
-                    menu.Items.Add(CreateCheckItem("Добавить недостающие записи Пинг-серверов", menu.Column, null, new EventHandler(AddPingServers)));
+                    menu.Items.Add(CreateCheckItem("Добавить недостающие записи Пинг-серверов", menu.Column, null, AddPingServers));
+                    menu.Items.Add(CreateCheckItem("Изменение всех значений...", menu.Column, null, ItemsEdit));
                 }
             }
         }
@@ -133,6 +134,12 @@ namespace DataToSQL
                     item.Comment = item.DataSource.Comment;
                 }
             }
+        }
+
+        private void ItemsEdit(object sender, EventArgs e)
+        {
+            ItemsEditForm itemsEdit = new ItemsEditForm(Global.Default.ItemCollection);
+            itemsEdit.ShowDialog();
         }
     }
 }
