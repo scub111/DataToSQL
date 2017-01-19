@@ -379,8 +379,10 @@ namespace DataToSQL
             IsConnected = false;
             IsReading = false;
             UpdateTime = new DateTime();
-            ReadDataWorker = new BackgroundWorker();
-            ReadDataWorker.DoWork += ReadDataWorker_DoWork;
+            IsBusy = false;
+
+            ReadDataThread = new Thread(() => TryReadDataEx());
+
             ReadDataTimeOut = 10000;
             TriggerPostionX = new TriggerT<int>();
             TriggerPostionY = new TriggerT<int>();
@@ -505,7 +507,7 @@ namespace DataToSQL
         /// <summary>
         /// Поток для чтения данных.
         /// </summary>
-        BackgroundWorker ReadDataWorker { get; set; }
+        Thread ReadDataThread { get; set; }
 
         /// <summary>
         /// Коллекция всех элементов.
@@ -542,9 +544,11 @@ namespace DataToSQL
         /// </summary>
         public int CursorDeactivationLost { get; set; }
 
-        //Занятость потока
+        /// <summary>
+        /// Занятость потока.
+        /// </summary>
         public bool IsBusy { get; set; }
-
+        
         /// <summary>
         /// Триггер на изменение X-позиции.
         /// </summary>
@@ -596,8 +600,12 @@ namespace DataToSQL
         /// </summary>
         public void ReadDataAsync()
         {
-            if (!ReadDataWorker.IsBusy)
-                ReadDataWorker.RunWorkerAsync();
+            if (!IsBusy)
+            {
+                IsBusy = true;
+                Thread ReadDataThread = new Thread(() => TryReadDataEx());
+                ReadDataThread.Start();
+            }
         }
 
         /// <summary>
@@ -653,7 +661,7 @@ namespace DataToSQL
         /// Попытка выполнить задачу обновления данных в заданный период времени.
         /// </summary>
         /// <returns></returns>
-        public bool TryReadDataEx()
+        public void TryReadDataEx()
         {
             ReadTimeT0 = DateTime.Now;
 
@@ -671,20 +679,27 @@ namespace DataToSQL
                     CursorDeactivationLost = 0;
             }
 
-            bool result = false;
 
             if (CursorDeactivationLost == 0)
-                result = ThreadEx.CallTimedOutMethodSync(ReadData, ReadDataTimeOut);
+            {
+                //result = ThreadEx.CallTimedOutMethodSync(ReadData, ReadDataTimeOut);
+                try
+                {
+                    ReadData();
+                }
+                catch
+                {
+                    ReceiveFaultCount++;
+                }
+            }
             else
             {
                 SetRequiredItemsQuality(14, "Frozen");
                 ReceiveFaultCount++;
             }
 
-            if (!result)
-                ReceiveFaultCount++;
             ReadTimeSpan = DateTime.Now - ReadTimeT0;
-            return result;
+            IsBusy = false;
         }
 
         /// <summary>
@@ -2240,12 +2255,10 @@ namespace DataToSQL
         public SQLServerReal(SQLServer server, Collection<ItemReal> itemRealCollection)
             : base(server)
         {
-            WorkerInit = new BackgroundWorker();
-            WorkerInit.DoWork += WorkerInit_DoWork;
-            WorkerSend = new BackgroundWorker();
-            WorkerSend.DoWork += WorkerSend_DoWork;
-            WorkerSendLog = new BackgroundWorker();
-            WorkerSendLog.DoWork += WorkerSendLog_DoWork;
+            InitIsBusy = false;
+            SendIsBusy = false;
+            LogIsBusy = false;
+
             TableInitiated = false;
             IsSending = false;
             GetData(server);
@@ -2319,24 +2332,19 @@ namespace DataToSQL
         public bool IsSending { get; set; }
 
         /// <summary>
-        /// Поток для инициализации таблиц.
+        /// Занят ли поток инициализации элементов в БД.
         /// </summary>
-        BackgroundWorker WorkerInit { get; set; }
+        bool InitIsBusy { get; set; }
 
         /// <summary>
-        /// Поток для периодической отправки данных в БД.
+        /// Занят ли поток отправки элементов в БД.
         /// </summary>
-        BackgroundWorker WorkerSend { get; set; }
+        bool SendIsBusy { get; set; }
 
         /// <summary>
-        /// Поток для отправки лога в БД.
+        /// Занят ли поток логирования.
         /// </summary>
-        BackgroundWorker WorkerSendLog { get; set; }
-
-        /// <summary>
-        /// Подключение к БД.
-        /// </summary>
-        //SqlConnection SqlConnect { get; set; }
+        bool LogIsBusy { get; set; }        
 
         /// <summary>
         /// Коллекция элементов, которые будут логироваться в БД.
@@ -2483,8 +2491,12 @@ namespace DataToSQL
         /// </summary>
         public void TableInitAsync()
         {
-            if (!WorkerInit.IsBusy)
-                WorkerInit.RunWorkerAsync();
+            if (!InitIsBusy)
+            {
+                InitIsBusy = true;
+                Thread thread = new Thread(InitItems);
+                thread.Start();
+            }
         }
 
         /// <summary>
@@ -2638,7 +2650,7 @@ namespace DataToSQL
         /// <summary>
         /// Функция, в которой будет выполняться в потоке инициализации таблиц в БД.
         /// </summary>
-        void WorkerInit_DoWork(object sender, DoWorkEventArgs e)
+        void InitItems()
         {
             if (SendAll || ItemForceRealCollection.Count > 0)
             {
@@ -2726,6 +2738,7 @@ namespace DataToSQL
                     connection.Close();
                 }
             }
+            InitIsBusy = false;
         }
 
         /// <summary>
@@ -2733,8 +2746,12 @@ namespace DataToSQL
         /// </summary>
         public void SendDataAsync()
         {
-            if (TableInitiated && !WorkerSend.IsBusy)
-                WorkerSend.RunWorkerAsync();
+            if (!SendIsBusy)
+            {
+                SendIsBusy = true;
+                Thread thread = new Thread(SendItems);
+                thread.Start();
+            }
         }
 
         /// <summary>
@@ -2842,13 +2859,12 @@ namespace DataToSQL
         /// <summary>
         /// Функция, в которой будет выполняться в потоке отправки данных в БД.
         /// </summary>
-        void WorkerSend_DoWork(object sender, DoWorkEventArgs e)
+        void SendItems()
         {
             if (SendAll || ItemForceRealCollection.Count > 0)
             {
                 try
                 {
-
                     // Отправка записей элементов.
                     if (SendAll)
                     {
@@ -2922,6 +2938,7 @@ namespace DataToSQL
                     Program.SaveLog(ex.Message);
                 }
             }
+            SendIsBusy = false;
         }
 
         /// <summary>
@@ -2929,14 +2946,18 @@ namespace DataToSQL
         /// </summary>
         public void SendDataLogAsync()
         {
-            if (!WorkerSendLog.IsBusy)
-                WorkerSendLog.RunWorkerAsync();
+            if (!LogIsBusy)
+            {
+                LogIsBusy = true;
+                Thread thread = new Thread(LogEvents);
+                thread.Start();
+            }
         }
 
         /// <summary>
         /// Функция, в которой будет выполняться в потоке инициализации таблиц в БД.
         /// </summary>
-        void WorkerSendLog_DoWork(object sender, DoWorkEventArgs e)
+        void LogEvents()
         {
             if (SendAll)
             {
@@ -2963,8 +2984,8 @@ namespace DataToSQL
                     connection.Close();
                 }
             }
+            LogIsBusy = false;
         }
-
     }
     #endregion
 }
