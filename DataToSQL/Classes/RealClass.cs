@@ -1662,7 +1662,7 @@ namespace DataToSQL
             Options = new PingOptions();
             buffer = Encoding.ASCII.GetBytes("a");
             ConnectSuccessCount = 1;
-            IsConnected = true;
+            IsConnected = false;
         }
 
         /// <summary>
@@ -1774,10 +1774,12 @@ namespace DataToSQL
                     }
                     item.DeviceTime = DateTime.Now;
                 }
+                IsConnected = true;
                 ReceiveSuccessCount++;
             }
             catch
             {
+                IsConnected = false;
                 ReceiveFaultCount++;
             }
 
@@ -2494,7 +2496,7 @@ namespace DataToSQL
             if (!InitIsBusy)
             {
                 InitIsBusy = true;
-                Thread thread = new Thread(InitItems);
+                Thread thread = new Thread(InitSQLItems);
                 thread.Start();
             }
         }
@@ -2595,7 +2597,7 @@ namespace DataToSQL
         /// <summary>
         /// Формирование SQL-запроса для инициализации элементов в БД.
         /// </summary>
-        string SQLInitItems(Collection<ItemReal> itemRealCollection)
+        string InitSQLItemStatement(Collection<ItemReal> itemRealCollection)
         {
             string statement = "";
             foreach (ItemReal item in ItemRealCollection)
@@ -2650,7 +2652,7 @@ namespace DataToSQL
         /// <summary>
         /// Функция, в которой будет выполняться в потоке инициализации таблиц в БД.
         /// </summary>
-        void InitItems()
+        void InitSQLItems()
         {
             if (SendAll || ItemForceRealCollection.Count > 0)
             {
@@ -2700,7 +2702,7 @@ namespace DataToSQL
                     // Инициализация записей элементов.
                     if (SendAll)
                     {
-                        statement += SQLInitItems(ItemRealCollection);
+                        statement += InitSQLItemStatement(ItemRealCollection);
 
                         foreach (KMAZSServerReal kmazsServerReal in Global.Default.KMAZSServerRealCollection)
                         {
@@ -2723,7 +2725,7 @@ namespace DataToSQL
                         }
                     }
                     else
-                        statement += SQLInitItems(ItemForceRealCollection);
+                        statement += InitSQLItemStatement(ItemForceRealCollection);
 
                     SqlCommand command = new SqlCommand(statement, connection);
                     command.ExecuteNonQuery();
@@ -2746,7 +2748,7 @@ namespace DataToSQL
         /// </summary>
         public void SendDataAsync()
         {
-            if (!SendIsBusy)
+            if (/*TableInitiated && */!SendIsBusy)
             {
                 SendIsBusy = true;
                 Thread thread = new Thread(SendItems);
@@ -2924,7 +2926,6 @@ namespace DataToSQL
                             command.ExecuteNonQuery();
                             connection.Close();
                         }
-
                     }
                     else
                         //statement += CreateSQLItemsStatement(ItemForceRealCollection);
