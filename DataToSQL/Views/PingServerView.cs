@@ -134,6 +134,9 @@ namespace DataToSQL
 
             // Кайерканский.
             GenerateIPAddress("172.24.228", 1, 128, pingServerDict);
+
+            // КУР.
+            GenerateIPAddress("172.31.71", 1, 255, pingServerDict);
         }
     }
 }
