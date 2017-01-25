@@ -23,9 +23,8 @@ namespace DataToSQL
             }
         }
 
-        public static bool CallTimedOutMethodAsync(Action method, int milliseconds, Action callBackMethod = null)
+        public static void CallTimedOutMethodAsync(Action method, int milliseconds, Action callBackMethod = null)
         {
-            bool isGood = true;
             new Thread(new ThreadStart(() =>
             {
                 Thread actionThread = new Thread(new ThreadStart(() =>
@@ -38,10 +37,8 @@ namespace DataToSQL
                 if (actionThread.IsAlive)
                 {
                     actionThread.Abort();
-                    isGood = false;
                 }
             })).Start();
-            return isGood;
         }
 
         public static bool CallTimedOutMethodSync(Action method, int milliseconds)
