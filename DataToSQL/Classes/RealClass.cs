@@ -94,6 +94,7 @@ namespace DataToSQL
         }
 
         public object XPObject { get; set; }
+
         public int Oid { get; set; }
 
         /// <summary>
@@ -824,14 +825,6 @@ namespace DataToSQL
                     RequiredIndexes.Add(i);
                     RequiredItems.Add(Items[i]);
                 }
-        }
-
-        /// <summary>
-        /// Обработчик события потока чтения данных.
-        /// </summary>
-        void ReadDataWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            TryReadDataEx();
         }
     }
     #endregion

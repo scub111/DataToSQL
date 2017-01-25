@@ -135,7 +135,7 @@
             this._dbForm1.Name = "_dbForm1";
             this._dbForm1.NotifyIcon = this.notifyIcon1;
             this._dbForm1.OwnerForm = this;
-            this._dbForm1.Size = new System.Drawing.Size(141, 719);
+            this._dbForm1.Size = new System.Drawing.Size(141, 513);
             this._dbForm1.TabIndex = 0;
             // 
             // barLayoutItem1
@@ -144,7 +144,7 @@
             this.barLayoutItem1.CustomizationFormText = "Навигация";
             this.barLayoutItem1.Location = new System.Drawing.Point(0, 26);
             this.barLayoutItem1.Name = "barLayoutItem1";
-            this.barLayoutItem1.Size = new System.Drawing.Size(141, 693);
+            this.barLayoutItem1.Size = new System.Drawing.Size(141, 487);
             this.barLayoutItem1.TextSize = new System.Drawing.Size(0, 0);
             this.barLayoutItem1.TextVisible = false;
             // 
@@ -172,7 +172,7 @@
             this.baseNavBarControl1.Location = new System.Drawing.Point(2, 28);
             this.baseNavBarControl1.Name = "baseNavBarControl1";
             this.baseNavBarControl1.OptionsNavPane.ExpandedWidth = 137;
-            this.baseNavBarControl1.Size = new System.Drawing.Size(137, 689);
+            this.baseNavBarControl1.Size = new System.Drawing.Size(137, 483);
             this.baseNavBarControl1.SmallImages = this.icons1;
             this.baseNavBarControl1.TabIndex = 5;
             // 
@@ -345,7 +345,7 @@
             this.baseControlContainer1.Controls.Add(this._dbForm1);
             this.baseControlContainer1.Location = new System.Drawing.Point(4, 23);
             this.baseControlContainer1.Name = "baseControlContainer1";
-            this.baseControlContainer1.Size = new System.Drawing.Size(141, 719);
+            this.baseControlContainer1.Size = new System.Drawing.Size(141, 513);
             this.baseControlContainer1.TabIndex = 0;
             // 
             // baseDockManager1
@@ -402,28 +402,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1096, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1051, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 746);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1096, 25);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 540);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1051, 25);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 746);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 540);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1096, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 746);
+            this.barDockControlRight.Location = new System.Drawing.Point(1051, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 540);
             // 
             // baseDockPanel1
             // 
@@ -433,7 +433,7 @@
             this.baseDockPanel1.Location = new System.Drawing.Point(0, 0);
             this.baseDockPanel1.Name = "baseDockPanel1";
             this.baseDockPanel1.OriginalSize = new System.Drawing.Size(149, 200);
-            this.baseDockPanel1.Size = new System.Drawing.Size(149, 746);
+            this.baseDockPanel1.Size = new System.Drawing.Size(149, 540);
             this.baseDockPanel1.Text = "Навигация";
             // 
             // baseDocumentManager1
@@ -453,7 +453,7 @@
             this.baseLayoutControl1.Location = new System.Drawing.Point(0, 0);
             this.baseLayoutControl1.Name = "baseLayoutControl1";
             this.baseLayoutControl1.Root = this.baseLayoutGroup1;
-            this.baseLayoutControl1.Size = new System.Drawing.Size(141, 719);
+            this.baseLayoutControl1.Size = new System.Drawing.Size(141, 513);
             this.baseLayoutControl1.TabIndex = 0;
             // 
             // filterClearButton1
@@ -485,7 +485,7 @@
             this.baseLayoutGroup1.Location = new System.Drawing.Point(0, 0);
             this.baseLayoutGroup1.Name = "baseLayoutGroup1";
             this.baseLayoutGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.baseLayoutGroup1.Size = new System.Drawing.Size(141, 719);
+            this.baseLayoutGroup1.Size = new System.Drawing.Size(141, 513);
             this.baseLayoutGroup1.TextVisible = false;
             // 
             // filterLayoutItem1
@@ -672,7 +672,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 771);
+            this.ClientSize = new System.Drawing.Size(1051, 565);
             this.Controls.Add(this.baseDockPanel1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
