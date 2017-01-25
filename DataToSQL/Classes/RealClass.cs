@@ -2752,14 +2752,12 @@ namespace DataToSQL
         /// <summary>
         /// Формирование SQL-запроса для отправки элементов в БД.
         /// </summary>
-        string CreateSQLItemsStatement(Collection<ItemReal> itemRealCollection)
+        string CreateSQLItemsStatement(Collection<ItemReal> itemRealCollection, short timePeriod)
         {
             string statement = "";
 
             object dataValueObject = null;
             string dataValueString = "";
-
-            int timePeriod = GetTimePeriod();
 
             foreach (ItemReal item in itemRealCollection)
                 if (item.Ready && !string.IsNullOrEmpty(item.SQLTableName))
@@ -2808,6 +2806,8 @@ namespace DataToSQL
         {
             List<Task> SendSQLTaskList = new List<Task>();
 
+            short timePeriod = GetTimePeriod();
+
             double itemPerThread;
             int from, to;
             for (int i = 0; i < threadCount; i++)
@@ -2822,7 +2822,7 @@ namespace DataToSQL
                 for (int j = from; j < to; j++)
                     items.Add(itemRealCollection[j]);
 
-                SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(items)));
+                SendSQLTaskList.Add(Task.Factory.StartNew(() => SendSQLItems(items, timePeriod)));
             }
             //Task task = Task.Factory.StartNew(() => SendSQLItems(ItemRealCollection));
             //task.Wait();
@@ -2832,13 +2832,13 @@ namespace DataToSQL
         /// <summary>
         /// Отправка данных в БД, разделенная на потоки.
         /// </summary>
-        void SendSQLItems(Collection<ItemReal> itemRealCollection)
+        void SendSQLItems(Collection<ItemReal> itemRealCollection, short timePeriod)
         {
             SqlConnection connection = new SqlConnection(ConnectionString);
             try
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(CreateSQLItemsStatement(itemRealCollection), connection);
+                SqlCommand command = new SqlCommand(CreateSQLItemsStatement(itemRealCollection, timePeriod), connection);
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

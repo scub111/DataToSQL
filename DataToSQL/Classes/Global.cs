@@ -200,7 +200,7 @@ namespace DataToSQL
         /// </summary>
         public void Init()
         {
-            Version = "v1.21.08";
+            Version = "v1.21.09";
 
             InitTime = DateTime.Now;
 
