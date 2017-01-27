@@ -164,7 +164,6 @@
   <ItemGroup>
     <Compile Include="Classes\DBClass.cs" />
     <Compile Include="Classes\ItemSql.cs" />
-    <Compile Include="Classes\Links.cs" />
     <Compile Include="Classes\MyFormSettings.cs" />
     <Compile Include="Classes\RealClass.cs" />
     <Compile Include="Forms\EqualAddressForm.cs">
@@ -212,7 +211,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\ThreadEx.cs" />
     <Compile Include="Views\ItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>

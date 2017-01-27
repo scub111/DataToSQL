@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using RapidInterface;
 using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
-using DevExpress.Xpo;
 
 namespace DataToSQL
 {
@@ -34,7 +28,7 @@ namespace DataToSQL
             {
                 if (Global.Default.ThreadMain != null)
                 {
-                    textThreadMainCountWork.Text = Global.Default.ThreadMain.CycleCount.ToString();
+                    textThreadMainCountWork.Text = Global.Default.ThreadMain.WorkCount.ToString();
                     //spCycleSpan.Text = Global.Default.ThreadMain.CycleSpan.ToString("{0.##}");
                     spCycleSpan.Text = Global.Default.ThreadMain.CycleSpan.TotalMilliseconds.ToString();
                     if (Global.Default.ThreadMain.IsBusy)

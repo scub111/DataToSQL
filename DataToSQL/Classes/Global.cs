@@ -200,7 +200,7 @@ namespace DataToSQL
         /// </summary>
         public void Init()
         {
-            Version = "v1.21.09";
+            Version = "v1.21.11";
 
             InitTime = DateTime.Now;
 
@@ -350,7 +350,7 @@ namespace DataToSQL
         void ThreadMain_WorkChanged(object sender, EventArgs e)
         {
             // Инициализация таблиц в БД.
-            if (ThreadMain.CycleCount > 2)
+            if (ThreadMain.WorkCount > 2)
                 foreach (SQLServerReal sqlServer in SQLServerRealCollection)
                     if (!sqlServer.TableInitiated)
                         sqlServer.TableInitAsync();

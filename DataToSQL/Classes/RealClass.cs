@@ -17,6 +17,7 @@ using System.Net.NetworkInformation;
 using FirebirdSql.Data.FirebirdClient;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Usable;
 
 namespace DataToSQL
 {
@@ -661,7 +662,6 @@ namespace DataToSQL
         /// <summary>
         /// Попытка выполнить задачу обновления данных в заданный период времени.
         /// </summary>
-        /// <returns></returns>
         public void TryReadDataEx()
         {
             ReadTimeT0 = DateTime.Now;
@@ -884,7 +884,7 @@ namespace DataToSQL
                             break;
 
                         case "ThreadMainCountWork":
-                            itemReal.DataValue = Global.Default.ThreadMain.CycleCount;
+                            itemReal.DataValue = Global.Default.ThreadMain.WorkCount;
                             break;
 
                     }
