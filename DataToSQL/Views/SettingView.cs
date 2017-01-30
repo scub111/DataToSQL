@@ -28,8 +28,11 @@ namespace DataToSQL
             {
                 if (Global.Default.ThreadMain != null)
                 {
-                    textThreadMainCountWork.Text = Global.Default.ThreadMain.WorkCount.ToString();
+                    spinThreadMainCountWork.Value = Global.Default.ThreadMain.WorkCount;
                     //spCycleSpan.Text = Global.Default.ThreadMain.CycleSpan.ToString("{0.##}");
+
+                    spinThreadMainFautCount.Value = Global.Default.ThreadMainFautCount;
+
                     spCycleSpan.Text = Global.Default.ThreadMain.CycleSpan.TotalMilliseconds.ToString();
                     if (Global.Default.ThreadMain.IsBusy)
                         textThreadMainStatus.Text = "Выполняется";

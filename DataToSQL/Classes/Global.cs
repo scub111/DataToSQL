@@ -176,6 +176,11 @@ namespace DataToSQL
         public BackgroundWorker WorkerReboot { get; set; }
 
         /// <summary>
+        /// Кол-во ошибок выполнения главного потока.
+        /// </summary>
+        public int ThreadMainFautCount { get; set; }
+
+        /// <summary>
         /// Задержка между получением данных с ОРС-серверов и отправкой их SQL-серверы.
         /// </summary>
         public int ThreadMainDelay { get; set; }
@@ -200,7 +205,7 @@ namespace DataToSQL
         /// </summary>
         public void Init()
         {
-            Version = "v1.21.13";
+            Version = "v1.21.14";
 
             InitTime = DateTime.Now;
 
@@ -233,6 +238,8 @@ namespace DataToSQL
             SQLServerRealCollection = new CollectionEx<SQLServerReal>();
 
             CopyDataToReal();
+
+            ThreadMainFautCount = 0;
 
             ThreadMain = new ThreadTimer() { Period = varXml.ThreadMainPeriod };
             ThreadMain.WorkChanged += ThreadMain_WorkChanged;
@@ -349,43 +356,50 @@ namespace DataToSQL
         /// </summary>
         void ThreadMain_WorkChanged(object sender, EventArgs e)
         {
-            // Инициализация таблиц в БД.
-            if (ThreadMain.WorkCount > 2)
-                foreach (SQLServerReal sqlServer in SQLServerRealCollection)
-                    if (!sqlServer.TableInitiated)
-                        sqlServer.TableInitAsync();
+            try
+            {
+                // Инициализация таблиц в БД.
+                if (ThreadMain.WorkCount > 2)
+                    foreach (SQLServerReal sqlServer in SQLServerRealCollection)
+                        if (!sqlServer.TableInitiated)
+                            sqlServer.TableInitAsync();
 
-            // Чтение статистических данных.
-            StatisticsRealCollection.ReadDataAsync();
+                // Чтение статистических данных.
+                StatisticsRealCollection.ReadDataAsync();
 
-            // Чтение данных с OPC-серверов.
-            OPCServerRealCollection.ReadDataAsync();
+                // Чтение данных с OPC-серверов.
+                OPCServerRealCollection.ReadDataAsync();
 
-            // Чтение данных со Взлетов.
-            VzljotRealCollection.ReadDataAsync();
+                // Чтение данных со Взлетов.
+                VzljotRealCollection.ReadDataAsync();
 
-            // Чтение данных со DDE-серверов.
-            DDEServerRealCollection.ReadDataAsync();
+                // Чтение данных со DDE-серверов.
+                DDEServerRealCollection.ReadDataAsync();
 
-            // Чтение данных с Технографов.
-            TechnographRealCollection.ReadDataAsync();
+                // Чтение данных с Технографов.
+                TechnographRealCollection.ReadDataAsync();
 
-            // Чтение данных с Ping-серверов.
-            PingServerRealCollection.ReadDataAsync();
+                // Чтение данных с Ping-серверов.
+                PingServerRealCollection.ReadDataAsync();
 
-            // Чтение данных с КМАЗС.
-            KMAZSServerRealCollection.ReadDataAsync();
+                // Чтение данных с КМАЗС.
+                KMAZSServerRealCollection.ReadDataAsync();
 
-            Thread.Sleep(ThreadMainDelay);
+                Thread.Sleep(ThreadMainDelay);
 
-            // Отправка значений на интерфейс.
-            foreach (ItemReal item in ItemRealCollection)
-                item.SendDataToXPObject();
+                // Отправка значений на интерфейс.
+                foreach (ItemReal item in ItemRealCollection)
+                    item.SendDataToXPObject();
 
-            WorkTimeSpanDays = DateTime.Now - InitTime;
+                WorkTimeSpanDays = DateTime.Now - InitTime;
 
-            // Отправка данных в SQL-сервера.
-            SQLServerRealCollection.SendDataAsync();
+                // Отправка данных в SQL-сервера.
+                SQLServerRealCollection.SendDataAsync();
+            }
+            catch
+            {
+                ThreadMainFautCount++;
+            }
         }
 
         /// <summary>

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.spCycleSpan = new DevExpress.XtraEditors.SpinEdit();
             this.btnUpdateSchema = new DevExpress.XtraEditors.SimpleButton();
             this.lblTidelogInfo = new DevExpress.XtraEditors.LabelControl();
             this.textAppName = new DevExpress.XtraEditors.TextEdit();
@@ -38,8 +39,6 @@
             this.btnSettingsSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnThreadMainStop = new DevExpress.XtraEditors.SimpleButton();
             this.btnThreadMainRun = new DevExpress.XtraEditors.SimpleButton();
-            this.textThreadMainStatus = new DevExpress.XtraEditors.TextEdit();
-            this.textThreadMainCountWork = new DevExpress.XtraEditors.TextEdit();
             this.btnReboot = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -53,20 +52,22 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.grpCycleSpan = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.spCycleSpan = new DevExpress.XtraEditors.SpinEdit();
-            this.grpCycleSpan = new DevExpress.XtraLayout.LayoutControlItem();
+            this.spinThreadMainFautCount = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textThreadMainStatus = new DevExpress.XtraEditors.TextEdit();
+            this.spinThreadMainCountWork = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spCycleSpan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textAppName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainDelay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainPeriod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textThreadMainStatus.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textThreadMainCountWork.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -79,16 +80,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpCycleSpan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spCycleSpan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpCycleSpan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainFautCount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textThreadMainStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainCountWork.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.spinThreadMainFautCount);
             this.layoutControl1.Controls.Add(this.spCycleSpan);
             this.layoutControl1.Controls.Add(this.btnUpdateSchema);
             this.layoutControl1.Controls.Add(this.lblTidelogInfo);
@@ -98,9 +103,9 @@
             this.layoutControl1.Controls.Add(this.btnSettingsSave);
             this.layoutControl1.Controls.Add(this.btnThreadMainStop);
             this.layoutControl1.Controls.Add(this.btnThreadMainRun);
-            this.layoutControl1.Controls.Add(this.textThreadMainStatus);
-            this.layoutControl1.Controls.Add(this.textThreadMainCountWork);
             this.layoutControl1.Controls.Add(this.btnReboot);
+            this.layoutControl1.Controls.Add(this.textThreadMainStatus);
+            this.layoutControl1.Controls.Add(this.spinThreadMainCountWork);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -109,9 +114,24 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // spCycleSpan
+            // 
+            this.spCycleSpan.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spCycleSpan.Location = new System.Drawing.Point(582, 228);
+            this.spCycleSpan.Name = "spCycleSpan";
+            this.spCycleSpan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spCycleSpan.Size = new System.Drawing.Size(347, 20);
+            this.spCycleSpan.StyleController = this.layoutControl1;
+            this.spCycleSpan.TabIndex = 16;
+            // 
             // btnUpdateSchema
             // 
-            this.btnUpdateSchema.Location = new System.Drawing.Point(478, 431);
+            this.btnUpdateSchema.Location = new System.Drawing.Point(478, 444);
             this.btnUpdateSchema.Name = "btnUpdateSchema";
             this.btnUpdateSchema.Size = new System.Drawing.Size(463, 22);
             this.btnUpdateSchema.StyleController = this.layoutControl1;
@@ -121,7 +141,7 @@
             // 
             // lblTidelogInfo
             // 
-            this.lblTidelogInfo.Location = new System.Drawing.Point(12, 369);
+            this.lblTidelogInfo.Location = new System.Drawing.Point(12, 364);
             this.lblTidelogInfo.Name = "lblTidelogInfo";
             this.lblTidelogInfo.Size = new System.Drawing.Size(47, 13);
             this.lblTidelogInfo.StyleController = this.layoutControl1;
@@ -130,9 +150,9 @@
             // 
             // textAppName
             // 
-            this.textAppName.Location = new System.Drawing.Point(126, 185);
+            this.textAppName.Location = new System.Drawing.Point(128, 180);
             this.textAppName.Name = "textAppName";
-            this.textAppName.Size = new System.Drawing.Size(803, 20);
+            this.textAppName.Size = new System.Drawing.Size(801, 20);
             this.textAppName.StyleController = this.layoutControl1;
             this.textAppName.TabIndex = 13;
             // 
@@ -143,11 +163,11 @@
             0,
             0,
             0});
-            this.spinThreadMainDelay.Location = new System.Drawing.Point(126, 281);
+            this.spinThreadMainDelay.Location = new System.Drawing.Point(582, 252);
             this.spinThreadMainDelay.Name = "spinThreadMainDelay";
             this.spinThreadMainDelay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.spinThreadMainDelay.Size = new System.Drawing.Size(803, 20);
+            this.spinThreadMainDelay.Size = new System.Drawing.Size(347, 20);
             this.spinThreadMainDelay.StyleController = this.layoutControl1;
             this.spinThreadMainDelay.TabIndex = 12;
             // 
@@ -158,17 +178,17 @@
             0,
             0,
             0});
-            this.spinThreadMainPeriod.Location = new System.Drawing.Point(126, 257);
+            this.spinThreadMainPeriod.Location = new System.Drawing.Point(128, 252);
             this.spinThreadMainPeriod.Name = "spinThreadMainPeriod";
             this.spinThreadMainPeriod.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.spinThreadMainPeriod.Size = new System.Drawing.Size(803, 20);
+            this.spinThreadMainPeriod.Size = new System.Drawing.Size(346, 20);
             this.spinThreadMainPeriod.StyleController = this.layoutControl1;
             this.spinThreadMainPeriod.TabIndex = 11;
             // 
             // btnSettingsSave
             // 
-            this.btnSettingsSave.Location = new System.Drawing.Point(24, 331);
+            this.btnSettingsSave.Location = new System.Drawing.Point(24, 326);
             this.btnSettingsSave.Name = "btnSettingsSave";
             this.btnSettingsSave.Size = new System.Drawing.Size(905, 22);
             this.btnSettingsSave.StyleController = this.layoutControl1;
@@ -178,7 +198,7 @@
             // 
             // btnThreadMainStop
             // 
-            this.btnThreadMainStop.Location = new System.Drawing.Point(478, 305);
+            this.btnThreadMainStop.Location = new System.Drawing.Point(478, 300);
             this.btnThreadMainStop.Name = "btnThreadMainStop";
             this.btnThreadMainStop.Size = new System.Drawing.Size(451, 22);
             this.btnThreadMainStop.StyleController = this.layoutControl1;
@@ -188,7 +208,7 @@
             // 
             // btnThreadMainRun
             // 
-            this.btnThreadMainRun.Location = new System.Drawing.Point(24, 305);
+            this.btnThreadMainRun.Location = new System.Drawing.Point(24, 300);
             this.btnThreadMainRun.Name = "btnThreadMainRun";
             this.btnThreadMainRun.Size = new System.Drawing.Size(450, 22);
             this.btnThreadMainRun.StyleController = this.layoutControl1;
@@ -196,27 +216,9 @@
             this.btnThreadMainRun.Text = "Пуск";
             this.btnThreadMainRun.Click += new System.EventHandler(this.btnThreadMainRun_Click);
             // 
-            // textThreadMainStatus
-            // 
-            this.textThreadMainStatus.Location = new System.Drawing.Point(126, 209);
-            this.textThreadMainStatus.Name = "textThreadMainStatus";
-            this.textThreadMainStatus.Properties.ReadOnly = true;
-            this.textThreadMainStatus.Size = new System.Drawing.Size(803, 20);
-            this.textThreadMainStatus.StyleController = this.layoutControl1;
-            this.textThreadMainStatus.TabIndex = 6;
-            // 
-            // textThreadMainCountWork
-            // 
-            this.textThreadMainCountWork.Location = new System.Drawing.Point(126, 233);
-            this.textThreadMainCountWork.Name = "textThreadMainCountWork";
-            this.textThreadMainCountWork.Properties.ReadOnly = true;
-            this.textThreadMainCountWork.Size = new System.Drawing.Size(348, 20);
-            this.textThreadMainCountWork.StyleController = this.layoutControl1;
-            this.textThreadMainCountWork.TabIndex = 5;
-            // 
             // btnReboot
             // 
-            this.btnReboot.Location = new System.Drawing.Point(12, 431);
+            this.btnReboot.Location = new System.Drawing.Point(12, 444);
             this.btnReboot.Name = "btnReboot";
             this.btnReboot.Size = new System.Drawing.Size(462, 22);
             this.btnReboot.StyleController = this.layoutControl1;
@@ -246,7 +248,7 @@
             // 
             this.layoutControlItem1.Control = this.btnReboot;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 419);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 432);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(466, 26);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -256,9 +258,9 @@
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 445);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 458);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(933, 244);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(933, 231);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup2
@@ -271,23 +273,24 @@
             this.layoutControlItem5,
             this.layoutControlItem7,
             this.layoutControlItem8,
-            this.layoutControlItem6,
             this.layoutControlItem9,
-            this.grpCycleSpan});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 143);
+            this.grpCycleSpan,
+            this.layoutControlItem13,
+            this.layoutControlItem6});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 138);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(933, 214);
             this.layoutControlGroup2.Text = "Главный поток";
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.textThreadMainCountWork;
+            this.layoutControlItem2.Control = this.spinThreadMainCountWork;
             this.layoutControlItem2.CustomizationFormText = "Счетчик:";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(454, 24);
             this.layoutControlItem2.Text = "Счетчик:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(101, 13);
             // 
             // layoutControlItem3
             // 
@@ -297,7 +300,7 @@
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(909, 24);
             this.layoutControlItem3.Text = "Статус:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(101, 13);
             // 
             // layoutControlItem4
             // 
@@ -335,19 +338,19 @@
             this.layoutControlItem8.CustomizationFormText = "Период:";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(909, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(454, 24);
             this.layoutControlItem8.Text = "Период:";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(101, 13);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.spinThreadMainDelay;
             this.layoutControlItem6.CustomizationFormText = "Задержка:";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem6.Location = new System.Drawing.Point(454, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(909, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(455, 24);
             this.layoutControlItem6.Text = "Задержка:";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(101, 13);
             // 
             // layoutControlItem9
             // 
@@ -357,15 +360,24 @@
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(909, 24);
             this.layoutControlItem9.Text = "Название:";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(101, 13);
+            // 
+            // grpCycleSpan
+            // 
+            this.grpCycleSpan.Control = this.spCycleSpan;
+            this.grpCycleSpan.Location = new System.Drawing.Point(454, 48);
+            this.grpCycleSpan.Name = "grpCycleSpan";
+            this.grpCycleSpan.Size = new System.Drawing.Size(455, 24);
+            this.grpCycleSpan.Text = "Время выполнения:";
+            this.grpCycleSpan.TextSize = new System.Drawing.Size(101, 13);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 374);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 369);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(933, 45);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(933, 63);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -374,14 +386,14 @@
             this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(933, 143);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(933, 138);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.lblTidelogInfo;
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem10";
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 357);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 352);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(933, 17);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -390,7 +402,7 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnUpdateSchema;
-            this.layoutControlItem11.Location = new System.Drawing.Point(466, 419);
+            this.layoutControlItem11.Location = new System.Drawing.Point(466, 432);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(467, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -402,29 +414,52 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // spCycleSpan
+            // spinThreadMainFautCount
             // 
-            this.spCycleSpan.EditValue = new decimal(new int[] {
+            this.spinThreadMainFautCount.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spCycleSpan.Location = new System.Drawing.Point(580, 233);
-            this.spCycleSpan.Name = "spCycleSpan";
-            this.spCycleSpan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinThreadMainFautCount.Location = new System.Drawing.Point(128, 276);
+            this.spinThreadMainFautCount.Name = "spinThreadMainFautCount";
+            this.spinThreadMainFautCount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spCycleSpan.Size = new System.Drawing.Size(349, 20);
-            this.spCycleSpan.StyleController = this.layoutControl1;
-            this.spCycleSpan.TabIndex = 16;
+            this.spinThreadMainFautCount.Properties.ReadOnly = true;
+            this.spinThreadMainFautCount.Size = new System.Drawing.Size(801, 20);
+            this.spinThreadMainFautCount.StyleController = this.layoutControl1;
+            this.spinThreadMainFautCount.TabIndex = 18;
             // 
-            // grpCycleSpan
+            // layoutControlItem13
             // 
-            this.grpCycleSpan.Control = this.spCycleSpan;
-            this.grpCycleSpan.Location = new System.Drawing.Point(454, 48);
-            this.grpCycleSpan.Name = "grpCycleSpan";
-            this.grpCycleSpan.Size = new System.Drawing.Size(455, 24);
-            this.grpCycleSpan.Text = "Время выполнения:";
-            this.grpCycleSpan.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem13.Control = this.spinThreadMainFautCount;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(909, 24);
+            this.layoutControlItem13.Text = "Ошибки гл. потока:";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(101, 13);
+            // 
+            // textThreadMainStatus
+            // 
+            this.textThreadMainStatus.Location = new System.Drawing.Point(128, 204);
+            this.textThreadMainStatus.Name = "textThreadMainStatus";
+            this.textThreadMainStatus.Properties.ReadOnly = true;
+            this.textThreadMainStatus.Size = new System.Drawing.Size(801, 20);
+            this.textThreadMainStatus.StyleController = this.layoutControl1;
+            this.textThreadMainStatus.TabIndex = 6;
+            // 
+            // spinThreadMainCountWork
+            // 
+            this.spinThreadMainCountWork.Location = new System.Drawing.Point(128, 228);
+            this.spinThreadMainCountWork.Name = "spinThreadMainCountWork";
+            this.spinThreadMainCountWork.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinThreadMainCountWork.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.spinThreadMainCountWork.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.spinThreadMainCountWork.Properties.ReadOnly = true;
+            this.spinThreadMainCountWork.Size = new System.Drawing.Size(346, 20);
+            this.spinThreadMainCountWork.StyleController = this.layoutControl1;
+            this.spinThreadMainCountWork.TabIndex = 5;
             // 
             // SettingView
             // 
@@ -437,11 +472,10 @@
             this.Load += new System.EventHandler(this.SettingView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spCycleSpan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textAppName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainDelay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainPeriod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textThreadMainStatus.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textThreadMainCountWork.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -454,12 +488,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpCycleSpan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spCycleSpan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpCycleSpan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainFautCount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textThreadMainStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinThreadMainCountWork.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -471,8 +508,6 @@
         private DevExpress.XtraEditors.SimpleButton btnReboot;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.TextEdit textThreadMainStatus;
-        private DevExpress.XtraEditors.TextEdit textThreadMainCountWork;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -497,5 +532,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraEditors.SpinEdit spCycleSpan;
         private DevExpress.XtraLayout.LayoutControlItem grpCycleSpan;
+        private DevExpress.XtraEditors.SpinEdit spinThreadMainFautCount;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraEditors.TextEdit textThreadMainStatus;
+        private DevExpress.XtraEditors.SpinEdit spinThreadMainCountWork;
     }
 }
